@@ -1,0 +1,17 @@
+[project]
+name = "project1-group-47"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "lerobot",
+]
+
+[tool.uv.workspace]
+members = [
+    "lerobot",
+]
+
+[tool.uv.sources]
+lerobot = { workspace = true, editable = true }
