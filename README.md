@@ -1,5 +1,18 @@
 # Project 1: Robot Learning (Group 47)
 
+## 📂 Repository Structure
+
+- `configs/`: Configuration files for models, robots, and training.
+- `data/`: Local storage for datasets and processed data.
+- `lerobot/`: The LeRobot library (Git submodule). Contains core logic for robot control and training.
+- `src/`: Custom project code.
+    - `data_utils/`: Utilities for data processing and dataset management.
+    - `models/`: Custom model architectures.
+    - `scripts/`: Python scripts for calibration, training, and evaluation.
+- `requirements.txt` & `pyproject.toml`: Dependency management files.
+
+---
+
 This repository contains the codebase for our Robot Learning project. We use **LeRobot** as our core library, managed as a Git submodule to allow for version consistency and local modifications.
 
 ---
@@ -96,3 +109,42 @@ The `lerobot/` directory is a separate Git repository nested inside ours.
 git submodule update --init --recursive
 uv sync
 ```
+
+
+## 🔌 Hardware Connectivity & Ports, Calibration
+
+### Finding Robot Ports
+USB port addresses (e.g., `/dev/tty.usbmodem5B141127361`) are **specific to the laptop and the physical USB port used.** When moved the robot to a new computer, the address will change.
+
+Before running calibration or teleop scripts, identify the current ports:
+
+```bash
+cd lerobot
+lerobot-find-port
+```
+
+### 🔧 Saving your Ports (Local Shortcut)
+To avoid looking up your port addresses every time, save them locally in your shell environment.
+
+1. Create a file named `.env` in the project root:
+   ```bash
+   echo "export LEADER_PORT={your leader port}" >> .env
+   echo "export FOLLOWER_PORT={your follower port}" >> .env
+   ```
+
+2. Load the paths into your terminal:
+    ```Bash
+    source .env
+    ```
+
+### 🔧 Calibration
+If you need to (re)calibrate, from the *root directory*:
+
+1. For the leader arm:
+    ```Bash
+    python src/scripts/calibrate.py --teleop.port=$LEADER_PORT --teleop.type=so101_leader --robot.id=leader_arm
+    ```
+2. For the follower arm:
+    ```Bash
+    python src/scripts/calibrate.py --robot.type=so101_follower --robot.port=$FOLLOWER_PORT --robot.id=follower_arm
+    ```
