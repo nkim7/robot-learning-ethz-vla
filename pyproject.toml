@@ -6,6 +6,7 @@ readme = "README.md"
 requires-python = ">=3.12"
 dependencies = [
     "lerobot[aloha,feetech,pusht]",
+    "rerun-sdk>=0.26.2",
 ]
 
 [tool.uv.workspace]
