@@ -132,7 +132,98 @@ If you edit code *inside* the `lerobot/` folder:
     git push origin main
     ```
 
+## Data Collection & Collaboration
+
+This section outlines the workflow for obtaining credentials, setting up your environment, and recording teleoperation data for the **SO-101** robot. We use a shared **Hugging Face Organization** to centralize all training data.
+
+---
+
+### 1. Obtain a Hugging Face Access Token
+Before you can upload data, you need a personal "Write" token from Hugging Face.
+
+1.  Log in to [Hugging Face](https://huggingface.co/).
+2.  Navigate to **Settings > Access Tokens** (or go to [huggingface.co/settings/tokens](https://huggingface.co/settings/tokens)).
+3.  Click **New token**.
+4.  Set the **Token type** to **Write**.
+5.  Give it a name (e.g., `robot-learning-group47-yourname`) and click **Generate a token**.
+6.  **Copy the token immediately**—you will not be able to see the full string again once you leave the page.
+
+---
+
+### 2. Configure Environment Variables (`.env`)
+To avoid entering your token every time you run a command, store it in a local environment file.
+
+1.  Create a file named `.env` in the root of this project.
+2.  Paste your token into the file using these two variables (the same token for both):
+    ```env
+    HUGGINGFACE_TOKEN=hf_your_token_here
+    HF_TOKEN=hf_your_token_here
+    ```
+3.  **Security Check:** Ensure your `.gitignore` file contains a line for `.env` so you do not accidentally share your token with the team or the public.
+
+To load these variables into your current terminal session, run:
+```bash
+# Activate the virtual environment
+source .venv/bin/activate
+
+# Load the tokens
+export $(grep -v '^#' .env | xargs)
+```
+
+---
+
+### 3. Initialize the Dataset Repository
+The first time the team records data for a specific project, a repository needs to be created under the Organization namespace. Running the script with the `--push-to-hub=true` flag handles this automatically.
+
+**First-time Authentication:**
+```bash
+hf auth login --token ${HUGGINGFACE_TOKEN} --add-to-git-credential
+```
+
+**Run a test recording to create the repo:**
+```bash
+python lerobot/scripts/control_robot.py record \
+  --robot.type=so101 \
+  --repo-id=robot-learning-group47/so101-teleoperation \
+  --push-to-hub=true \
+  --num-episodes=1
+```
+
+
+### 4. Recording Teleoperation Data
+Once the environment is set up, use the following workflow to record training episodes.
+
+**Recording Workflow:**
+```bash
+# 1. Activate and Load
+source .venv/bin/activate
+export $(grep -v '^#' .env | xargs)
+
+# 2. Record Session
+python lerobot/scripts/control_robot.py record \
+  --robot.type=so101 \
+  --repo-id=your-org-name/your-dataset-name \
+  --push-to-hub=true \
+  --fps=30 \
+  --warmup-time-s=5 \
+  --episode-time-s=30 \
+  --reset-time-s=5 \
+  --num-episodes=10
+```
+
+### Script Parameter Reference
+
+| Parameter | Description |
+| :--- | :--- |
+| **`--robot.type`** | Must be `so101` for our hardware. |
+| **`--repo-id`** | The Organization path (e.g., `org/dataset-name`). |
+| **`--push-to-hub`** | Automatically uploads data to the cloud after recording. |
+| **`--num-episodes`** | Number of successful demonstrations to capture. |
+| **`--episode-time-s`** | Max time for one demonstration (default 30s). |
+| **`--fps`** | The frequency of the control loop (standard is 30Hz). |
+```
 ---
 
 > [!IMPORTANT]
 > **Collaborator Rule**: Never commit your physical port paths to Git. Always use the `.env` method described in the Hardware section.
+> **About the robots**: Each robot works with its own bus driver and its own charger. The charger for the follower arm has a green light, the one for the leader arm is blue.
