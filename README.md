@@ -136,3 +136,4 @@ If you edit code *inside* the `lerobot/` folder:
 
 > [!IMPORTANT]
 > **Collaborator Rule**: Never commit your physical port paths to Git. Always use the `.env` method described in the Hardware section.
+> **About the robots**: Each robot works with its own bus driver and its own charger. The charger for the follower arm has a green light, the one for the leader arm is blue.
