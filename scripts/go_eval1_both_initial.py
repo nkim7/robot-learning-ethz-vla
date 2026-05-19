@@ -14,6 +14,9 @@ LEADER_PORT = "/dev/tty.usbmodem5B141126211"
 FOLLOWER_CALIBRATION_DIR = Path("calibration/so101_group47/follower")
 LEADER_CALIBRATION_DIR = Path("calibration/so101_group47/leader")
 
+CONTROL_HZ = 15
+MOVE_STEPS = 15   # 15 = ~1 second. Use 20 if movement is too abrupt.
+
 
 def make_follower():
     cfg = SOFollowerConfig(
@@ -22,7 +25,6 @@ def make_follower():
         use_degrees=True,
     )
 
-    # Compatibility with your local LeRobot version
     cfg.id = None
     cfg.calibration_dir = FOLLOWER_CALIBRATION_DIR
     cfg.disable_torque_on_disconnect = False
@@ -37,11 +39,28 @@ def make_leader():
         use_degrees=True,
     )
 
-    # Compatibility with your local LeRobot version
     cfg.id = None
     cfg.calibration_dir = LEADER_CALIBRATION_DIR
 
     return SOLeader(cfg)
+
+
+def send_repeated(device, target, steps=MOVE_STEPS):
+    for _ in range(steps):
+        device.send_action(target)
+        time.sleep(1 / CONTROL_HZ)
+
+
+def send_leader_repeated(leader, target, steps=MOVE_STEPS):
+    if hasattr(leader, "send_action"):
+        send_repeated(leader, target, steps)
+        return
+
+    for _ in range(steps):
+        for name, value in target.items():
+            motor = name.replace(".pos", "")
+            leader.bus.write("Goal_Position", motor, value)
+        time.sleep(1 / CONTROL_HZ)
 
 
 def main():
@@ -61,48 +80,19 @@ def main():
     leader = make_leader()
 
     try:
-        print("Connecting follower and leader...")
+        print("Resetting follower and leader to initial pose...")
         follower.connect()
         leader.connect()
 
-        print("")
-        print("Moving FOLLOWER to fixed Eval 1 initial pose:")
-        print(target)
+        send_repeated(follower, target)
+        send_leader_repeated(leader, target)
 
-        for _ in range(45):
-            follower.send_action(target)
-            time.sleep(1 / 15)
-
-        print("")
-        print("Moving LEADER to matching teleop initial pose:")
-        print(target)
-
-        # Leader is also a motor bus, so command it through its bus.
-        # First try LeRobot's send_action-style API if available.
-        if hasattr(leader, "send_action"):
-            for _ in range(45):
-                leader.send_action(target)
-                time.sleep(1 / 15)
-        else:
-            # Fallback: write calibrated goal positions directly through the bus.
-            for _ in range(45):
-                for name, value in target.items():
-                    motor = name.replace(".pos", "")
-                    leader.bus.write("Goal_Position", motor, value)
-                time.sleep(1 / 15)
-
-        print("")
-        print("Disabling leader torque so it is free for teleoperation...")
         try:
             leader.bus.disable_torque()
         except Exception as e:
             print(f"Warning: could not disable leader torque cleanly: {e}")
 
-        print("")
-        print("Done.")
-        print("Follower is fixed at initial pose.")
-        print("Leader is matched to the same pose and torque-disabled.")
-        print("Now start recording.")
+        print("Done. Follower fixed; leader matched and torque-disabled.")
 
     finally:
         try:
