@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-cd "$(dirname "$0")"
+cd "$(dirname "$0")/.."
 source .venv/bin/activate
 
 SKIP="12 19"
@@ -19,7 +19,7 @@ from lerobot.processor import make_default_robot_action_processor
 SKIP = set()
 STEP = int(os.environ.get("STEP", 1))
 PORT = "/dev/tty.usbmodem5AE60831701"
-CALIB = "calibration/so101_group47/follower"
+CALIB = "robot/calibration/so101_group47/follower"
 SNAP = (
     os.path.expanduser("~") +
     "/.cache/huggingface/hub/"

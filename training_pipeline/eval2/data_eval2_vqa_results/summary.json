@@ -1,7 +1,0 @@
-{
-  "records": 366,
-  "train": 311,
-  "val": 55,
-  "photos_root": "permutation_init_position",
-  "out": "data/eval2_vqa_fresh/vqa.jsonl"
-}

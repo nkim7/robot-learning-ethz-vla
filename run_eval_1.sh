@@ -19,7 +19,7 @@ bash robot/apply_lerobot_camera_patch.sh
   echo "Models not found. Downloading..."; bash scripts/download_models.sh
 }
 
-rm -rf ~/.cache/huggingface/lerobot/local/eval1_run
+rm -rf ~/.cache/huggingface/lerobot/local/eval_1_run
 
 lerobot-record \
   --robot.type=so101_follower \
@@ -28,7 +28,7 @@ lerobot-record \
   --robot.calibration_dir="$REPO_ROOT/robot/calibration/so101_group47/follower" \
   --robot.cameras='{"camera1":{"type":"opencv_crop","index_or_path":0,"source_width":640,"source_height":480,"roi_x":215,"roi_y":0,"roi_size":425,"width":256,"height":256,"fps":15,"warmup_s":1}}' \
   --policy.path="$REPO_ROOT/models/eval1" \
-  --dataset.repo_id=local/eval1_run \
+  --dataset.repo_id=local/eval_1_run \
   --dataset.push_to_hub=false \
   --dataset.fps=15 \
   --dataset.num_episodes=1 \

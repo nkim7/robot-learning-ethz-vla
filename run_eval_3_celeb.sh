@@ -28,7 +28,7 @@ NUM_EPISODES="${NUM_EPISODES:-1}"
 [[ -f "$ACTION_CKPT/model.safetensors" ]]           || { echo "Models not found. Downloading..."; bash scripts/download_models.sh; }
 [[ -f "$VLM_LORA/adapter_model.safetensors" ]]      || { echo "ERROR: VLM LoRA (celeb) not found: $VLM_LORA"; exit 1; }
 
-rm -rf ~/.cache/huggingface/lerobot/local/eval3_celeb_run
+rm -rf ~/.cache/huggingface/lerobot/local/eval_3_celeb_run
 echo "Task: $TASK  |  Port: $FOLLOWER_PORT  |  Device: $DEVICE"
 
 PYTHONPATH="$REPO_ROOT/lerobot/src:$REPO_ROOT/models/eval3/runtime:${PYTHONPATH:-}" \
@@ -45,7 +45,7 @@ python "$REPO_ROOT/models/eval3/runtime/eval_3_runner.py" \
     --robot.cameras='{"front":{"type":"opencv_crop","index_or_path":0,"source_width":640,"source_height":480,"roi_x":215,"roi_y":0,"roi_size":425,"width":256,"height":256,"fps":15,"warmup_s":1}}' \
     --policy.path="$ACTION_CKPT" \
     --policy.device="$DEVICE" \
-    --dataset.repo_id=local/eval3_celeb_run \
+    --dataset.repo_id=local/eval_3_celeb_run \
     --dataset.push_to_hub=false \
     --dataset.fps=15 \
     --dataset.num_episodes="$NUM_EPISODES" \

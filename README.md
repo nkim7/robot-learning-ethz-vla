@@ -17,7 +17,8 @@ cd robot-learning-ethz-vla
 brew install ffmpeg uv          # macOS
 # sudo apt install ffmpeg && curl -LsSf https://astral.sh/uv/install.sh | sh  # Linux
 
-# 3. Save your robot port
+# 3. Find and save your robot port
+source .venv/bin/activate 2>/dev/null || { uv sync && source .venv/bin/activate; }
 lerobot-find-port
 echo "export FOLLOWER_PORT=/dev/tty.usbmodemXXXX" >> .env   # replace with your port
 ```
@@ -52,6 +53,18 @@ TASK="Place the coke on Rihanna." bash run_eval_3_celeb.sh
 
 ---
 
+## Teleoperation
+
+```bash
+[[ -f .env ]] && source .env
+source .venv/bin/activate
+python robot/teleop.py
+```
+
+Requires both `FOLLOWER_PORT` and `LEADER_PORT` set in `.env`.
+
+---
+
 ## How Eval 3 Works
 
 Eval 3 uses a two-stage pipeline:
@@ -61,8 +74,23 @@ Eval 3 uses a two-stage pipeline:
 3. **Action expert** — SmolVLA takes the rewritten instruction + camera image and outputs joint commands every frame.
 
 Two LoRA adapters cover the two visual domains:
-- `TOY/` — plastic figurines
-- `celeb/` — printed celebrity cards
+- `models/eval3/TOY/` — plastic figurines
+- `models/eval3/celeb/` — printed celebrity cards
+
+---
+
+## Datasets
+
+To download the training datasets used for each eval:
+
+```bash
+bash scripts/download_datasets.sh          # all three
+bash scripts/download_datasets.sh eval1    # only eval1
+bash scripts/download_datasets.sh eval2
+bash scripts/download_datasets.sh eval3
+```
+
+Downloads into `training_pipeline/eval*/data/`.
 
 ---
 
@@ -78,31 +106,47 @@ Two LoRA adapters cover the two visual domains:
 
 ```
 robot-learning-ethz-vla/
-├── run_eval_1.sh
-├── run_eval_2.sh
-├── run_eval_3_TOY.sh
-├── run_eval_3_celeb.sh
+├── run_eval_1.sh              — Eval 1 one-shot runner
+├── run_eval_2.sh              — Eval 2 one-shot runner
+├── run_eval_3_TOY.sh          — Eval 3 TOY figures runner
+├── run_eval_3_celeb.sh        — Eval 3 celebrity cards runner
 │
-├── robot/                     — Hardware scripts, calibration, camera patch
+├── robot/                     — Hardware scripts & calibration
+│   ├── calibration/           — Calibration files for group 47 arms
+│   ├── patches/               — LeRobot camera stability patch
+│   ├── teleop.py              — Teleoperation
+│   ├── calibrate.py           — Calibration helper
+│   ├── go_eval1_both_initial.py
+│   └── reset_from_eval1_pose.py
+│
 ├── models/                    — Policy checkpoints (gitignored, auto-downloaded)
 │   ├── eval1/
 │   ├── eval2/
 │   └── eval3/
 │       ├── TOY/               — VLM LoRA for TOY figures
 │       ├── celeb/             — VLM LoRA for celebrity cards
-│       └── runtime/           — Inference code (git-tracked)
+│       └── runtime/           — Eval 3 inference runner (git-tracked)
 │
 ├── training_pipeline/
 │   ├── eval1/
+│   │   ├── data/              — Datasets and config files
+│   │   ├── src/               — Python training & analysis scripts
+│   │   └── shells/            — Shell scripts (train, record, eval)
 │   ├── eval2/
+│   │   ├── data/              — Datasets, previews, VQA assets
+│   │   ├── src/               — Python training & analysis scripts
+│   │   └── shells/            — Shell scripts (train, record, eval)
 │   └── eval3/
-│       ├── vlm/               — VLM LoRA training scripts
-│       └── vla/               — VLA action model training scripts
+│       ├── data/              — Datasets and generated assets
+│       ├── src/
+│       │   ├── vlm/           — VLM LoRA training scripts
+│       │   └── vla/           — VLA action model training scripts & server code
+│       └── shells/            — Shell scripts (train, record, eval)
 │
 ├── scripts/
 │   ├── download_models.sh
 │   └── download_datasets.sh
-└── lerobot/                   — LeRobot submodule
+└── lerobot/                   — LeRobot submodule (v0.5.2)
 ```
 
 ---
