@@ -1,0 +1,15 @@
+{
+  "toy_dataset": "/home/shadeform/data/eval3_90_permutation",
+  "lmr_dataset": "/home/shadeform/data/eval3_lmr",
+  "output_dataset": "/home/shadeform/data/eval3_cotrain_action_90toy_plus_lmr",
+  "total_episodes": 120,
+  "total_frames": 26963,
+  "tasks": [
+    "Place the coke on Taylor Swift.",
+    "Place the coke on Barack Obama.",
+    "Place the coke on Yann LeCun.",
+    "Put the coke on left.",
+    "Put the coke on middle.",
+    "Put the coke on right."
+  ]
+}
