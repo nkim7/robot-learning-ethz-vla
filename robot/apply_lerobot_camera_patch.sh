@@ -14,16 +14,15 @@ if [ ! -f "$PATCH" ]; then
   exit 1
 fi
 
+# --- 1. Crash-prevention patch ---
 if grep -q "Patched for robot-learning-ethz-vla" "$TARGET"; then
-  echo "Patch already appears to be applied."
-  exit 0
+  echo "Crash-prevention patch already applied."
+else
+  git -C lerobot apply "../$PATCH"
+  echo "Applied LeRobot camera stability patch."
 fi
 
-git -C lerobot apply "../$PATCH"
-
-echo "Applied LeRobot camera stability patch."
-
-# Register opencv_crop camera type so draccus can parse --robot.cameras='{"type":"opencv_crop",...}'.
+# --- 2. Register opencv_crop type so draccus can parse --robot.cameras='{"type":"opencv_crop",...}' ---
 # The @CameraConfig.register_subclass("opencv_crop") decorator only runs on import, so we add the
 # import to cameras/__init__.py without touching the submodule's git history.
 CAMERAS_INIT="lerobot/src/lerobot/cameras/__init__.py"
