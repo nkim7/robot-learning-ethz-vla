@@ -21,8 +21,10 @@ data/
 # four lines: ignore models/, un-ignore models/eval3/ so git can descend,
 # re-ignore everything inside models/eval3/, then un-ignore runtime/ only.
 models/*
+!models/.gitkeep
 !models/eval3/
 models/eval3/*
+!models/eval3/.gitkeep
 !models/eval3/runtime/
 training_pipeline/eval1/data/
 training_pipeline/eval2/data/
