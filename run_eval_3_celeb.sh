@@ -26,7 +26,7 @@ NUM_EPISODES="${NUM_EPISODES:-1}"
 
 [[ -n "$FOLLOWER_PORT" ]]                           || { echo "ERROR: FOLLOWER_PORT not set. Run: lerobot-find-port"; exit 1; }
 [[ -f "$ACTION_CKPT/model.safetensors" ]]           || { echo "Models not found. Downloading..."; bash scripts/download_models.sh; }
-[[ -f "$VLM_LORA/adapter_model.safetensors" ]]      || { echo "ERROR: VLM LoRA (celeb) not found: $VLM_LORA"; exit 1; }
+[[ -f "$VLM_LORA/adapter_model.safetensors" ]]      || { echo "VLM LoRA not found. Downloading..."; bash scripts/download_models.sh; }
 
 rm -rf ~/.cache/huggingface/lerobot/local/eval_3_celeb_run
 echo "Task: $TASK  |  Port: $FOLLOWER_PORT  |  Device: $DEVICE"
