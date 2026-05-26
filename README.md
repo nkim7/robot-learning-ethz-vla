@@ -65,20 +65,6 @@ Requires both `FOLLOWER_PORT` and `LEADER_PORT` set in `.env`.
 
 ---
 
-## How Eval 3 Works
-
-Eval 3 uses a two-stage pipeline:
-
-1. **VLM LoRA** — on the first camera frame, a fine-tuned SmolVLM2-2.2B identifies which slot (left / middle / right) the target person is in.
-2. **Instruction rewrite** — the task `"Place the coke on Taylor Swift."` is rewritten to `"Put the coke on left."` so the action expert receives the position-conditioned instruction it was trained on.
-3. **Action expert** — SmolVLA takes the rewritten instruction + camera image and outputs joint commands every frame.
-
-Two LoRA adapters cover the two visual domains:
-- `models/eval3/TOY/` — plastic figurines
-- `models/eval3/celeb/` — printed celebrity cards
-
----
-
 ## Models
 
 Model weights are **not stored in git** — they live on HuggingFace and are downloaded automatically on first `bash run_eval_*.sh`. To download manually upfront:
