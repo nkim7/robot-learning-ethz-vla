@@ -17,6 +17,31 @@ def _extract_person(task: str) -> str | None:
     return m.group(1) if m else None
 
 
+def _patch_early_robot_connect() -> None:
+    """Connect the robot (and warm up cameras) before policy loading.
+
+    lerobot-record normally loads the policy first (slow for large models), then
+    connects the robot/cameras. This means the camera sits idle for the entire
+    model loading period, which can cause connectivity issues on macOS.
+
+    We patch make_robot_from_config in lerobot_record so the robot is connected
+    immediately after construction. The second connect() call that lerobot_record
+    makes after policy loading is replaced with a no-op.
+    """
+    from lerobot.scripts import lerobot_record as _lr
+    _orig_make_robot = _lr.make_robot_from_config
+
+    def _make_robot_and_connect_early(robot_cfg):
+        robot = _orig_make_robot(robot_cfg)
+        print("Early robot connect: warming up cameras before model loading...", flush=True)
+        robot.connect()
+        # Replace instance connect() with a no-op so the second call in record() is harmless
+        robot.connect = lambda calibrate=True: None
+        return robot
+
+    _lr.make_robot_from_config = _make_robot_and_connect_early
+
+
 def _apply_patches() -> None:
     try:
         from run1_lora_patch import apply_run1_vlm_lora_patch  # type: ignore[import]
@@ -24,6 +49,8 @@ def _apply_patches() -> None:
         print(f"ERROR: cannot import run1_lora_patch: {e}", file=sys.stderr)
         sys.exit(1)
     apply_run1_vlm_lora_patch()
+
+    _patch_early_robot_connect()
 
     if os.environ.get("EVAL3_INSTRUCTION_REWRITE", "1").lower() not in {"0", "false", "no"}:
         _patch_predict_action_inline()
