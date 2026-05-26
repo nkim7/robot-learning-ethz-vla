@@ -79,6 +79,28 @@ Two LoRA adapters cover the two visual domains:
 
 ---
 
+## Models
+
+Model weights are **not stored in git** — they live on HuggingFace and are downloaded automatically on first `bash run_eval_*.sh`. To download manually upfront:
+
+```bash
+bash scripts/download_models.sh
+```
+
+This fetches from `robot-learning-group47/` on HuggingFace into:
+
+```
+models/
+├── eval1/          ← weights for run_eval_1.sh
+├── eval2/          ← weights for run_eval_2.sh
+└── eval3/
+    ├── TOY/        ← VLM LoRA for run_eval_3_TOY.sh
+    ├── celeb/      ← VLM LoRA for run_eval_3_celeb.sh
+    └── runtime/    ← inference code (git-tracked, no download needed)
+```
+
+---
+
 ## Datasets
 
 To download the training datasets used for each eval:
