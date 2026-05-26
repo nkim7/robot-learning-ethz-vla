@@ -17,7 +17,7 @@ bash robot/apply_lerobot_camera_patch.sh
 [[ -f .env ]] && source .env
 
 MODELS_ROOT="${MODELS_ROOT:-$REPO_ROOT/models}"
-ACTION_CKPT="$MODELS_ROOT/eval3"
+ACTION_CKPT="$MODELS_ROOT/eval3/cycle_05_action_checkpoint"
 VLM_LORA="$MODELS_ROOT/eval3/celeb"
 TASK="${TASK:-Place the coke on Rihanna.}"
 FOLLOWER_PORT="${FOLLOWER_PORT:-}"

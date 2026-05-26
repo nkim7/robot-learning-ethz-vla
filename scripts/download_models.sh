@@ -13,7 +13,7 @@ from pathlib import Path
 models = [
     ("robot-learning-group47/eval1_final_policy",    "models/eval1",       "model.safetensors"),
     ("robot-learning-group47/eval2_final_policy",    "models/eval2",       "model.safetensors"),
-    ("robot-learning-group47/eval3_cotrain",         "models/eval3",       "model.safetensors"),
+    ("robot-learning-group47/eval3_cotrain",         "models/eval3",       "cycle_05_action_checkpoint/model.safetensors"),
     ("robot-learning-group47/eval3_phase2_TOY",      "models/eval3/TOY",   "adapter_model.safetensors"),
     ("robot-learning-group47/eval3_phase2_celeb100", "models/eval3/celeb", "adapter_model.safetensors"),
 ]
