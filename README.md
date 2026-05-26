@@ -30,25 +30,6 @@ The robot must pick up a coke can and place it precisely on top of a small celeb
 
 ---
 
-## Training
-
-### Eval 1
-We collected 60 teleoperated demonstrations with fixed bowl positions and a fixed banana. The dataset (`eval1_60_fixed_banana_fixed_bowl`) was used to fine-tune SmolVLA 0.5B directly via `lerobot-train` with standard action chunking.
-
-### Eval 2
-We collected 108 demonstrations across all 18 bowl-order × target-color combinations (`eval2_fixed_bowl_fixed_banana_108`). Training followed a two-stage approach: a position-bootstrapping stage to ground ordinal prompts, followed by a compositional stage with full prompt augmentation (positional, relational, and negation forms) to generalise across bowl permutations.
-
-### Eval 3
-We trained and packaged two inference paths: a preprompt-based modular system and a separate end-to-end VLA baseline.
-
-For tasks 1 and 2 (TOY figures), we use the `eval3_cotrain` checkpoint as the action expert paired with a VLM LoRA. At inference, a server probes the first frame and rewrites celebrity prompts into spatial instructions before passing them to the action policy.
-
-For task 3 (celebrity cards), we swap in the `eval3_phase2_celeb100` LoRA for celebrity and slot detection while keeping the same `eval3_cotrain` action expert.
-
-All runtime scripts, setup commands, Python launchers, patches, and checkpoint-download instructions are organised in `training_pipeline/eval3/` for reproducible evaluation.
-
----
-
 ## Setup
 
 **Requirements:** macOS or Linux · Python 3.12+ · `ffmpeg` · `uv`
