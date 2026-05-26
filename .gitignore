@@ -15,6 +15,11 @@ wheels/
 data/
 
 # Large artifacts — stored on HuggingFace Hub, use download_models.sh / download_datasets.sh
+#
+# models/eval3/runtime/ contains inference code that must stay in git.
+# Git cannot apply a negation exception inside an ignored parent, so we need
+# four lines: ignore models/, un-ignore models/eval3/ so git can descend,
+# re-ignore everything inside models/eval3/, then un-ignore runtime/ only.
 models/*
 !models/eval3/
 models/eval3/*
