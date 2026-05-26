@@ -52,7 +52,7 @@ export FOLLOWER_PORT=/dev/tty.usbmodemXXXX
 export LEADER_PORT=/dev/tty.usbmodemYYYY
 ```
 
-Models and the camera patch are applied automatically on first run. The patch script also installs a custom `opencv_crop` camera driver (not part of upstream LeRobot) that all eval scripts depend on — it is shipped in `robot/patches/opencv_crop/` and copied into the LeRobot submodule automatically. Add the `export` lines to `~/.zshrc` or `~/.bashrc` to avoid re-typing each session.
+Models and the camera patch are downloaded automatically on first run. Add the `export` lines to `~/.zshrc` or `~/.bashrc` to avoid re-typing each session.
 
 ---
 
