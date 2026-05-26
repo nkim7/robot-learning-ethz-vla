@@ -16,5 +16,5 @@ ports:
   leader: /dev/tty.usbmodem5B141126211
 
 calibration:
-  follower: calibration/so101_group47/follower
-  leader: calibration/so101_group47/leader
+  follower: robot/calibration/so101_group47/follower
+  leader: robot/calibration/so101_group47/leader
