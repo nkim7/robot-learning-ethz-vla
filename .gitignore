@@ -16,6 +16,8 @@ data/
 
 # Large artifacts — stored on HuggingFace Hub, use download_models.sh / download_datasets.sh
 models/*
+!models/eval3/
+models/eval3/*
 !models/eval3/runtime/
 training_pipeline/eval1/data/
 training_pipeline/eval2/data/
