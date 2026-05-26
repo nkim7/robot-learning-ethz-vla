@@ -1,13 +1,13 @@
 # Robot Learning — ETH Zürich · Group 47
 
-> Fine-tuning [SmolVLA 0.5B](https://huggingface.co/HuggingFaceTB/SmolVLA-500M) for language-conditioned manipulation on a SO-101 robot arm.  
+> Language-conditioned robot manipulation using a VLA model on a SO-101 robot arm.  
 > *Robot Learning course — ETH Zürich, Spring 2026.*
 
 ---
 
 ## Project Overview
 
-This project explores how far a compact Vision-Language-Action model can be pushed on real-world manipulation with limited data and compute. We fine-tuned **SmolVLA 0.5B** (`HuggingFaceTB/SmolVLA-500M`) — built on SmolVLM2 — on three progressively harder tasks, all on the same SO-101 6-DOF follower arm.
+This project explores language-conditioned manipulation with a Vision-Language-Action model on a real robot. We used [SmolVLA 0.5B](https://huggingface.co/HuggingFaceTB/SmolVLA-500M) (`HuggingFaceTB/SmolVLA-500M`) — built on SmolVLM2 — as our VLA backbone, training it on three progressively harder tasks on a SO-101 6-DOF follower arm.
 
 | | Task | Language |
 |---|---|---|
@@ -82,7 +82,7 @@ TASK="Place the coke on Rihanna." bash run_eval_3_celeb.sh
 
 ## Models
 
-All three evals use **SmolVLA 0.5B** ([`HuggingFaceTB/SmolVLA-500M`](https://huggingface.co/HuggingFaceTB/SmolVLA-500M)) as the base action policy. Eval 3 additionally uses a VLM LoRA on SmolVLM2-2.2B for scene understanding.
+All three evals use **SmolVLA 0.5B** ([`HuggingFaceTB/SmolVLA-500M`](https://huggingface.co/HuggingFaceTB/SmolVLA-500M)) as the VLA backbone. Eval 3 additionally uses a VLM LoRA on SmolVLM2-2.2B for scene understanding.
 
 Weights are **not stored in git** — they live on HuggingFace under `robot-learning-group47/` and are downloaded automatically on first run. To pre-fetch:
 
