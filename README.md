@@ -1,229 +1,143 @@
-# Project 1: Robot Learning (Group 47)
+# Robot Learning — Group 47
 
-This repository contains the codebase for our Robot Learning project. We use **LeRobot** as our core library, managed as a Git submodule to ensure version consistency across the team while allowing for local modifications.
-
----
-
-## 📂 Repository Structure
-
-* `configs/`: Configuration files for models, robots, and training.
-* `data/`: Local storage for datasets and processed data.
-* `lerobot/`: The LeRobot library (Git submodule). Core logic for control and training.
-* `src/`: Custom project code.
-    * `data_utils/`: Utilities for data processing.
-    * `models/`: Custom model architectures.
-    * `scripts/`: Python scripts for calibration, training, and evaluation.
-* `requirements.txt` & `pyproject.toml`: Dependency management files.
+SO-101 robot arm with SmolVLA policies. Three evaluation tasks.
 
 ---
 
-## 1. Prerequisites
+## Repository Structure
 
-### System Dependency: FFmpeg
-LeRobot requires FFmpeg for video processing. **Install this before setting up the Python environment.**
-
-* **macOS**: `brew install ffmpeg`
-* **Ubuntu/Linux**: `sudo apt update && sudo apt install ffmpeg`
-* **Windows**: `winget install ffmpeg`
-
-### Python 3.12
-This project is optimized for **Python 3.12**. Using `uv` is recommended for automated version management.
+```
+robot-learning-ethz-vla/
+├── run_eval_1.sh              — Eval 1: fixed-bowl grasping
+├── run_eval_2.sh              — Eval 2: relational reasoning
+├── run_eval_3_TOY.sh          — Eval 3 tasks 1/2: TOY figures (Taylor Swift, Obama, LeCun …)
+├── run_eval_3_celeb.sh        — Eval 3 task 3: celebrities (Rihanna, Elon Musk …)
+│
+├── robot/                     — Hardware scripts and configuration
+│   ├── calibration/so101_group47/   — Arm calibration files (follower + leader)
+│   ├── patches/               — LeRobot camera stability patch
+│   ├── apply_lerobot_camera_patch.sh
+│   ├── teleop.py              — Teleoperation
+│   └── calibrate.py           — Calibration script
+│
+├── models/                    — Policy checkpoints (gitignored, auto-downloaded on first run)
+│   ├── eval1/                 — Eval 1 final policy
+│   ├── eval2/                 — Eval 2 final policy
+│   └── eval3/
+│       ├── model.safetensors + config   — Eval 3 action model
+│       ├── TOY/               — VLM LoRA for TOY figures
+│       ├── celeb/             — VLM LoRA for celebrities
+│       └── runtime/           — Inference code (git-tracked)
+│           ├── eval_3_runner.py
+│           ├── run1_lora_patch.py
+│           ├── run1_common.py
+│           ├── run2_policy_server_launcher.py
+│           └── run2_common.py
+│
+├── training_pipeline/
+│   ├── eval1/                 — Training scripts for Eval 1
+│   ├── eval2/                 — Training scripts for Eval 2
+│   └── eval3/
+│       ├── vlm/               — VLM LoRA training (face recognition, position QA)
+│       └── vla/               — VLA action model training (cotrain, bridge, run1/run2)
+│
+├── scripts/
+│   ├── download_models.sh     — Download final policies from HuggingFace
+│   └── download_datasets.sh   — Download training datasets from HuggingFace
+├── lerobot/                   — LeRobot library (git submodule)
+├── pyproject.toml
+└── uv.lock
+```
 
 ---
 
-## 2. Installation & Setup
+## Setup
 
-### Step 1: Clone Recursively
-To ensure the `lerobot/` submodule is not empty, you must clone with the `--recursive` flag:
+**Requirements:** macOS or Linux, Python 3.12+
 
 ```bash
+# 1. Clone
 git clone --recursive https://github.com/lorefrigo/robot-learning-ethz-vla.git
-cd project1_group_47
-```
-*If already cloned, run: `git submodule update --init --recursive`*
+cd robot-learning-ethz-vla
 
-### Step 2: Environment Setup
-We recommend using `uv` for dependency resolution, but we execute scripts via the standard virtual environment.
+# 2. Install dependencies
+brew install ffmpeg uv          # macOS
+# sudo apt install ffmpeg && curl -LsSf https://astral.sh/uv/install.sh | sh  # Linux
+uv sync
 
-#### Option A: Using `uv` (Recommended)
-1.  **Sync the project**:
-    ```bash
-    uv sync
-    ```
-    *This creates a `.venv` and installs all dependencies, including LeRobot in editable mode.*
-2.  **Activate & Use**:
-    ```bash
-    source .venv/bin/activate
-    python --version  # Should be 3.12.x
-    ```
-
-#### Option B: Using `pip`
-```bash
-python3.12 -m venv .venv
+# 3. Find and save your robot port
 source .venv/bin/activate
-pip install -r requirements.txt
-```
-
----
-
-## 3. Hardware & Calibration
-
-### Finding Robot Ports
-USB port addresses are specific to your machine and the physical port used. Identify them before starting:
-
-```bash
-cd lerobot
 lerobot-find-port
+echo "export FOLLOWER_PORT=/dev/tty.usbmodemXXXX" >> .env   # replace with your port
+
+# 4. Download models
+bash scripts/download_models.sh
 ```
 
-### Local Environment Variables (`.env`)
-To avoid re-entering port addresses, save them in a local `.env` file at the project root. **This file is ignored by Git.**
-
-1.  **Create the file**:
-    ```bash
-    echo "export LEADER_PORT=/dev/tty.your_port_here" >> .env
-    echo "export FOLLOWER_PORT=/dev/tty.your_port_here" >> .env
-    ```
-2.  **Load the ports**:
-    ```bash
-    source .env
-    ```
-
-### Calibration Workflow
-Always run calibration from the **root directory**. Ensure the **12V power adapter** is connected to the follower arm to avoid voltage errors.
-
-* **Leader Arm**:
-    ```bash
-    python src/scripts/calibrate.py --teleop.type=so101_leader --teleop.port=$LEADER_PORT --teleop.id=leader_arm
-    ```
-* **Follower Arm**:
-    ```bash
-    python src/scripts/calibrate.py --robot.type=so101_follower --robot.port=$FOLLOWER_PORT --robot.id=follower_arm
-    ```
-
 ---
 
-## 🛠️ Working with the `lerobot` Submodule
+## Running Evals
 
-Since `lerobot` is a separate repository (a fork), follow these protocols to keep the team in sync.
+Each script auto-installs dependencies and reads `FOLLOWER_PORT` from `.env`.
 
-### Daily Workflow (Pulling)
-When the library is updated, you must update the submodule files after pulling the main repo:
+**Eval 1** — *"Put the banana in the blue colored bowl."*
 ```bash
-git pull --recurse-submodules
-# OR
-git pull origin main && git submodule update --recursive
+bash run_eval_1.sh
 ```
 
-### Modifying the Library (Pushing)
-If you edit code *inside* the `lerobot/` folder:
-1.  **Commit inside `lerobot`**:
-    ```bash
-    cd lerobot
-    git checkout main
-    git add . && git commit -m "Your library fix"
-    git push origin main
-    ```
-2.  **Update the Main Project "Bookmark"**:
-    ```bash
-    cd ..
-    git add lerobot
-    git commit -m "chore: update lerobot reference"
-    git push origin main
-    ```
-
-## Data Collection & Collaboration
-
-This section outlines the workflow for obtaining credentials, setting up your environment, and recording teleoperation data for the **SO-101** robot. We use a shared **Hugging Face Organization** to centralize all training data.
-
----
-
-### 1. Obtain a Hugging Face Access Token
-Before you can upload data, you need a personal "Write" token from Hugging Face.
-
-1.  Log in to [Hugging Face](https://huggingface.co/).
-2.  Navigate to **Settings > Access Tokens** (or go to [huggingface.co/settings/tokens](https://huggingface.co/settings/tokens)).
-3.  Click **New token**.
-4.  Set the **Token type** to **Write**.
-5.  Give it a name (e.g., `robot-learning-group47-yourname`) and click **Generate a token**.
-6.  **Copy the token immediately**—you will not be able to see the full string again once you leave the page.
-
----
-
-### 2. Configure Environment Variables (`.env`)
-To avoid entering your token every time you run a command, store it in a local environment file.
-
-1.  Create a file named `.env` in the root of this project.
-2.  Paste your token into the file using these two variables (the same token for both):
-    ```env
-    HUGGINGFACE_TOKEN=hf_your_token_here
-    HF_TOKEN=hf_your_token_here
-    ```
-3.  **Security Check:** Ensure your `.gitignore` file contains a line for `.env` so you do not accidentally share your token with the team or the public.
-
-To load these variables into your current terminal session, run:
+**Eval 2** — *"Put the banana into the bowl to the right of the blue bowl."*
 ```bash
-# Activate the virtual environment
+bash run_eval_2.sh
+```
+
+**Eval 3 — TOY** (tasks 1/2) — TOY figures on table, model identifies by face
+```bash
+TASK="Place the coke on Taylor Swift." bash run_eval_3_TOY.sh
+# also: Obama, Yann LeCun, etc.
+```
+
+**Eval 3 — Celeb** (task 3) — real celebrity cards
+```bash
+TASK="Place the coke on Rihanna." bash run_eval_3_celeb.sh
+# also: Elon Musk, etc.
+```
+
+---
+
+## Hardware Notes
+
+- Follower arm charger: **green** light — Leader arm charger: **blue** light
+- Connect the 12V power adapter to the follower arm before running
+- Calibration files for this robot are in `robot/calibration/so101_group47/`
+
+---
+
+## Calibration (new robot only)
+
+```bash
 source .venv/bin/activate
-
-# Load the tokens
-export $(grep -v '^#' .env | xargs)
+python robot/calibrate.py \
+  --robot.type=so101_follower \
+  --robot.port=$FOLLOWER_PORT \
+  --robot.id=my_follower \
+  --robot.calibration_dir=robot/calibration/so101_group47/follower
 ```
 
 ---
 
-### 3. Initialize the Dataset Repository
-The first time the team records data for a specific project, a repository needs to be created under the Organization namespace. Running the script with the `--push-to-hub=true` flag handles this automatically.
+## Data Collection
 
-**First-time Authentication:**
 ```bash
-hf auth login --token ${HUGGINGFACE_TOKEN} --add-to-git-credential
-```
-
-**Run a test recording to create the repo:**
-```bash
-python lerobot/scripts/control_robot.py record \
-  --robot.type=so101 \
-  --repo-id=robot-learning-group47/so101-teleoperation \
-  --push-to-hub=true \
-  --num-episodes=1
-```
-
-
-### 4. Recording Teleoperation Data
-Once the environment is set up, use the following workflow to record training episodes.
-
-**Recording Workflow:**
-```bash
-# 1. Activate and Load
 source .venv/bin/activate
-export $(grep -v '^#' .env | xargs)
-
-# 2. Record Session
-python lerobot/scripts/control_robot.py record \
-  --robot.type=so101 \
-  --repo-id=your-org-name/your-dataset-name \
-  --push-to-hub=true \
-  --fps=30 \
-  --warmup-time-s=5 \
-  --episode-time-s=30 \
-  --reset-time-s=5 \
-  --num-episodes=10
+lerobot-record \
+  --robot.type=so101_follower \
+  --robot.id=my_follower \
+  --robot.port=$FOLLOWER_PORT \
+  --robot.calibration_dir=robot/calibration/so101_group47/follower \
+  --dataset.repo_id=robot-learning-group47/your-dataset \
+  --dataset.single_task="Your task." \
+  --dataset.num_episodes=10 \
+  --dataset.episode_time_s=20 \
+  --dataset.fps=15 \
+  --dataset.push_to_hub=true
 ```
-
-### Script Parameter Reference
-
-| Parameter | Description |
-| :--- | :--- |
-| **`--robot.type`** | Must be `so101` for our hardware. |
-| **`--repo-id`** | The Organization path (e.g., `org/dataset-name`). |
-| **`--push-to-hub`** | Automatically uploads data to the cloud after recording. |
-| **`--num-episodes`** | Number of successful demonstrations to capture. |
-| **`--episode-time-s`** | Max time for one demonstration (default 30s). |
-| **`--fps`** | The frequency of the control loop (standard is 30Hz). |
-```
----
-
-> [!IMPORTANT]
-> **Collaborator Rule**: Never commit your physical port paths to Git. Always use the `.env` method described in the Hardware section.
-> **About the robots**: Each robot works with its own bus driver and its own charger. The charger for the follower arm has a green light, the one for the leader arm is blue.

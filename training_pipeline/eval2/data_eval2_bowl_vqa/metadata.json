@@ -1,0 +1,290 @@
+[
+  {
+    "image": "bgr_clean.jpeg",
+    "source": "bgr.jpeg",
+    "permutation": "bgr",
+    "suffix": "bare",
+    "layout": {
+      "left": "blue",
+      "middle": "green",
+      "right": "red"
+    },
+    "split": "train"
+  },
+  {
+    "image": "bgr_2_clean.jpeg",
+    "source": "bgr_2.jpeg",
+    "permutation": "bgr",
+    "suffix": "_2",
+    "layout": {
+      "left": "blue",
+      "middle": "green",
+      "right": "red"
+    },
+    "split": "train"
+  },
+  {
+    "image": "bgr_3_clean.jpeg",
+    "source": "bgr_3.jpeg",
+    "permutation": "bgr",
+    "suffix": "_3",
+    "layout": {
+      "left": "blue",
+      "middle": "green",
+      "right": "red"
+    },
+    "split": "train"
+  },
+  {
+    "image": "bgr_4_clean.jpeg",
+    "source": "bgr_4.jpeg",
+    "permutation": "bgr",
+    "suffix": "_4",
+    "layout": {
+      "left": "blue",
+      "middle": "green",
+      "right": "red"
+    },
+    "split": "val"
+  },
+  {
+    "image": "brg_clean.jpeg",
+    "source": "brg.jpeg",
+    "permutation": "brg",
+    "suffix": "bare",
+    "layout": {
+      "left": "blue",
+      "middle": "red",
+      "right": "green"
+    },
+    "split": "train"
+  },
+  {
+    "image": "brg_2_clean.jpeg",
+    "source": "brg_2.jpeg",
+    "permutation": "brg",
+    "suffix": "_2",
+    "layout": {
+      "left": "blue",
+      "middle": "red",
+      "right": "green"
+    },
+    "split": "train"
+  },
+  {
+    "image": "brg_3_clean.jpeg",
+    "source": "brg_3.jpeg",
+    "permutation": "brg",
+    "suffix": "_3",
+    "layout": {
+      "left": "blue",
+      "middle": "red",
+      "right": "green"
+    },
+    "split": "train"
+  },
+  {
+    "image": "brg_4_clean.jpeg",
+    "source": "brg_4.jpeg",
+    "permutation": "brg",
+    "suffix": "_4",
+    "layout": {
+      "left": "blue",
+      "middle": "red",
+      "right": "green"
+    },
+    "split": "val"
+  },
+  {
+    "image": "gbr_clean.jpeg",
+    "source": "gbr.jpeg",
+    "permutation": "gbr",
+    "suffix": "bare",
+    "layout": {
+      "left": "green",
+      "middle": "blue",
+      "right": "red"
+    },
+    "split": "train"
+  },
+  {
+    "image": "gbr_2_clean.jpeg",
+    "source": "gbr_2.jpeg",
+    "permutation": "gbr",
+    "suffix": "_2",
+    "layout": {
+      "left": "green",
+      "middle": "blue",
+      "right": "red"
+    },
+    "split": "train"
+  },
+  {
+    "image": "gbr_3_clean.jpeg",
+    "source": "gbr_3.jpeg",
+    "permutation": "gbr",
+    "suffix": "_3",
+    "layout": {
+      "left": "green",
+      "middle": "blue",
+      "right": "red"
+    },
+    "split": "train"
+  },
+  {
+    "image": "gbr_4_clean.jpeg",
+    "source": "gbr_4.jpeg",
+    "permutation": "gbr",
+    "suffix": "_4",
+    "layout": {
+      "left": "green",
+      "middle": "blue",
+      "right": "red"
+    },
+    "split": "val"
+  },
+  {
+    "image": "grb_clean.jpeg",
+    "source": "grb.jpeg",
+    "permutation": "grb",
+    "suffix": "bare",
+    "layout": {
+      "left": "green",
+      "middle": "red",
+      "right": "blue"
+    },
+    "split": "train"
+  },
+  {
+    "image": "grb_2_clean.jpeg",
+    "source": "grb_2.jpeg",
+    "permutation": "grb",
+    "suffix": "_2",
+    "layout": {
+      "left": "green",
+      "middle": "red",
+      "right": "blue"
+    },
+    "split": "train"
+  },
+  {
+    "image": "grb_3_clean.jpeg",
+    "source": "grb_3.jpeg",
+    "permutation": "grb",
+    "suffix": "_3",
+    "layout": {
+      "left": "green",
+      "middle": "red",
+      "right": "blue"
+    },
+    "split": "train"
+  },
+  {
+    "image": "grb_4_clean.jpeg",
+    "source": "grb_4.jpeg",
+    "permutation": "grb",
+    "suffix": "_4",
+    "layout": {
+      "left": "green",
+      "middle": "red",
+      "right": "blue"
+    },
+    "split": "val"
+  },
+  {
+    "image": "rbg_clean.jpeg",
+    "source": "rbg.jpeg",
+    "permutation": "rbg",
+    "suffix": "bare",
+    "layout": {
+      "left": "red",
+      "middle": "blue",
+      "right": "green"
+    },
+    "split": "train"
+  },
+  {
+    "image": "rbg_2_clean.jpeg",
+    "source": "rbg_2.jpeg",
+    "permutation": "rbg",
+    "suffix": "_2",
+    "layout": {
+      "left": "red",
+      "middle": "blue",
+      "right": "green"
+    },
+    "split": "train"
+  },
+  {
+    "image": "rbg_3_clean.jpeg",
+    "source": "rbg_3.jpeg",
+    "permutation": "rbg",
+    "suffix": "_3",
+    "layout": {
+      "left": "red",
+      "middle": "blue",
+      "right": "green"
+    },
+    "split": "train"
+  },
+  {
+    "image": "rbg_4_clean.jpeg",
+    "source": "rbg_4.jpeg",
+    "permutation": "rbg",
+    "suffix": "_4",
+    "layout": {
+      "left": "red",
+      "middle": "blue",
+      "right": "green"
+    },
+    "split": "val"
+  },
+  {
+    "image": "rgb_clean.jpeg",
+    "source": "rgb.jpeg",
+    "permutation": "rgb",
+    "suffix": "bare",
+    "layout": {
+      "left": "red",
+      "middle": "green",
+      "right": "blue"
+    },
+    "split": "train"
+  },
+  {
+    "image": "rgb_2_clean.jpeg",
+    "source": "rgb_2.jpeg",
+    "permutation": "rgb",
+    "suffix": "_2",
+    "layout": {
+      "left": "red",
+      "middle": "green",
+      "right": "blue"
+    },
+    "split": "train"
+  },
+  {
+    "image": "rgb_3_clean.jpeg",
+    "source": "rgb_3.jpeg",
+    "permutation": "rgb",
+    "suffix": "_3",
+    "layout": {
+      "left": "red",
+      "middle": "green",
+      "right": "blue"
+    },
+    "split": "train"
+  },
+  {
+    "image": "rgb_4_clean.jpeg",
+    "source": "rgb_4.jpeg",
+    "permutation": "rgb",
+    "suffix": "_4",
+    "layout": {
+      "left": "red",
+      "middle": "green",
+      "right": "blue"
+    },
+    "split": "val"
+  }
+]

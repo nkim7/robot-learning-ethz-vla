@@ -12,5 +12,12 @@ wheels/
 # Environment variables
 .env
 
- data/
- data/
+data/
+
+# Large artifacts — stored on HuggingFace Hub, use download_models.sh / download_datasets.sh
+models/*
+!models/eval3/runtime/
+training_pipeline/eval1/data/
+training_pipeline/eval2/data/
+training_pipeline/eval3/data/
+training_pipeline/eval2/eval2_fresh_smolvlm_vqa_lora_r32_online_parsefix/

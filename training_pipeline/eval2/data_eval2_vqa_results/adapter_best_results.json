@@ -1,0 +1,3484 @@
+{
+  "model": "HuggingFaceTB/SmolVLM2-500M-Video-Instruct",
+  "rows": 366,
+  "correct": 366,
+  "accuracy": 1.0,
+  "elapsed_s": 148.58266019821167,
+  "by_type": {
+    "negation": {
+      "correct": 72,
+      "total": 72,
+      "accuracy": 1.0
+    },
+    "ordinal": {
+      "correct": 198,
+      "total": 198,
+      "accuracy": 1.0
+    },
+    "relative": {
+      "correct": 96,
+      "total": 96,
+      "accuracy": 1.0
+    }
+  },
+  "by_layout": {
+    "bgr": {
+      "correct": 61,
+      "total": 61,
+      "accuracy": 1.0
+    },
+    "brg": {
+      "correct": 61,
+      "total": 61,
+      "accuracy": 1.0
+    },
+    "gbr": {
+      "correct": 61,
+      "total": 61,
+      "accuracy": 1.0
+    },
+    "grb": {
+      "correct": 61,
+      "total": 61,
+      "accuracy": 1.0
+    },
+    "rbg": {
+      "correct": 61,
+      "total": 61,
+      "accuracy": 1.0
+    },
+    "rgb": {
+      "correct": 61,
+      "total": 61,
+      "accuracy": 1.0
+    }
+  },
+  "by_target": {
+    "green": {
+      "correct": 122,
+      "total": 122,
+      "accuracy": 1.0
+    },
+    "blue": {
+      "correct": 122,
+      "total": 122,
+      "accuracy": 1.0
+    },
+    "red": {
+      "correct": 122,
+      "total": 122,
+      "accuracy": 1.0
+    }
+  },
+  "confusion": {
+    "green->green": 122,
+    "blue->blue": 122,
+    "red->red": 122
+  },
+  "examples": [
+    {
+      "layout": "bgr",
+      "type": "negation",
+      "question": "Identify the bowl that is not blue or red.",
+      "target": "green",
+      "prediction": "green",
+      "raw": "green",
+      "ok": true
+    },
+    {
+      "layout": "bgr",
+      "type": "negation",
+      "question": "Identify the bowl that is not red or green.",
+      "target": "blue",
+      "prediction": "blue",
+      "raw": "blue",
+      "ok": true
+    },
+    {
+      "layout": "bgr",
+      "type": "negation",
+      "question": "Only one bowl is neither blue nor green; what color is it?",
+      "target": "red",
+      "prediction": "red",
+      "raw": "red",
+      "ok": true
+    },
+    {
+      "layout": "bgr",
+      "type": "negation",
+      "question": "Only one bowl is neither blue nor red; what color is it?",
+      "target": "green",
+      "prediction": "green",
+      "raw": "green",
+      "ok": true
+    },
+    {
+      "layout": "bgr",
+      "type": "negation",
+      "question": "Only one bowl is neither red nor green; what color is it?",
+      "target": "blue",
+      "prediction": "blue",
+      "raw": "blue",
+      "ok": true
+    },
+    {
+      "layout": "bgr",
+      "type": "negation",
+      "question": "What color is the bowl that is neither blue nor green?",
+      "target": "red",
+      "prediction": "red",
+      "raw": "red",
+      "ok": true
+    },
+    {
+      "layout": "bgr",
+      "type": "negation",
+      "question": "What color is the bowl that is neither blue nor red?",
+      "target": "green",
+      "prediction": "green",
+      "raw": "green",
+      "ok": true
+    },
+    {
+      "layout": "bgr",
+      "type": "negation",
+      "question": "What color is the bowl that is neither red nor green?",
+      "target": "blue",
+      "prediction": "blue",
+      "raw": "blue",
+      "ok": true
+    },
+    {
+      "layout": "bgr",
+      "type": "negation",
+      "question": "Which bowl is not red and not green?",
+      "target": "blue",
+      "prediction": "blue",
+      "raw": "blue",
+      "ok": true
+    },
+    {
+      "layout": "bgr",
+      "type": "ordinal",
+      "question": "Name the bowl between the other two bowls.",
+      "target": "green",
+      "prediction": "green",
+      "raw": "green",
+      "ok": true
+    },
+    {
+      "layout": "bgr",
+      "type": "ordinal",
+      "question": "Name the bowl on the far left.",
+      "target": "blue",
+      "prediction": "blue",
+      "raw": "blue",
+      "ok": true
+    },
+    {
+      "layout": "bgr",
+      "type": "ordinal",
+      "question": "Name the bowl on the far right.",
+      "target": "red",
+      "prediction": "red",
+      "raw": "red",
+      "ok": true
+    }
+  ],
+  "predictions": [
+    {
+      "layout": "bgr",
+      "type": "negation",
+      "question": "Identify the bowl that is not blue or red.",
+      "target": "green",
+      "prediction": "green",
+      "raw": "green",
+      "ok": true
+    },
+    {
+      "layout": "bgr",
+      "type": "negation",
+      "question": "Identify the bowl that is not red or green.",
+      "target": "blue",
+      "prediction": "blue",
+      "raw": "blue",
+      "ok": true
+    },
+    {
+      "layout": "bgr",
+      "type": "negation",
+      "question": "Only one bowl is neither blue nor green; what color is it?",
+      "target": "red",
+      "prediction": "red",
+      "raw": "red",
+      "ok": true
+    },
+    {
+      "layout": "bgr",
+      "type": "negation",
+      "question": "Only one bowl is neither blue nor red; what color is it?",
+      "target": "green",
+      "prediction": "green",
+      "raw": "green",
+      "ok": true
+    },
+    {
+      "layout": "bgr",
+      "type": "negation",
+      "question": "Only one bowl is neither red nor green; what color is it?",
+      "target": "blue",
+      "prediction": "blue",
+      "raw": "blue",
+      "ok": true
+    },
+    {
+      "layout": "bgr",
+      "type": "negation",
+      "question": "What color is the bowl that is neither blue nor green?",
+      "target": "red",
+      "prediction": "red",
+      "raw": "red",
+      "ok": true
+    },
+    {
+      "layout": "bgr",
+      "type": "negation",
+      "question": "What color is the bowl that is neither blue nor red?",
+      "target": "green",
+      "prediction": "green",
+      "raw": "green",
+      "ok": true
+    },
+    {
+      "layout": "bgr",
+      "type": "negation",
+      "question": "What color is the bowl that is neither red nor green?",
+      "target": "blue",
+      "prediction": "blue",
+      "raw": "blue",
+      "ok": true
+    },
+    {
+      "layout": "bgr",
+      "type": "negation",
+      "question": "Which bowl is not red and not green?",
+      "target": "blue",
+      "prediction": "blue",
+      "raw": "blue",
+      "ok": true
+    },
+    {
+      "layout": "bgr",
+      "type": "ordinal",
+      "question": "Name the bowl between the other two bowls.",
+      "target": "green",
+      "prediction": "green",
+      "raw": "green",
+      "ok": true
+    },
+    {
+      "layout": "bgr",
+      "type": "ordinal",
+      "question": "Name the bowl on the far left.",
+      "target": "blue",
+      "prediction": "blue",
+      "raw": "blue",
+      "ok": true
+    },
+    {
+      "layout": "bgr",
+      "type": "ordinal",
+      "question": "Name the bowl on the far right.",
+      "target": "red",
+      "prediction": "red",
+      "raw": "red",
+      "ok": true
+    },
+    {
+      "layout": "bgr",
+      "type": "ordinal",
+      "question": "Starting from the right, what color is bowl number three?",
+      "target": "blue",
+      "prediction": "blue",
+      "raw": "blue",
+      "ok": true
+    },
+    {
+      "layout": "bgr",
+      "type": "ordinal",
+      "question": "What color is the center bowl?",
+      "target": "green",
+      "prediction": "green",
+      "raw": "green",
+      "ok": true
+    },
+    {
+      "layout": "bgr",
+      "type": "ordinal",
+      "question": "What color is the first bowl from the left?",
+      "target": "blue",
+      "prediction": "blue",
+      "raw": "blue",
+      "ok": true
+    },
+    {
+      "layout": "bgr",
+      "type": "ordinal",
+      "question": "What color is the first bowl from the right?",
+      "target": "red",
+      "prediction": "red",
+      "raw": "red",
+      "ok": true
+    },
+    {
+      "layout": "bgr",
+      "type": "ordinal",
+      "question": "What color is the last bowl from the left?",
+      "target": "red",
+      "prediction": "red",
+      "raw": "red",
+      "ok": true
+    },
+    {
+      "layout": "bgr",
+      "type": "ordinal",
+      "question": "What color is the left bowl?",
+      "target": "blue",
+      "prediction": "blue",
+      "raw": "blue",
+      "ok": true
+    },
+    {
+      "layout": "bgr",
+      "type": "ordinal",
+      "question": "What color is the middle bowl?",
+      "target": "green",
+      "prediction": "green",
+      "raw": "green",
+      "ok": true
+    },
+    {
+      "layout": "bgr",
+      "type": "ordinal",
+      "question": "What color is the right bowl?",
+      "target": "red",
+      "prediction": "red",
+      "raw": "red",
+      "ok": true
+    },
+    {
+      "layout": "bgr",
+      "type": "ordinal",
+      "question": "What color is the second bowl from the right?",
+      "target": "green",
+      "prediction": "green",
+      "raw": "green",
+      "ok": true
+    },
+    {
+      "layout": "bgr",
+      "type": "ordinal",
+      "question": "What color is the third bowl from the right?",
+      "target": "blue",
+      "prediction": "blue",
+      "raw": "blue",
+      "ok": true
+    },
+    {
+      "layout": "bgr",
+      "type": "ordinal",
+      "question": "Which bowl is 1st from the left?",
+      "target": "blue",
+      "prediction": "blue",
+      "raw": "blue",
+      "ok": true
+    },
+    {
+      "layout": "bgr",
+      "type": "ordinal",
+      "question": "Which bowl is 1st from the right?",
+      "target": "red",
+      "prediction": "red",
+      "raw": "red",
+      "ok": true
+    },
+    {
+      "layout": "bgr",
+      "type": "ordinal",
+      "question": "Which bowl is 2nd from the left?",
+      "target": "green",
+      "prediction": "green",
+      "raw": "green",
+      "ok": true
+    },
+    {
+      "layout": "bgr",
+      "type": "ordinal",
+      "question": "Which bowl is 2nd from the right?",
+      "target": "green",
+      "prediction": "green",
+      "raw": "green",
+      "ok": true
+    },
+    {
+      "layout": "bgr",
+      "type": "ordinal",
+      "question": "Which bowl is 3rd from the right?",
+      "target": "blue",
+      "prediction": "blue",
+      "raw": "blue",
+      "ok": true
+    },
+    {
+      "layout": "bgr",
+      "type": "ordinal",
+      "question": "Which bowl is first from the right?",
+      "target": "red",
+      "prediction": "red",
+      "raw": "red",
+      "ok": true
+    },
+    {
+      "layout": "bgr",
+      "type": "ordinal",
+      "question": "Which bowl is leftmost?",
+      "target": "blue",
+      "prediction": "blue",
+      "raw": "blue",
+      "ok": true
+    },
+    {
+      "layout": "bgr",
+      "type": "ordinal",
+      "question": "Which bowl is rightmost?",
+      "target": "red",
+      "prediction": "red",
+      "raw": "red",
+      "ok": true
+    },
+    {
+      "layout": "bgr",
+      "type": "ordinal",
+      "question": "Which bowl is second from the right?",
+      "target": "green",
+      "prediction": "green",
+      "raw": "green",
+      "ok": true
+    },
+    {
+      "layout": "bgr",
+      "type": "ordinal",
+      "question": "Which bowl is third from the left?",
+      "target": "red",
+      "prediction": "red",
+      "raw": "red",
+      "ok": true
+    },
+    {
+      "layout": "bgr",
+      "type": "ordinal",
+      "question": "Which bowl is third from the right?",
+      "target": "blue",
+      "prediction": "blue",
+      "raw": "blue",
+      "ok": true
+    },
+    {
+      "layout": "bgr",
+      "type": "ordinal",
+      "question": "Which color is in the left position?",
+      "target": "blue",
+      "prediction": "blue",
+      "raw": "blue",
+      "ok": true
+    },
+    {
+      "layout": "bgr",
+      "type": "ordinal",
+      "question": "Which color is in the middle position?",
+      "target": "green",
+      "prediction": "green",
+      "raw": "green",
+      "ok": true
+    },
+    {
+      "layout": "bgr",
+      "type": "ordinal",
+      "question": "Which color is in the right position?",
+      "target": "red",
+      "prediction": "red",
+      "raw": "red",
+      "ok": true
+    },
+    {
+      "layout": "bgr",
+      "type": "relative",
+      "question": "If I look immediately left of the green bowl, which color do I find?",
+      "target": "blue",
+      "prediction": "blue",
+      "raw": "blue",
+      "ok": true
+    },
+    {
+      "layout": "bgr",
+      "type": "relative",
+      "question": "If I look immediately left of the red bowl, which color do I find?",
+      "target": "green",
+      "prediction": "green",
+      "raw": "green",
+      "ok": true
+    },
+    {
+      "layout": "bgr",
+      "type": "relative",
+      "question": "If I look immediately right of the green bowl, which color do I find?",
+      "target": "red",
+      "prediction": "red",
+      "raw": "red",
+      "ok": true
+    },
+    {
+      "layout": "bgr",
+      "type": "relative",
+      "question": "What color is the bowl immediately left of the green bowl?",
+      "target": "blue",
+      "prediction": "blue",
+      "raw": "blue",
+      "ok": true
+    },
+    {
+      "layout": "bgr",
+      "type": "relative",
+      "question": "What color is the bowl immediately left of the red bowl?",
+      "target": "green",
+      "prediction": "green",
+      "raw": "green",
+      "ok": true
+    },
+    {
+      "layout": "bgr",
+      "type": "relative",
+      "question": "What color is the bowl immediately right of the blue bowl?",
+      "target": "green",
+      "prediction": "green",
+      "raw": "green",
+      "ok": true
+    },
+    {
+      "layout": "bgr",
+      "type": "relative",
+      "question": "What color is the bowl immediately right of the green bowl?",
+      "target": "red",
+      "prediction": "red",
+      "raw": "red",
+      "ok": true
+    },
+    {
+      "layout": "bgr",
+      "type": "relative",
+      "question": "Which bowl is to the left of the green bowl?",
+      "target": "blue",
+      "prediction": "blue",
+      "raw": "blue",
+      "ok": true
+    },
+    {
+      "layout": "bgr",
+      "type": "relative",
+      "question": "Which bowl is to the right of the blue bowl?",
+      "target": "green",
+      "prediction": "green",
+      "raw": "green",
+      "ok": true
+    },
+    {
+      "layout": "bgr",
+      "type": "relative",
+      "question": "Which color bowl is directly to the left of green?",
+      "target": "blue",
+      "prediction": "blue",
+      "raw": "blue",
+      "ok": true
+    },
+    {
+      "layout": "bgr",
+      "type": "relative",
+      "question": "Which color bowl is directly to the right of blue?",
+      "target": "green",
+      "prediction": "green",
+      "raw": "green",
+      "ok": true
+    },
+    {
+      "layout": "bgr",
+      "type": "relative",
+      "question": "Which color bowl is directly to the right of green?",
+      "target": "red",
+      "prediction": "red",
+      "raw": "red",
+      "ok": true
+    },
+    {
+      "layout": "brg",
+      "type": "negation",
+      "question": "Identify the bowl that is not blue or green.",
+      "target": "red",
+      "prediction": "red",
+      "raw": "red",
+      "ok": true
+    },
+    {
+      "layout": "brg",
+      "type": "negation",
+      "question": "Identify the bowl that is not red or green.",
+      "target": "blue",
+      "prediction": "blue",
+      "raw": "blue",
+      "ok": true
+    },
+    {
+      "layout": "brg",
+      "type": "negation",
+      "question": "Only one bowl is neither blue nor green; what color is it?",
+      "target": "red",
+      "prediction": "red",
+      "raw": "red",
+      "ok": true
+    },
+    {
+      "layout": "brg",
+      "type": "negation",
+      "question": "Only one bowl is neither blue nor red; what color is it?",
+      "target": "green",
+      "prediction": "green",
+      "raw": "green",
+      "ok": true
+    },
+    {
+      "layout": "brg",
+      "type": "negation",
+      "question": "Only one bowl is neither red nor green; what color is it?",
+      "target": "blue",
+      "prediction": "blue",
+      "raw": "blue",
+      "ok": true
+    },
+    {
+      "layout": "brg",
+      "type": "negation",
+      "question": "What color is the bowl that is neither blue nor red?",
+      "target": "green",
+      "prediction": "green",
+      "raw": "green",
+      "ok": true
+    },
+    {
+      "layout": "brg",
+      "type": "negation",
+      "question": "What color is the bowl that is neither red nor green?",
+      "target": "blue",
+      "prediction": "blue",
+      "raw": "blue",
+      "ok": true
+    },
+    {
+      "layout": "brg",
+      "type": "negation",
+      "question": "Which bowl is not blue and not green?",
+      "target": "red",
+      "prediction": "red",
+      "raw": "red",
+      "ok": true
+    },
+    {
+      "layout": "brg",
+      "type": "negation",
+      "question": "Which bowl is not blue and not red?",
+      "target": "green",
+      "prediction": "green",
+      "raw": "green",
+      "ok": true
+    },
+    {
+      "layout": "brg",
+      "type": "negation",
+      "question": "Which bowl is not red and not green?",
+      "target": "blue",
+      "prediction": "blue",
+      "raw": "blue",
+      "ok": true
+    },
+    {
+      "layout": "brg",
+      "type": "ordinal",
+      "question": "Name the bowl between the other two bowls.",
+      "target": "red",
+      "prediction": "red",
+      "raw": "red",
+      "ok": true
+    },
+    {
+      "layout": "brg",
+      "type": "ordinal",
+      "question": "Name the bowl on the far left.",
+      "target": "blue",
+      "prediction": "blue",
+      "raw": "blue",
+      "ok": true
+    },
+    {
+      "layout": "brg",
+      "type": "ordinal",
+      "question": "Starting from the right, what color is bowl number one?",
+      "target": "green",
+      "prediction": "green",
+      "raw": "green",
+      "ok": true
+    },
+    {
+      "layout": "brg",
+      "type": "ordinal",
+      "question": "Starting from the right, what color is bowl number two?",
+      "target": "red",
+      "prediction": "red",
+      "raw": "red",
+      "ok": true
+    },
+    {
+      "layout": "brg",
+      "type": "ordinal",
+      "question": "What color is the first bowl from the left?",
+      "target": "blue",
+      "prediction": "blue",
+      "raw": "blue",
+      "ok": true
+    },
+    {
+      "layout": "brg",
+      "type": "ordinal",
+      "question": "What color is the first bowl from the right?",
+      "target": "green",
+      "prediction": "green",
+      "raw": "green",
+      "ok": true
+    },
+    {
+      "layout": "brg",
+      "type": "ordinal",
+      "question": "What color is the last bowl from the left?",
+      "target": "green",
+      "prediction": "green",
+      "raw": "green",
+      "ok": true
+    },
+    {
+      "layout": "brg",
+      "type": "ordinal",
+      "question": "What color is the left bowl?",
+      "target": "blue",
+      "prediction": "blue",
+      "raw": "blue",
+      "ok": true
+    },
+    {
+      "layout": "brg",
+      "type": "ordinal",
+      "question": "What color is the middle bowl?",
+      "target": "red",
+      "prediction": "red",
+      "raw": "red",
+      "ok": true
+    },
+    {
+      "layout": "brg",
+      "type": "ordinal",
+      "question": "What color is the right bowl?",
+      "target": "green",
+      "prediction": "green",
+      "raw": "green",
+      "ok": true
+    },
+    {
+      "layout": "brg",
+      "type": "ordinal",
+      "question": "What color is the third bowl from the right?",
+      "target": "blue",
+      "prediction": "blue",
+      "raw": "blue",
+      "ok": true
+    },
+    {
+      "layout": "brg",
+      "type": "ordinal",
+      "question": "Which bowl is 1st from the left?",
+      "target": "blue",
+      "prediction": "blue",
+      "raw": "blue",
+      "ok": true
+    },
+    {
+      "layout": "brg",
+      "type": "ordinal",
+      "question": "Which bowl is 2nd from the left?",
+      "target": "red",
+      "prediction": "red",
+      "raw": "red",
+      "ok": true
+    },
+    {
+      "layout": "brg",
+      "type": "ordinal",
+      "question": "Which bowl is 2nd from the right?",
+      "target": "red",
+      "prediction": "red",
+      "raw": "red",
+      "ok": true
+    },
+    {
+      "layout": "brg",
+      "type": "ordinal",
+      "question": "Which bowl is 3rd from the right?",
+      "target": "blue",
+      "prediction": "blue",
+      "raw": "blue",
+      "ok": true
+    },
+    {
+      "layout": "brg",
+      "type": "ordinal",
+      "question": "Which bowl is first from the left?",
+      "target": "blue",
+      "prediction": "blue",
+      "raw": "blue",
+      "ok": true
+    },
+    {
+      "layout": "brg",
+      "type": "ordinal",
+      "question": "Which bowl is in the middle?",
+      "target": "red",
+      "prediction": "red",
+      "raw": "red",
+      "ok": true
+    },
+    {
+      "layout": "brg",
+      "type": "ordinal",
+      "question": "Which bowl is leftmost?",
+      "target": "blue",
+      "prediction": "blue",
+      "raw": "blue",
+      "ok": true
+    },
+    {
+      "layout": "brg",
+      "type": "ordinal",
+      "question": "Which bowl is rightmost?",
+      "target": "green",
+      "prediction": "green",
+      "raw": "green",
+      "ok": true
+    },
+    {
+      "layout": "brg",
+      "type": "ordinal",
+      "question": "Which bowl is second from the left?",
+      "target": "red",
+      "prediction": "red",
+      "raw": "red",
+      "ok": true
+    },
+    {
+      "layout": "brg",
+      "type": "ordinal",
+      "question": "Which bowl is second from the right?",
+      "target": "red",
+      "prediction": "red",
+      "raw": "red",
+      "ok": true
+    },
+    {
+      "layout": "brg",
+      "type": "ordinal",
+      "question": "Which bowl is third from the left?",
+      "target": "green",
+      "prediction": "green",
+      "raw": "green",
+      "ok": true
+    },
+    {
+      "layout": "brg",
+      "type": "ordinal",
+      "question": "Which color is in the left position?",
+      "target": "blue",
+      "prediction": "blue",
+      "raw": "blue",
+      "ok": true
+    },
+    {
+      "layout": "brg",
+      "type": "ordinal",
+      "question": "Which color is in the middle position?",
+      "target": "red",
+      "prediction": "red",
+      "raw": "red",
+      "ok": true
+    },
+    {
+      "layout": "brg",
+      "type": "ordinal",
+      "question": "Which color is in the right position?",
+      "target": "green",
+      "prediction": "green",
+      "raw": "green",
+      "ok": true
+    },
+    {
+      "layout": "brg",
+      "type": "relative",
+      "question": "If I look immediately left of the green bowl, which color do I find?",
+      "target": "red",
+      "prediction": "red",
+      "raw": "red",
+      "ok": true
+    },
+    {
+      "layout": "brg",
+      "type": "relative",
+      "question": "If I look immediately left of the red bowl, which color do I find?",
+      "target": "blue",
+      "prediction": "blue",
+      "raw": "blue",
+      "ok": true
+    },
+    {
+      "layout": "brg",
+      "type": "relative",
+      "question": "If I look immediately right of the blue bowl, which color do I find?",
+      "target": "red",
+      "prediction": "red",
+      "raw": "red",
+      "ok": true
+    },
+    {
+      "layout": "brg",
+      "type": "relative",
+      "question": "If I look immediately right of the red bowl, which color do I find?",
+      "target": "green",
+      "prediction": "green",
+      "raw": "green",
+      "ok": true
+    },
+    {
+      "layout": "brg",
+      "type": "relative",
+      "question": "What color is the bowl immediately left of the green bowl?",
+      "target": "red",
+      "prediction": "red",
+      "raw": "red",
+      "ok": true
+    },
+    {
+      "layout": "brg",
+      "type": "relative",
+      "question": "What color is the bowl immediately left of the red bowl?",
+      "target": "blue",
+      "prediction": "blue",
+      "raw": "blue",
+      "ok": true
+    },
+    {
+      "layout": "brg",
+      "type": "relative",
+      "question": "What color is the bowl immediately right of the blue bowl?",
+      "target": "red",
+      "prediction": "red",
+      "raw": "red",
+      "ok": true
+    },
+    {
+      "layout": "brg",
+      "type": "relative",
+      "question": "What color is the bowl immediately right of the red bowl?",
+      "target": "green",
+      "prediction": "green",
+      "raw": "green",
+      "ok": true
+    },
+    {
+      "layout": "brg",
+      "type": "relative",
+      "question": "Which bowl is to the left of the green bowl?",
+      "target": "red",
+      "prediction": "red",
+      "raw": "red",
+      "ok": true
+    },
+    {
+      "layout": "brg",
+      "type": "relative",
+      "question": "Which bowl is to the left of the red bowl?",
+      "target": "blue",
+      "prediction": "blue",
+      "raw": "blue",
+      "ok": true
+    },
+    {
+      "layout": "brg",
+      "type": "relative",
+      "question": "Which bowl is to the right of the blue bowl?",
+      "target": "red",
+      "prediction": "red",
+      "raw": "red",
+      "ok": true
+    },
+    {
+      "layout": "brg",
+      "type": "relative",
+      "question": "Which color bowl is directly to the left of green?",
+      "target": "red",
+      "prediction": "red",
+      "raw": "red",
+      "ok": true
+    },
+    {
+      "layout": "brg",
+      "type": "relative",
+      "question": "Which color bowl is directly to the left of red?",
+      "target": "blue",
+      "prediction": "blue",
+      "raw": "blue",
+      "ok": true
+    },
+    {
+      "layout": "brg",
+      "type": "relative",
+      "question": "Which color bowl is directly to the right of blue?",
+      "target": "red",
+      "prediction": "red",
+      "raw": "red",
+      "ok": true
+    },
+    {
+      "layout": "brg",
+      "type": "relative",
+      "question": "Which color bowl is directly to the right of red?",
+      "target": "green",
+      "prediction": "green",
+      "raw": "green",
+      "ok": true
+    },
+    {
+      "layout": "gbr",
+      "type": "negation",
+      "question": "Identify the bowl that is not blue or green.",
+      "target": "red",
+      "prediction": "red",
+      "raw": "red",
+      "ok": true
+    },
+    {
+      "layout": "gbr",
+      "type": "negation",
+      "question": "Identify the bowl that is not blue or red.",
+      "target": "green",
+      "prediction": "green",
+      "raw": "green",
+      "ok": true
+    },
+    {
+      "layout": "gbr",
+      "type": "negation",
+      "question": "Only one bowl is neither blue nor red; what color is it?",
+      "target": "green",
+      "prediction": "green",
+      "raw": "green",
+      "ok": true
+    },
+    {
+      "layout": "gbr",
+      "type": "negation",
+      "question": "Only one bowl is neither red nor green; what color is it?",
+      "target": "blue",
+      "prediction": "blue",
+      "raw": "blue",
+      "ok": true
+    },
+    {
+      "layout": "gbr",
+      "type": "negation",
+      "question": "What color is the bowl that is neither blue nor green?",
+      "target": "red",
+      "prediction": "red",
+      "raw": "red",
+      "ok": true
+    },
+    {
+      "layout": "gbr",
+      "type": "negation",
+      "question": "What color is the bowl that is neither blue nor red?",
+      "target": "green",
+      "prediction": "green",
+      "raw": "green",
+      "ok": true
+    },
+    {
+      "layout": "gbr",
+      "type": "negation",
+      "question": "Which bowl is not blue and not green?",
+      "target": "red",
+      "prediction": "red",
+      "raw": "red",
+      "ok": true
+    },
+    {
+      "layout": "gbr",
+      "type": "negation",
+      "question": "Which bowl is not red and not green?",
+      "target": "blue",
+      "prediction": "blue",
+      "raw": "blue",
+      "ok": true
+    },
+    {
+      "layout": "gbr",
+      "type": "ordinal",
+      "question": "Name the bowl between the other two bowls.",
+      "target": "blue",
+      "prediction": "blue",
+      "raw": "blue",
+      "ok": true
+    },
+    {
+      "layout": "gbr",
+      "type": "ordinal",
+      "question": "Name the bowl on the far left.",
+      "target": "green",
+      "prediction": "green",
+      "raw": "green",
+      "ok": true
+    },
+    {
+      "layout": "gbr",
+      "type": "ordinal",
+      "question": "Starting from the right, what color is bowl number one?",
+      "target": "red",
+      "prediction": "red",
+      "raw": "red",
+      "ok": true
+    },
+    {
+      "layout": "gbr",
+      "type": "ordinal",
+      "question": "Starting from the right, what color is bowl number three?",
+      "target": "green",
+      "prediction": "green",
+      "raw": "green",
+      "ok": true
+    },
+    {
+      "layout": "gbr",
+      "type": "ordinal",
+      "question": "Starting from the right, what color is bowl number two?",
+      "target": "blue",
+      "prediction": "blue",
+      "raw": "blue",
+      "ok": true
+    },
+    {
+      "layout": "gbr",
+      "type": "ordinal",
+      "question": "What color is the first bowl from the left?",
+      "target": "green",
+      "prediction": "green",
+      "raw": "green",
+      "ok": true
+    },
+    {
+      "layout": "gbr",
+      "type": "ordinal",
+      "question": "What color is the first bowl from the right?",
+      "target": "red",
+      "prediction": "red",
+      "raw": "red",
+      "ok": true
+    },
+    {
+      "layout": "gbr",
+      "type": "ordinal",
+      "question": "What color is the last bowl from the left?",
+      "target": "red",
+      "prediction": "red",
+      "raw": "red",
+      "ok": true
+    },
+    {
+      "layout": "gbr",
+      "type": "ordinal",
+      "question": "What color is the left bowl?",
+      "target": "green",
+      "prediction": "green",
+      "raw": "green",
+      "ok": true
+    },
+    {
+      "layout": "gbr",
+      "type": "ordinal",
+      "question": "What color is the middle bowl?",
+      "target": "blue",
+      "prediction": "blue",
+      "raw": "blue",
+      "ok": true
+    },
+    {
+      "layout": "gbr",
+      "type": "ordinal",
+      "question": "What color is the right bowl?",
+      "target": "red",
+      "prediction": "red",
+      "raw": "red",
+      "ok": true
+    },
+    {
+      "layout": "gbr",
+      "type": "ordinal",
+      "question": "What color is the third bowl from the right?",
+      "target": "green",
+      "prediction": "green",
+      "raw": "green",
+      "ok": true
+    },
+    {
+      "layout": "gbr",
+      "type": "ordinal",
+      "question": "Which bowl is 1st from the left?",
+      "target": "green",
+      "prediction": "green",
+      "raw": "green",
+      "ok": true
+    },
+    {
+      "layout": "gbr",
+      "type": "ordinal",
+      "question": "Which bowl is 1st from the right?",
+      "target": "red",
+      "prediction": "red",
+      "raw": "red",
+      "ok": true
+    },
+    {
+      "layout": "gbr",
+      "type": "ordinal",
+      "question": "Which bowl is 2nd from the left?",
+      "target": "blue",
+      "prediction": "blue",
+      "raw": "blue",
+      "ok": true
+    },
+    {
+      "layout": "gbr",
+      "type": "ordinal",
+      "question": "Which bowl is 3rd from the left?",
+      "target": "red",
+      "prediction": "red",
+      "raw": "red",
+      "ok": true
+    },
+    {
+      "layout": "gbr",
+      "type": "ordinal",
+      "question": "Which bowl is first from the left?",
+      "target": "green",
+      "prediction": "green",
+      "raw": "green",
+      "ok": true
+    },
+    {
+      "layout": "gbr",
+      "type": "ordinal",
+      "question": "Which bowl is first from the right?",
+      "target": "red",
+      "prediction": "red",
+      "raw": "red",
+      "ok": true
+    },
+    {
+      "layout": "gbr",
+      "type": "ordinal",
+      "question": "Which bowl is in the middle?",
+      "target": "blue",
+      "prediction": "blue",
+      "raw": "blue",
+      "ok": true
+    },
+    {
+      "layout": "gbr",
+      "type": "ordinal",
+      "question": "Which bowl is leftmost?",
+      "target": "green",
+      "prediction": "green",
+      "raw": "green",
+      "ok": true
+    },
+    {
+      "layout": "gbr",
+      "type": "ordinal",
+      "question": "Which bowl is rightmost?",
+      "target": "red",
+      "prediction": "red",
+      "raw": "red",
+      "ok": true
+    },
+    {
+      "layout": "gbr",
+      "type": "ordinal",
+      "question": "Which bowl is second from the left?",
+      "target": "blue",
+      "prediction": "blue",
+      "raw": "blue",
+      "ok": true
+    },
+    {
+      "layout": "gbr",
+      "type": "ordinal",
+      "question": "Which bowl is second from the right?",
+      "target": "blue",
+      "prediction": "blue",
+      "raw": "blue",
+      "ok": true
+    },
+    {
+      "layout": "gbr",
+      "type": "ordinal",
+      "question": "Which bowl is third from the left?",
+      "target": "red",
+      "prediction": "red",
+      "raw": "red",
+      "ok": true
+    },
+    {
+      "layout": "gbr",
+      "type": "ordinal",
+      "question": "Which color is in the left position?",
+      "target": "green",
+      "prediction": "green",
+      "raw": "green",
+      "ok": true
+    },
+    {
+      "layout": "gbr",
+      "type": "ordinal",
+      "question": "Which color is in the middle position?",
+      "target": "blue",
+      "prediction": "blue",
+      "raw": "blue",
+      "ok": true
+    },
+    {
+      "layout": "gbr",
+      "type": "ordinal",
+      "question": "Which color is in the right position?",
+      "target": "red",
+      "prediction": "red",
+      "raw": "red",
+      "ok": true
+    },
+    {
+      "layout": "gbr",
+      "type": "relative",
+      "question": "If I look immediately left of the blue bowl, which color do I find?",
+      "target": "green",
+      "prediction": "green",
+      "raw": "green",
+      "ok": true
+    },
+    {
+      "layout": "gbr",
+      "type": "relative",
+      "question": "If I look immediately left of the red bowl, which color do I find?",
+      "target": "blue",
+      "prediction": "blue",
+      "raw": "blue",
+      "ok": true
+    },
+    {
+      "layout": "gbr",
+      "type": "relative",
+      "question": "If I look immediately right of the blue bowl, which color do I find?",
+      "target": "red",
+      "prediction": "red",
+      "raw": "red",
+      "ok": true
+    },
+    {
+      "layout": "gbr",
+      "type": "relative",
+      "question": "If I look immediately right of the green bowl, which color do I find?",
+      "target": "blue",
+      "prediction": "blue",
+      "raw": "blue",
+      "ok": true
+    },
+    {
+      "layout": "gbr",
+      "type": "relative",
+      "question": "What color is the bowl immediately left of the blue bowl?",
+      "target": "green",
+      "prediction": "green",
+      "raw": "green",
+      "ok": true
+    },
+    {
+      "layout": "gbr",
+      "type": "relative",
+      "question": "What color is the bowl immediately left of the red bowl?",
+      "target": "blue",
+      "prediction": "blue",
+      "raw": "blue",
+      "ok": true
+    },
+    {
+      "layout": "gbr",
+      "type": "relative",
+      "question": "What color is the bowl immediately right of the blue bowl?",
+      "target": "red",
+      "prediction": "red",
+      "raw": "red",
+      "ok": true
+    },
+    {
+      "layout": "gbr",
+      "type": "relative",
+      "question": "What color is the bowl immediately right of the green bowl?",
+      "target": "blue",
+      "prediction": "blue",
+      "raw": "blue",
+      "ok": true
+    },
+    {
+      "layout": "gbr",
+      "type": "relative",
+      "question": "Which bowl is to the left of the blue bowl?",
+      "target": "green",
+      "prediction": "green",
+      "raw": "green",
+      "ok": true
+    },
+    {
+      "layout": "gbr",
+      "type": "relative",
+      "question": "Which bowl is to the left of the red bowl?",
+      "target": "blue",
+      "prediction": "blue",
+      "raw": "blue",
+      "ok": true
+    },
+    {
+      "layout": "gbr",
+      "type": "relative",
+      "question": "Which color bowl is directly to the left of blue?",
+      "target": "green",
+      "prediction": "green",
+      "raw": "green",
+      "ok": true
+    },
+    {
+      "layout": "gbr",
+      "type": "relative",
+      "question": "Which color bowl is directly to the left of red?",
+      "target": "blue",
+      "prediction": "blue",
+      "raw": "blue",
+      "ok": true
+    },
+    {
+      "layout": "gbr",
+      "type": "relative",
+      "question": "Which color bowl is directly to the right of blue?",
+      "target": "red",
+      "prediction": "red",
+      "raw": "red",
+      "ok": true
+    },
+    {
+      "layout": "gbr",
+      "type": "relative",
+      "question": "Which color bowl is directly to the right of green?",
+      "target": "blue",
+      "prediction": "blue",
+      "raw": "blue",
+      "ok": true
+    },
+    {
+      "layout": "grb",
+      "type": "negation",
+      "question": "Identify the bowl that is not blue or green.",
+      "target": "red",
+      "prediction": "red",
+      "raw": "red",
+      "ok": true
+    },
+    {
+      "layout": "grb",
+      "type": "negation",
+      "question": "Identify the bowl that is not blue or red.",
+      "target": "green",
+      "prediction": "green",
+      "raw": "green",
+      "ok": true
+    },
+    {
+      "layout": "grb",
+      "type": "negation",
+      "question": "Only one bowl is neither blue nor green; what color is it?",
+      "target": "red",
+      "prediction": "red",
+      "raw": "red",
+      "ok": true
+    },
+    {
+      "layout": "grb",
+      "type": "negation",
+      "question": "Only one bowl is neither blue nor red; what color is it?",
+      "target": "green",
+      "prediction": "green",
+      "raw": "green",
+      "ok": true
+    },
+    {
+      "layout": "grb",
+      "type": "negation",
+      "question": "Only one bowl is neither red nor green; what color is it?",
+      "target": "blue",
+      "prediction": "blue",
+      "raw": "blue",
+      "ok": true
+    },
+    {
+      "layout": "grb",
+      "type": "negation",
+      "question": "What color is the bowl that is neither blue nor green?",
+      "target": "red",
+      "prediction": "red",
+      "raw": "red",
+      "ok": true
+    },
+    {
+      "layout": "grb",
+      "type": "negation",
+      "question": "What color is the bowl that is neither blue nor red?",
+      "target": "green",
+      "prediction": "green",
+      "raw": "green",
+      "ok": true
+    },
+    {
+      "layout": "grb",
+      "type": "negation",
+      "question": "What color is the bowl that is neither red nor green?",
+      "target": "blue",
+      "prediction": "blue",
+      "raw": "blue",
+      "ok": true
+    },
+    {
+      "layout": "grb",
+      "type": "negation",
+      "question": "Which bowl is not blue and not green?",
+      "target": "red",
+      "prediction": "red",
+      "raw": "red",
+      "ok": true
+    },
+    {
+      "layout": "grb",
+      "type": "negation",
+      "question": "Which bowl is not blue and not red?",
+      "target": "green",
+      "prediction": "green",
+      "raw": "green",
+      "ok": true
+    },
+    {
+      "layout": "grb",
+      "type": "negation",
+      "question": "Which bowl is not red and not green?",
+      "target": "blue",
+      "prediction": "blue",
+      "raw": "blue",
+      "ok": true
+    },
+    {
+      "layout": "grb",
+      "type": "ordinal",
+      "question": "Name the bowl between the other two bowls.",
+      "target": "red",
+      "prediction": "red",
+      "raw": "red",
+      "ok": true
+    },
+    {
+      "layout": "grb",
+      "type": "ordinal",
+      "question": "Name the bowl on the far left.",
+      "target": "green",
+      "prediction": "green",
+      "raw": "green",
+      "ok": true
+    },
+    {
+      "layout": "grb",
+      "type": "ordinal",
+      "question": "Name the bowl on the far right.",
+      "target": "blue",
+      "prediction": "blue",
+      "raw": "blue",
+      "ok": true
+    },
+    {
+      "layout": "grb",
+      "type": "ordinal",
+      "question": "Starting from the right, what color is bowl number one?",
+      "target": "blue",
+      "prediction": "blue",
+      "raw": "blue",
+      "ok": true
+    },
+    {
+      "layout": "grb",
+      "type": "ordinal",
+      "question": "What color is the first bowl from the left?",
+      "target": "green",
+      "prediction": "green",
+      "raw": "green",
+      "ok": true
+    },
+    {
+      "layout": "grb",
+      "type": "ordinal",
+      "question": "What color is the first bowl from the right?",
+      "target": "blue",
+      "prediction": "blue",
+      "raw": "blue",
+      "ok": true
+    },
+    {
+      "layout": "grb",
+      "type": "ordinal",
+      "question": "What color is the last bowl from the left?",
+      "target": "blue",
+      "prediction": "blue",
+      "raw": "blue",
+      "ok": true
+    },
+    {
+      "layout": "grb",
+      "type": "ordinal",
+      "question": "What color is the left bowl?",
+      "target": "green",
+      "prediction": "green",
+      "raw": "green",
+      "ok": true
+    },
+    {
+      "layout": "grb",
+      "type": "ordinal",
+      "question": "What color is the middle bowl?",
+      "target": "red",
+      "prediction": "red",
+      "raw": "red",
+      "ok": true
+    },
+    {
+      "layout": "grb",
+      "type": "ordinal",
+      "question": "What color is the right bowl?",
+      "target": "blue",
+      "prediction": "blue",
+      "raw": "blue",
+      "ok": true
+    },
+    {
+      "layout": "grb",
+      "type": "ordinal",
+      "question": "What color is the second bowl from the right?",
+      "target": "red",
+      "prediction": "red",
+      "raw": "red",
+      "ok": true
+    },
+    {
+      "layout": "grb",
+      "type": "ordinal",
+      "question": "What color is the third bowl from the right?",
+      "target": "green",
+      "prediction": "green",
+      "raw": "green",
+      "ok": true
+    },
+    {
+      "layout": "grb",
+      "type": "ordinal",
+      "question": "Which bowl is 1st from the left?",
+      "target": "green",
+      "prediction": "green",
+      "raw": "green",
+      "ok": true
+    },
+    {
+      "layout": "grb",
+      "type": "ordinal",
+      "question": "Which bowl is 1st from the right?",
+      "target": "blue",
+      "prediction": "blue",
+      "raw": "blue",
+      "ok": true
+    },
+    {
+      "layout": "grb",
+      "type": "ordinal",
+      "question": "Which bowl is 2nd from the left?",
+      "target": "red",
+      "prediction": "red",
+      "raw": "red",
+      "ok": true
+    },
+    {
+      "layout": "grb",
+      "type": "ordinal",
+      "question": "Which bowl is 2nd from the right?",
+      "target": "red",
+      "prediction": "red",
+      "raw": "red",
+      "ok": true
+    },
+    {
+      "layout": "grb",
+      "type": "ordinal",
+      "question": "Which bowl is 3rd from the left?",
+      "target": "blue",
+      "prediction": "blue",
+      "raw": "blue",
+      "ok": true
+    },
+    {
+      "layout": "grb",
+      "type": "ordinal",
+      "question": "Which bowl is 3rd from the right?",
+      "target": "green",
+      "prediction": "green",
+      "raw": "green",
+      "ok": true
+    },
+    {
+      "layout": "grb",
+      "type": "ordinal",
+      "question": "Which bowl is first from the left?",
+      "target": "green",
+      "prediction": "green",
+      "raw": "green",
+      "ok": true
+    },
+    {
+      "layout": "grb",
+      "type": "ordinal",
+      "question": "Which bowl is first from the right?",
+      "target": "blue",
+      "prediction": "blue",
+      "raw": "blue",
+      "ok": true
+    },
+    {
+      "layout": "grb",
+      "type": "ordinal",
+      "question": "Which bowl is leftmost?",
+      "target": "green",
+      "prediction": "green",
+      "raw": "green",
+      "ok": true
+    },
+    {
+      "layout": "grb",
+      "type": "ordinal",
+      "question": "Which bowl is rightmost?",
+      "target": "blue",
+      "prediction": "blue",
+      "raw": "blue",
+      "ok": true
+    },
+    {
+      "layout": "grb",
+      "type": "ordinal",
+      "question": "Which bowl is second from the left?",
+      "target": "red",
+      "prediction": "red",
+      "raw": "red",
+      "ok": true
+    },
+    {
+      "layout": "grb",
+      "type": "ordinal",
+      "question": "Which bowl is second from the right?",
+      "target": "red",
+      "prediction": "red",
+      "raw": "red",
+      "ok": true
+    },
+    {
+      "layout": "grb",
+      "type": "ordinal",
+      "question": "Which bowl is third from the right?",
+      "target": "green",
+      "prediction": "green",
+      "raw": "green",
+      "ok": true
+    },
+    {
+      "layout": "grb",
+      "type": "ordinal",
+      "question": "Which color is in the left position?",
+      "target": "green",
+      "prediction": "green",
+      "raw": "green",
+      "ok": true
+    },
+    {
+      "layout": "grb",
+      "type": "ordinal",
+      "question": "Which color is in the middle position?",
+      "target": "red",
+      "prediction": "red",
+      "raw": "red",
+      "ok": true
+    },
+    {
+      "layout": "grb",
+      "type": "ordinal",
+      "question": "Which color is in the right position?",
+      "target": "blue",
+      "prediction": "blue",
+      "raw": "blue",
+      "ok": true
+    },
+    {
+      "layout": "grb",
+      "type": "relative",
+      "question": "If I look immediately left of the blue bowl, which color do I find?",
+      "target": "red",
+      "prediction": "red",
+      "raw": "red",
+      "ok": true
+    },
+    {
+      "layout": "grb",
+      "type": "relative",
+      "question": "If I look immediately left of the red bowl, which color do I find?",
+      "target": "green",
+      "prediction": "green",
+      "raw": "green",
+      "ok": true
+    },
+    {
+      "layout": "grb",
+      "type": "relative",
+      "question": "If I look immediately right of the green bowl, which color do I find?",
+      "target": "red",
+      "prediction": "red",
+      "raw": "red",
+      "ok": true
+    },
+    {
+      "layout": "grb",
+      "type": "relative",
+      "question": "If I look immediately right of the red bowl, which color do I find?",
+      "target": "blue",
+      "prediction": "blue",
+      "raw": "blue",
+      "ok": true
+    },
+    {
+      "layout": "grb",
+      "type": "relative",
+      "question": "What color is the bowl immediately left of the blue bowl?",
+      "target": "red",
+      "prediction": "red",
+      "raw": "red",
+      "ok": true
+    },
+    {
+      "layout": "grb",
+      "type": "relative",
+      "question": "What color is the bowl immediately right of the green bowl?",
+      "target": "red",
+      "prediction": "red",
+      "raw": "red",
+      "ok": true
+    },
+    {
+      "layout": "grb",
+      "type": "relative",
+      "question": "What color is the bowl immediately right of the red bowl?",
+      "target": "blue",
+      "prediction": "blue",
+      "raw": "blue",
+      "ok": true
+    },
+    {
+      "layout": "grb",
+      "type": "relative",
+      "question": "Which bowl is to the left of the blue bowl?",
+      "target": "red",
+      "prediction": "red",
+      "raw": "red",
+      "ok": true
+    },
+    {
+      "layout": "grb",
+      "type": "relative",
+      "question": "Which bowl is to the left of the red bowl?",
+      "target": "green",
+      "prediction": "green",
+      "raw": "green",
+      "ok": true
+    },
+    {
+      "layout": "grb",
+      "type": "relative",
+      "question": "Which bowl is to the right of the green bowl?",
+      "target": "red",
+      "prediction": "red",
+      "raw": "red",
+      "ok": true
+    },
+    {
+      "layout": "grb",
+      "type": "relative",
+      "question": "Which bowl is to the right of the red bowl?",
+      "target": "blue",
+      "prediction": "blue",
+      "raw": "blue",
+      "ok": true
+    },
+    {
+      "layout": "grb",
+      "type": "relative",
+      "question": "Which color bowl is directly to the left of red?",
+      "target": "green",
+      "prediction": "green",
+      "raw": "green",
+      "ok": true
+    },
+    {
+      "layout": "grb",
+      "type": "relative",
+      "question": "Which color bowl is directly to the right of green?",
+      "target": "red",
+      "prediction": "red",
+      "raw": "red",
+      "ok": true
+    },
+    {
+      "layout": "grb",
+      "type": "relative",
+      "question": "Which color bowl is directly to the right of red?",
+      "target": "blue",
+      "prediction": "blue",
+      "raw": "blue",
+      "ok": true
+    },
+    {
+      "layout": "rbg",
+      "type": "negation",
+      "question": "Identify the bowl that is not blue or green.",
+      "target": "red",
+      "prediction": "red",
+      "raw": "red",
+      "ok": true
+    },
+    {
+      "layout": "rbg",
+      "type": "negation",
+      "question": "Identify the bowl that is not red or green.",
+      "target": "blue",
+      "prediction": "blue",
+      "raw": "blue",
+      "ok": true
+    },
+    {
+      "layout": "rbg",
+      "type": "negation",
+      "question": "Only one bowl is neither blue nor green; what color is it?",
+      "target": "red",
+      "prediction": "red",
+      "raw": "red",
+      "ok": true
+    },
+    {
+      "layout": "rbg",
+      "type": "negation",
+      "question": "Only one bowl is neither blue nor red; what color is it?",
+      "target": "green",
+      "prediction": "green",
+      "raw": "green",
+      "ok": true
+    },
+    {
+      "layout": "rbg",
+      "type": "negation",
+      "question": "Only one bowl is neither red nor green; what color is it?",
+      "target": "blue",
+      "prediction": "blue",
+      "raw": "blue",
+      "ok": true
+    },
+    {
+      "layout": "rbg",
+      "type": "negation",
+      "question": "What color is the bowl that is neither blue nor green?",
+      "target": "red",
+      "prediction": "red",
+      "raw": "red",
+      "ok": true
+    },
+    {
+      "layout": "rbg",
+      "type": "negation",
+      "question": "What color is the bowl that is neither blue nor red?",
+      "target": "green",
+      "prediction": "green",
+      "raw": "green",
+      "ok": true
+    },
+    {
+      "layout": "rbg",
+      "type": "negation",
+      "question": "What color is the bowl that is neither red nor green?",
+      "target": "blue",
+      "prediction": "blue",
+      "raw": "blue",
+      "ok": true
+    },
+    {
+      "layout": "rbg",
+      "type": "negation",
+      "question": "Which bowl is not blue and not green?",
+      "target": "red",
+      "prediction": "red",
+      "raw": "red",
+      "ok": true
+    },
+    {
+      "layout": "rbg",
+      "type": "negation",
+      "question": "Which bowl is not blue and not red?",
+      "target": "green",
+      "prediction": "green",
+      "raw": "green",
+      "ok": true
+    },
+    {
+      "layout": "rbg",
+      "type": "negation",
+      "question": "Which bowl is not red and not green?",
+      "target": "blue",
+      "prediction": "blue",
+      "raw": "blue",
+      "ok": true
+    },
+    {
+      "layout": "rbg",
+      "type": "ordinal",
+      "question": "Name the bowl between the other two bowls.",
+      "target": "blue",
+      "prediction": "blue",
+      "raw": "blue",
+      "ok": true
+    },
+    {
+      "layout": "rbg",
+      "type": "ordinal",
+      "question": "Name the bowl on the far left.",
+      "target": "red",
+      "prediction": "red",
+      "raw": "red",
+      "ok": true
+    },
+    {
+      "layout": "rbg",
+      "type": "ordinal",
+      "question": "Name the bowl on the far right.",
+      "target": "green",
+      "prediction": "green",
+      "raw": "green",
+      "ok": true
+    },
+    {
+      "layout": "rbg",
+      "type": "ordinal",
+      "question": "Starting from the right, what color is bowl number three?",
+      "target": "red",
+      "prediction": "red",
+      "raw": "red",
+      "ok": true
+    },
+    {
+      "layout": "rbg",
+      "type": "ordinal",
+      "question": "Starting from the right, what color is bowl number two?",
+      "target": "blue",
+      "prediction": "blue",
+      "raw": "blue",
+      "ok": true
+    },
+    {
+      "layout": "rbg",
+      "type": "ordinal",
+      "question": "What color is the center bowl?",
+      "target": "blue",
+      "prediction": "blue",
+      "raw": "blue",
+      "ok": true
+    },
+    {
+      "layout": "rbg",
+      "type": "ordinal",
+      "question": "What color is the first bowl from the left?",
+      "target": "red",
+      "prediction": "red",
+      "raw": "red",
+      "ok": true
+    },
+    {
+      "layout": "rbg",
+      "type": "ordinal",
+      "question": "What color is the first bowl from the right?",
+      "target": "green",
+      "prediction": "green",
+      "raw": "green",
+      "ok": true
+    },
+    {
+      "layout": "rbg",
+      "type": "ordinal",
+      "question": "What color is the last bowl from the left?",
+      "target": "green",
+      "prediction": "green",
+      "raw": "green",
+      "ok": true
+    },
+    {
+      "layout": "rbg",
+      "type": "ordinal",
+      "question": "What color is the left bowl?",
+      "target": "red",
+      "prediction": "red",
+      "raw": "red",
+      "ok": true
+    },
+    {
+      "layout": "rbg",
+      "type": "ordinal",
+      "question": "What color is the middle bowl?",
+      "target": "blue",
+      "prediction": "blue",
+      "raw": "blue",
+      "ok": true
+    },
+    {
+      "layout": "rbg",
+      "type": "ordinal",
+      "question": "What color is the right bowl?",
+      "target": "green",
+      "prediction": "green",
+      "raw": "green",
+      "ok": true
+    },
+    {
+      "layout": "rbg",
+      "type": "ordinal",
+      "question": "What color is the second bowl from the right?",
+      "target": "blue",
+      "prediction": "blue",
+      "raw": "blue",
+      "ok": true
+    },
+    {
+      "layout": "rbg",
+      "type": "ordinal",
+      "question": "What color is the third bowl from the right?",
+      "target": "red",
+      "prediction": "red",
+      "raw": "red",
+      "ok": true
+    },
+    {
+      "layout": "rbg",
+      "type": "ordinal",
+      "question": "Which bowl is 1st from the right?",
+      "target": "green",
+      "prediction": "green",
+      "raw": "green",
+      "ok": true
+    },
+    {
+      "layout": "rbg",
+      "type": "ordinal",
+      "question": "Which bowl is 2nd from the right?",
+      "target": "blue",
+      "prediction": "blue",
+      "raw": "blue",
+      "ok": true
+    },
+    {
+      "layout": "rbg",
+      "type": "ordinal",
+      "question": "Which bowl is 3rd from the left?",
+      "target": "green",
+      "prediction": "green",
+      "raw": "green",
+      "ok": true
+    },
+    {
+      "layout": "rbg",
+      "type": "ordinal",
+      "question": "Which bowl is 3rd from the right?",
+      "target": "red",
+      "prediction": "red",
+      "raw": "red",
+      "ok": true
+    },
+    {
+      "layout": "rbg",
+      "type": "ordinal",
+      "question": "Which bowl is first from the left?",
+      "target": "red",
+      "prediction": "red",
+      "raw": "red",
+      "ok": true
+    },
+    {
+      "layout": "rbg",
+      "type": "ordinal",
+      "question": "Which bowl is first from the right?",
+      "target": "green",
+      "prediction": "green",
+      "raw": "green",
+      "ok": true
+    },
+    {
+      "layout": "rbg",
+      "type": "ordinal",
+      "question": "Which bowl is in the middle?",
+      "target": "blue",
+      "prediction": "blue",
+      "raw": "blue",
+      "ok": true
+    },
+    {
+      "layout": "rbg",
+      "type": "ordinal",
+      "question": "Which bowl is leftmost?",
+      "target": "red",
+      "prediction": "red",
+      "raw": "red",
+      "ok": true
+    },
+    {
+      "layout": "rbg",
+      "type": "ordinal",
+      "question": "Which bowl is rightmost?",
+      "target": "green",
+      "prediction": "green",
+      "raw": "green",
+      "ok": true
+    },
+    {
+      "layout": "rbg",
+      "type": "ordinal",
+      "question": "Which bowl is second from the left?",
+      "target": "blue",
+      "prediction": "blue",
+      "raw": "blue",
+      "ok": true
+    },
+    {
+      "layout": "rbg",
+      "type": "ordinal",
+      "question": "Which bowl is second from the right?",
+      "target": "blue",
+      "prediction": "blue",
+      "raw": "blue",
+      "ok": true
+    },
+    {
+      "layout": "rbg",
+      "type": "ordinal",
+      "question": "Which bowl is third from the left?",
+      "target": "green",
+      "prediction": "green",
+      "raw": "green",
+      "ok": true
+    },
+    {
+      "layout": "rbg",
+      "type": "ordinal",
+      "question": "Which color is in the middle position?",
+      "target": "blue",
+      "prediction": "blue",
+      "raw": "blue",
+      "ok": true
+    },
+    {
+      "layout": "rbg",
+      "type": "ordinal",
+      "question": "Which color is in the right position?",
+      "target": "green",
+      "prediction": "green",
+      "raw": "green",
+      "ok": true
+    },
+    {
+      "layout": "rbg",
+      "type": "relative",
+      "question": "If I look immediately left of the blue bowl, which color do I find?",
+      "target": "red",
+      "prediction": "red",
+      "raw": "red",
+      "ok": true
+    },
+    {
+      "layout": "rbg",
+      "type": "relative",
+      "question": "If I look immediately left of the green bowl, which color do I find?",
+      "target": "blue",
+      "prediction": "blue",
+      "raw": "blue",
+      "ok": true
+    },
+    {
+      "layout": "rbg",
+      "type": "relative",
+      "question": "If I look immediately right of the blue bowl, which color do I find?",
+      "target": "green",
+      "prediction": "green",
+      "raw": "green",
+      "ok": true
+    },
+    {
+      "layout": "rbg",
+      "type": "relative",
+      "question": "If I look immediately right of the red bowl, which color do I find?",
+      "target": "blue",
+      "prediction": "blue",
+      "raw": "blue",
+      "ok": true
+    },
+    {
+      "layout": "rbg",
+      "type": "relative",
+      "question": "What color is the bowl immediately left of the blue bowl?",
+      "target": "red",
+      "prediction": "red",
+      "raw": "red",
+      "ok": true
+    },
+    {
+      "layout": "rbg",
+      "type": "relative",
+      "question": "What color is the bowl immediately left of the green bowl?",
+      "target": "blue",
+      "prediction": "blue",
+      "raw": "blue",
+      "ok": true
+    },
+    {
+      "layout": "rbg",
+      "type": "relative",
+      "question": "What color is the bowl immediately right of the blue bowl?",
+      "target": "green",
+      "prediction": "green",
+      "raw": "green",
+      "ok": true
+    },
+    {
+      "layout": "rbg",
+      "type": "relative",
+      "question": "What color is the bowl immediately right of the red bowl?",
+      "target": "blue",
+      "prediction": "blue",
+      "raw": "blue",
+      "ok": true
+    },
+    {
+      "layout": "rbg",
+      "type": "relative",
+      "question": "Which bowl is to the left of the blue bowl?",
+      "target": "red",
+      "prediction": "red",
+      "raw": "red",
+      "ok": true
+    },
+    {
+      "layout": "rbg",
+      "type": "relative",
+      "question": "Which bowl is to the left of the green bowl?",
+      "target": "blue",
+      "prediction": "blue",
+      "raw": "blue",
+      "ok": true
+    },
+    {
+      "layout": "rbg",
+      "type": "relative",
+      "question": "Which bowl is to the right of the blue bowl?",
+      "target": "green",
+      "prediction": "green",
+      "raw": "green",
+      "ok": true
+    },
+    {
+      "layout": "rbg",
+      "type": "relative",
+      "question": "Which bowl is to the right of the red bowl?",
+      "target": "blue",
+      "prediction": "blue",
+      "raw": "blue",
+      "ok": true
+    },
+    {
+      "layout": "rbg",
+      "type": "relative",
+      "question": "Which color bowl is directly to the left of blue?",
+      "target": "red",
+      "prediction": "red",
+      "raw": "red",
+      "ok": true
+    },
+    {
+      "layout": "rbg",
+      "type": "relative",
+      "question": "Which color bowl is directly to the left of green?",
+      "target": "blue",
+      "prediction": "blue",
+      "raw": "blue",
+      "ok": true
+    },
+    {
+      "layout": "rbg",
+      "type": "relative",
+      "question": "Which color bowl is directly to the right of blue?",
+      "target": "green",
+      "prediction": "green",
+      "raw": "green",
+      "ok": true
+    },
+    {
+      "layout": "rbg",
+      "type": "relative",
+      "question": "Which color bowl is directly to the right of red?",
+      "target": "blue",
+      "prediction": "blue",
+      "raw": "blue",
+      "ok": true
+    },
+    {
+      "layout": "rgb",
+      "type": "negation",
+      "question": "Identify the bowl that is not blue or green.",
+      "target": "red",
+      "prediction": "red",
+      "raw": "red",
+      "ok": true
+    },
+    {
+      "layout": "rgb",
+      "type": "negation",
+      "question": "Identify the bowl that is not blue or red.",
+      "target": "green",
+      "prediction": "green",
+      "raw": "green",
+      "ok": true
+    },
+    {
+      "layout": "rgb",
+      "type": "negation",
+      "question": "Identify the bowl that is not red or green.",
+      "target": "blue",
+      "prediction": "blue",
+      "raw": "blue",
+      "ok": true
+    },
+    {
+      "layout": "rgb",
+      "type": "negation",
+      "question": "Only one bowl is neither blue nor green; what color is it?",
+      "target": "red",
+      "prediction": "red",
+      "raw": "red",
+      "ok": true
+    },
+    {
+      "layout": "rgb",
+      "type": "negation",
+      "question": "Only one bowl is neither blue nor red; what color is it?",
+      "target": "green",
+      "prediction": "green",
+      "raw": "green",
+      "ok": true
+    },
+    {
+      "layout": "rgb",
+      "type": "negation",
+      "question": "Only one bowl is neither red nor green; what color is it?",
+      "target": "blue",
+      "prediction": "blue",
+      "raw": "blue",
+      "ok": true
+    },
+    {
+      "layout": "rgb",
+      "type": "negation",
+      "question": "What color is the bowl that is neither blue nor green?",
+      "target": "red",
+      "prediction": "red",
+      "raw": "red",
+      "ok": true
+    },
+    {
+      "layout": "rgb",
+      "type": "negation",
+      "question": "What color is the bowl that is neither blue nor red?",
+      "target": "green",
+      "prediction": "green",
+      "raw": "green",
+      "ok": true
+    },
+    {
+      "layout": "rgb",
+      "type": "negation",
+      "question": "What color is the bowl that is neither red nor green?",
+      "target": "blue",
+      "prediction": "blue",
+      "raw": "blue",
+      "ok": true
+    },
+    {
+      "layout": "rgb",
+      "type": "negation",
+      "question": "Which bowl is not blue and not green?",
+      "target": "red",
+      "prediction": "red",
+      "raw": "red",
+      "ok": true
+    },
+    {
+      "layout": "rgb",
+      "type": "negation",
+      "question": "Which bowl is not blue and not red?",
+      "target": "green",
+      "prediction": "green",
+      "raw": "green",
+      "ok": true
+    },
+    {
+      "layout": "rgb",
+      "type": "negation",
+      "question": "Which bowl is not red and not green?",
+      "target": "blue",
+      "prediction": "blue",
+      "raw": "blue",
+      "ok": true
+    },
+    {
+      "layout": "rgb",
+      "type": "ordinal",
+      "question": "Name the bowl on the far left.",
+      "target": "red",
+      "prediction": "red",
+      "raw": "red",
+      "ok": true
+    },
+    {
+      "layout": "rgb",
+      "type": "ordinal",
+      "question": "Name the bowl on the far right.",
+      "target": "blue",
+      "prediction": "blue",
+      "raw": "blue",
+      "ok": true
+    },
+    {
+      "layout": "rgb",
+      "type": "ordinal",
+      "question": "Starting from the right, what color is bowl number one?",
+      "target": "blue",
+      "prediction": "blue",
+      "raw": "blue",
+      "ok": true
+    },
+    {
+      "layout": "rgb",
+      "type": "ordinal",
+      "question": "Starting from the right, what color is bowl number three?",
+      "target": "red",
+      "prediction": "red",
+      "raw": "red",
+      "ok": true
+    },
+    {
+      "layout": "rgb",
+      "type": "ordinal",
+      "question": "Starting from the right, what color is bowl number two?",
+      "target": "green",
+      "prediction": "green",
+      "raw": "green",
+      "ok": true
+    },
+    {
+      "layout": "rgb",
+      "type": "ordinal",
+      "question": "What color is the center bowl?",
+      "target": "green",
+      "prediction": "green",
+      "raw": "green",
+      "ok": true
+    },
+    {
+      "layout": "rgb",
+      "type": "ordinal",
+      "question": "What color is the first bowl from the left?",
+      "target": "red",
+      "prediction": "red",
+      "raw": "red",
+      "ok": true
+    },
+    {
+      "layout": "rgb",
+      "type": "ordinal",
+      "question": "What color is the first bowl from the right?",
+      "target": "blue",
+      "prediction": "blue",
+      "raw": "blue",
+      "ok": true
+    },
+    {
+      "layout": "rgb",
+      "type": "ordinal",
+      "question": "What color is the last bowl from the left?",
+      "target": "blue",
+      "prediction": "blue",
+      "raw": "blue",
+      "ok": true
+    },
+    {
+      "layout": "rgb",
+      "type": "ordinal",
+      "question": "What color is the left bowl?",
+      "target": "red",
+      "prediction": "red",
+      "raw": "red",
+      "ok": true
+    },
+    {
+      "layout": "rgb",
+      "type": "ordinal",
+      "question": "What color is the middle bowl?",
+      "target": "green",
+      "prediction": "green",
+      "raw": "green",
+      "ok": true
+    },
+    {
+      "layout": "rgb",
+      "type": "ordinal",
+      "question": "What color is the right bowl?",
+      "target": "blue",
+      "prediction": "blue",
+      "raw": "blue",
+      "ok": true
+    },
+    {
+      "layout": "rgb",
+      "type": "ordinal",
+      "question": "What color is the second bowl from the right?",
+      "target": "green",
+      "prediction": "green",
+      "raw": "green",
+      "ok": true
+    },
+    {
+      "layout": "rgb",
+      "type": "ordinal",
+      "question": "What color is the third bowl from the right?",
+      "target": "red",
+      "prediction": "red",
+      "raw": "red",
+      "ok": true
+    },
+    {
+      "layout": "rgb",
+      "type": "ordinal",
+      "question": "Which bowl is 1st from the left?",
+      "target": "red",
+      "prediction": "red",
+      "raw": "red",
+      "ok": true
+    },
+    {
+      "layout": "rgb",
+      "type": "ordinal",
+      "question": "Which bowl is 1st from the right?",
+      "target": "blue",
+      "prediction": "blue",
+      "raw": "blue",
+      "ok": true
+    },
+    {
+      "layout": "rgb",
+      "type": "ordinal",
+      "question": "Which bowl is 2nd from the left?",
+      "target": "green",
+      "prediction": "green",
+      "raw": "green",
+      "ok": true
+    },
+    {
+      "layout": "rgb",
+      "type": "ordinal",
+      "question": "Which bowl is 2nd from the right?",
+      "target": "green",
+      "prediction": "green",
+      "raw": "green",
+      "ok": true
+    },
+    {
+      "layout": "rgb",
+      "type": "ordinal",
+      "question": "Which bowl is 3rd from the left?",
+      "target": "blue",
+      "prediction": "blue",
+      "raw": "blue",
+      "ok": true
+    },
+    {
+      "layout": "rgb",
+      "type": "ordinal",
+      "question": "Which bowl is 3rd from the right?",
+      "target": "red",
+      "prediction": "red",
+      "raw": "red",
+      "ok": true
+    },
+    {
+      "layout": "rgb",
+      "type": "ordinal",
+      "question": "Which bowl is first from the left?",
+      "target": "red",
+      "prediction": "red",
+      "raw": "red",
+      "ok": true
+    },
+    {
+      "layout": "rgb",
+      "type": "ordinal",
+      "question": "Which bowl is first from the right?",
+      "target": "blue",
+      "prediction": "blue",
+      "raw": "blue",
+      "ok": true
+    },
+    {
+      "layout": "rgb",
+      "type": "ordinal",
+      "question": "Which bowl is in the middle?",
+      "target": "green",
+      "prediction": "green",
+      "raw": "green",
+      "ok": true
+    },
+    {
+      "layout": "rgb",
+      "type": "ordinal",
+      "question": "Which bowl is leftmost?",
+      "target": "red",
+      "prediction": "red",
+      "raw": "red",
+      "ok": true
+    },
+    {
+      "layout": "rgb",
+      "type": "ordinal",
+      "question": "Which bowl is second from the right?",
+      "target": "green",
+      "prediction": "green",
+      "raw": "green",
+      "ok": true
+    },
+    {
+      "layout": "rgb",
+      "type": "ordinal",
+      "question": "Which bowl is third from the left?",
+      "target": "blue",
+      "prediction": "blue",
+      "raw": "blue",
+      "ok": true
+    },
+    {
+      "layout": "rgb",
+      "type": "ordinal",
+      "question": "Which bowl is third from the right?",
+      "target": "red",
+      "prediction": "red",
+      "raw": "red",
+      "ok": true
+    },
+    {
+      "layout": "rgb",
+      "type": "ordinal",
+      "question": "Which color is in the left position?",
+      "target": "red",
+      "prediction": "red",
+      "raw": "red",
+      "ok": true
+    },
+    {
+      "layout": "rgb",
+      "type": "ordinal",
+      "question": "Which color is in the middle position?",
+      "target": "green",
+      "prediction": "green",
+      "raw": "green",
+      "ok": true
+    },
+    {
+      "layout": "rgb",
+      "type": "ordinal",
+      "question": "Which color is in the right position?",
+      "target": "blue",
+      "prediction": "blue",
+      "raw": "blue",
+      "ok": true
+    },
+    {
+      "layout": "rgb",
+      "type": "relative",
+      "question": "If I look immediately left of the blue bowl, which color do I find?",
+      "target": "green",
+      "prediction": "green",
+      "raw": "green",
+      "ok": true
+    },
+    {
+      "layout": "rgb",
+      "type": "relative",
+      "question": "If I look immediately left of the green bowl, which color do I find?",
+      "target": "red",
+      "prediction": "red",
+      "raw": "red",
+      "ok": true
+    },
+    {
+      "layout": "rgb",
+      "type": "relative",
+      "question": "If I look immediately right of the green bowl, which color do I find?",
+      "target": "blue",
+      "prediction": "blue",
+      "raw": "blue",
+      "ok": true
+    },
+    {
+      "layout": "rgb",
+      "type": "relative",
+      "question": "If I look immediately right of the red bowl, which color do I find?",
+      "target": "green",
+      "prediction": "green",
+      "raw": "green",
+      "ok": true
+    },
+    {
+      "layout": "rgb",
+      "type": "relative",
+      "question": "What color is the bowl immediately left of the blue bowl?",
+      "target": "green",
+      "prediction": "green",
+      "raw": "green",
+      "ok": true
+    },
+    {
+      "layout": "rgb",
+      "type": "relative",
+      "question": "What color is the bowl immediately left of the green bowl?",
+      "target": "red",
+      "prediction": "red",
+      "raw": "red",
+      "ok": true
+    },
+    {
+      "layout": "rgb",
+      "type": "relative",
+      "question": "What color is the bowl immediately right of the green bowl?",
+      "target": "blue",
+      "prediction": "blue",
+      "raw": "blue",
+      "ok": true
+    },
+    {
+      "layout": "rgb",
+      "type": "relative",
+      "question": "What color is the bowl immediately right of the red bowl?",
+      "target": "green",
+      "prediction": "green",
+      "raw": "green",
+      "ok": true
+    },
+    {
+      "layout": "rgb",
+      "type": "relative",
+      "question": "Which bowl is to the left of the green bowl?",
+      "target": "red",
+      "prediction": "red",
+      "raw": "red",
+      "ok": true
+    },
+    {
+      "layout": "rgb",
+      "type": "relative",
+      "question": "Which bowl is to the right of the green bowl?",
+      "target": "blue",
+      "prediction": "blue",
+      "raw": "blue",
+      "ok": true
+    },
+    {
+      "layout": "rgb",
+      "type": "relative",
+      "question": "Which bowl is to the right of the red bowl?",
+      "target": "green",
+      "prediction": "green",
+      "raw": "green",
+      "ok": true
+    },
+    {
+      "layout": "rgb",
+      "type": "relative",
+      "question": "Which color bowl is directly to the left of green?",
+      "target": "red",
+      "prediction": "red",
+      "raw": "red",
+      "ok": true
+    },
+    {
+      "layout": "rgb",
+      "type": "relative",
+      "question": "Which color bowl is directly to the right of green?",
+      "target": "blue",
+      "prediction": "blue",
+      "raw": "blue",
+      "ok": true
+    },
+    {
+      "layout": "rgb",
+      "type": "relative",
+      "question": "Which color bowl is directly to the right of red?",
+      "target": "green",
+      "prediction": "green",
+      "raw": "green",
+      "ok": true
+    },
+    {
+      "layout": "bgr",
+      "type": "negation",
+      "question": "Identify the bowl that is not blue or green.",
+      "target": "red",
+      "prediction": "red",
+      "raw": "red",
+      "ok": true
+    },
+    {
+      "layout": "bgr",
+      "type": "negation",
+      "question": "Which bowl is not blue and not green?",
+      "target": "red",
+      "prediction": "red",
+      "raw": "red",
+      "ok": true
+    },
+    {
+      "layout": "bgr",
+      "type": "negation",
+      "question": "Which bowl is not blue and not red?",
+      "target": "green",
+      "prediction": "green",
+      "raw": "green",
+      "ok": true
+    },
+    {
+      "layout": "bgr",
+      "type": "ordinal",
+      "question": "Starting from the right, what color is bowl number one?",
+      "target": "red",
+      "prediction": "red",
+      "raw": "red",
+      "ok": true
+    },
+    {
+      "layout": "bgr",
+      "type": "ordinal",
+      "question": "Starting from the right, what color is bowl number two?",
+      "target": "green",
+      "prediction": "green",
+      "raw": "green",
+      "ok": true
+    },
+    {
+      "layout": "bgr",
+      "type": "ordinal",
+      "question": "Which bowl is 3rd from the left?",
+      "target": "red",
+      "prediction": "red",
+      "raw": "red",
+      "ok": true
+    },
+    {
+      "layout": "bgr",
+      "type": "ordinal",
+      "question": "Which bowl is first from the left?",
+      "target": "blue",
+      "prediction": "blue",
+      "raw": "blue",
+      "ok": true
+    },
+    {
+      "layout": "bgr",
+      "type": "ordinal",
+      "question": "Which bowl is in the middle?",
+      "target": "green",
+      "prediction": "green",
+      "raw": "green",
+      "ok": true
+    },
+    {
+      "layout": "bgr",
+      "type": "ordinal",
+      "question": "Which bowl is second from the left?",
+      "target": "green",
+      "prediction": "green",
+      "raw": "green",
+      "ok": true
+    },
+    {
+      "layout": "bgr",
+      "type": "relative",
+      "question": "If I look immediately right of the blue bowl, which color do I find?",
+      "target": "green",
+      "prediction": "green",
+      "raw": "green",
+      "ok": true
+    },
+    {
+      "layout": "bgr",
+      "type": "relative",
+      "question": "Which bowl is to the left of the red bowl?",
+      "target": "green",
+      "prediction": "green",
+      "raw": "green",
+      "ok": true
+    },
+    {
+      "layout": "bgr",
+      "type": "relative",
+      "question": "Which bowl is to the right of the green bowl?",
+      "target": "red",
+      "prediction": "red",
+      "raw": "red",
+      "ok": true
+    },
+    {
+      "layout": "bgr",
+      "type": "relative",
+      "question": "Which color bowl is directly to the left of red?",
+      "target": "green",
+      "prediction": "green",
+      "raw": "green",
+      "ok": true
+    },
+    {
+      "layout": "brg",
+      "type": "negation",
+      "question": "Identify the bowl that is not blue or red.",
+      "target": "green",
+      "prediction": "green",
+      "raw": "green",
+      "ok": true
+    },
+    {
+      "layout": "brg",
+      "type": "negation",
+      "question": "What color is the bowl that is neither blue nor green?",
+      "target": "red",
+      "prediction": "red",
+      "raw": "red",
+      "ok": true
+    },
+    {
+      "layout": "brg",
+      "type": "ordinal",
+      "question": "Name the bowl on the far right.",
+      "target": "green",
+      "prediction": "green",
+      "raw": "green",
+      "ok": true
+    },
+    {
+      "layout": "brg",
+      "type": "ordinal",
+      "question": "Starting from the right, what color is bowl number three?",
+      "target": "blue",
+      "prediction": "blue",
+      "raw": "blue",
+      "ok": true
+    },
+    {
+      "layout": "brg",
+      "type": "ordinal",
+      "question": "What color is the center bowl?",
+      "target": "red",
+      "prediction": "red",
+      "raw": "red",
+      "ok": true
+    },
+    {
+      "layout": "brg",
+      "type": "ordinal",
+      "question": "What color is the second bowl from the right?",
+      "target": "red",
+      "prediction": "red",
+      "raw": "red",
+      "ok": true
+    },
+    {
+      "layout": "brg",
+      "type": "ordinal",
+      "question": "Which bowl is 1st from the right?",
+      "target": "green",
+      "prediction": "green",
+      "raw": "green",
+      "ok": true
+    },
+    {
+      "layout": "brg",
+      "type": "ordinal",
+      "question": "Which bowl is 3rd from the left?",
+      "target": "green",
+      "prediction": "green",
+      "raw": "green",
+      "ok": true
+    },
+    {
+      "layout": "brg",
+      "type": "ordinal",
+      "question": "Which bowl is first from the right?",
+      "target": "green",
+      "prediction": "green",
+      "raw": "green",
+      "ok": true
+    },
+    {
+      "layout": "brg",
+      "type": "ordinal",
+      "question": "Which bowl is third from the right?",
+      "target": "blue",
+      "prediction": "blue",
+      "raw": "blue",
+      "ok": true
+    },
+    {
+      "layout": "brg",
+      "type": "relative",
+      "question": "Which bowl is to the right of the red bowl?",
+      "target": "green",
+      "prediction": "green",
+      "raw": "green",
+      "ok": true
+    },
+    {
+      "layout": "gbr",
+      "type": "negation",
+      "question": "Identify the bowl that is not red or green.",
+      "target": "blue",
+      "prediction": "blue",
+      "raw": "blue",
+      "ok": true
+    },
+    {
+      "layout": "gbr",
+      "type": "negation",
+      "question": "Only one bowl is neither blue nor green; what color is it?",
+      "target": "red",
+      "prediction": "red",
+      "raw": "red",
+      "ok": true
+    },
+    {
+      "layout": "gbr",
+      "type": "negation",
+      "question": "What color is the bowl that is neither red nor green?",
+      "target": "blue",
+      "prediction": "blue",
+      "raw": "blue",
+      "ok": true
+    },
+    {
+      "layout": "gbr",
+      "type": "negation",
+      "question": "Which bowl is not blue and not red?",
+      "target": "green",
+      "prediction": "green",
+      "raw": "green",
+      "ok": true
+    },
+    {
+      "layout": "gbr",
+      "type": "ordinal",
+      "question": "Name the bowl on the far right.",
+      "target": "red",
+      "prediction": "red",
+      "raw": "red",
+      "ok": true
+    },
+    {
+      "layout": "gbr",
+      "type": "ordinal",
+      "question": "What color is the center bowl?",
+      "target": "blue",
+      "prediction": "blue",
+      "raw": "blue",
+      "ok": true
+    },
+    {
+      "layout": "gbr",
+      "type": "ordinal",
+      "question": "What color is the second bowl from the right?",
+      "target": "blue",
+      "prediction": "blue",
+      "raw": "blue",
+      "ok": true
+    },
+    {
+      "layout": "gbr",
+      "type": "ordinal",
+      "question": "Which bowl is 2nd from the right?",
+      "target": "blue",
+      "prediction": "blue",
+      "raw": "blue",
+      "ok": true
+    },
+    {
+      "layout": "gbr",
+      "type": "ordinal",
+      "question": "Which bowl is 3rd from the right?",
+      "target": "green",
+      "prediction": "green",
+      "raw": "green",
+      "ok": true
+    },
+    {
+      "layout": "gbr",
+      "type": "ordinal",
+      "question": "Which bowl is third from the right?",
+      "target": "green",
+      "prediction": "green",
+      "raw": "green",
+      "ok": true
+    },
+    {
+      "layout": "gbr",
+      "type": "relative",
+      "question": "Which bowl is to the right of the blue bowl?",
+      "target": "red",
+      "prediction": "red",
+      "raw": "red",
+      "ok": true
+    },
+    {
+      "layout": "gbr",
+      "type": "relative",
+      "question": "Which bowl is to the right of the green bowl?",
+      "target": "blue",
+      "prediction": "blue",
+      "raw": "blue",
+      "ok": true
+    },
+    {
+      "layout": "grb",
+      "type": "negation",
+      "question": "Identify the bowl that is not red or green.",
+      "target": "blue",
+      "prediction": "blue",
+      "raw": "blue",
+      "ok": true
+    },
+    {
+      "layout": "grb",
+      "type": "ordinal",
+      "question": "Starting from the right, what color is bowl number three?",
+      "target": "green",
+      "prediction": "green",
+      "raw": "green",
+      "ok": true
+    },
+    {
+      "layout": "grb",
+      "type": "ordinal",
+      "question": "Starting from the right, what color is bowl number two?",
+      "target": "red",
+      "prediction": "red",
+      "raw": "red",
+      "ok": true
+    },
+    {
+      "layout": "grb",
+      "type": "ordinal",
+      "question": "What color is the center bowl?",
+      "target": "red",
+      "prediction": "red",
+      "raw": "red",
+      "ok": true
+    },
+    {
+      "layout": "grb",
+      "type": "ordinal",
+      "question": "Which bowl is in the middle?",
+      "target": "red",
+      "prediction": "red",
+      "raw": "red",
+      "ok": true
+    },
+    {
+      "layout": "grb",
+      "type": "ordinal",
+      "question": "Which bowl is third from the left?",
+      "target": "blue",
+      "prediction": "blue",
+      "raw": "blue",
+      "ok": true
+    },
+    {
+      "layout": "grb",
+      "type": "relative",
+      "question": "What color is the bowl immediately left of the red bowl?",
+      "target": "green",
+      "prediction": "green",
+      "raw": "green",
+      "ok": true
+    },
+    {
+      "layout": "grb",
+      "type": "relative",
+      "question": "Which color bowl is directly to the left of blue?",
+      "target": "red",
+      "prediction": "red",
+      "raw": "red",
+      "ok": true
+    },
+    {
+      "layout": "rbg",
+      "type": "negation",
+      "question": "Identify the bowl that is not blue or red.",
+      "target": "green",
+      "prediction": "green",
+      "raw": "green",
+      "ok": true
+    },
+    {
+      "layout": "rbg",
+      "type": "ordinal",
+      "question": "Starting from the right, what color is bowl number one?",
+      "target": "green",
+      "prediction": "green",
+      "raw": "green",
+      "ok": true
+    },
+    {
+      "layout": "rbg",
+      "type": "ordinal",
+      "question": "Which bowl is 1st from the left?",
+      "target": "red",
+      "prediction": "red",
+      "raw": "red",
+      "ok": true
+    },
+    {
+      "layout": "rbg",
+      "type": "ordinal",
+      "question": "Which bowl is 2nd from the left?",
+      "target": "blue",
+      "prediction": "blue",
+      "raw": "blue",
+      "ok": true
+    },
+    {
+      "layout": "rbg",
+      "type": "ordinal",
+      "question": "Which bowl is third from the right?",
+      "target": "red",
+      "prediction": "red",
+      "raw": "red",
+      "ok": true
+    },
+    {
+      "layout": "rbg",
+      "type": "ordinal",
+      "question": "Which color is in the left position?",
+      "target": "red",
+      "prediction": "red",
+      "raw": "red",
+      "ok": true
+    },
+    {
+      "layout": "rgb",
+      "type": "ordinal",
+      "question": "Name the bowl between the other two bowls.",
+      "target": "green",
+      "prediction": "green",
+      "raw": "green",
+      "ok": true
+    },
+    {
+      "layout": "rgb",
+      "type": "ordinal",
+      "question": "Which bowl is rightmost?",
+      "target": "blue",
+      "prediction": "blue",
+      "raw": "blue",
+      "ok": true
+    },
+    {
+      "layout": "rgb",
+      "type": "ordinal",
+      "question": "Which bowl is second from the left?",
+      "target": "green",
+      "prediction": "green",
+      "raw": "green",
+      "ok": true
+    },
+    {
+      "layout": "rgb",
+      "type": "relative",
+      "question": "Which bowl is to the left of the blue bowl?",
+      "target": "green",
+      "prediction": "green",
+      "raw": "green",
+      "ok": true
+    },
+    {
+      "layout": "rgb",
+      "type": "relative",
+      "question": "Which color bowl is directly to the left of blue?",
+      "target": "green",
+      "prediction": "green",
+      "raw": "green",
+      "ok": true
+    }
+  ]
+}

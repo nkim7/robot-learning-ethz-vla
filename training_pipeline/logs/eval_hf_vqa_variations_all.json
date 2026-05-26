@@ -1,0 +1,90 @@
+{
+  "model": "robot-learning-group47/smolvlm2-500m-vqa-lora-merged",
+  "jsonl": "data/eval2_vqa_fresh/vqa.jsonl",
+  "split": "all",
+  "total": 366,
+  "correct": 366,
+  "accuracy": 1.0,
+  "counts": {
+    "type": {
+      "ordinal": 198,
+      "relative": 96,
+      "negation": 72
+    },
+    "layout": {
+      "rbg": 61,
+      "bgr": 61,
+      "brg": 61,
+      "grb": 61,
+      "gbr": 61,
+      "rgb": 61
+    },
+    "split": {
+      "val": 55,
+      "train": 311
+    }
+  },
+  "by_type": {
+    "negation": {
+      "correct": 72,
+      "total": 72,
+      "accuracy": 1.0
+    },
+    "ordinal": {
+      "correct": 198,
+      "total": 198,
+      "accuracy": 1.0
+    },
+    "relative": {
+      "correct": 96,
+      "total": 96,
+      "accuracy": 1.0
+    }
+  },
+  "by_layout": {
+    "bgr": {
+      "correct": 61,
+      "total": 61,
+      "accuracy": 1.0
+    },
+    "brg": {
+      "correct": 61,
+      "total": 61,
+      "accuracy": 1.0
+    },
+    "gbr": {
+      "correct": 61,
+      "total": 61,
+      "accuracy": 1.0
+    },
+    "grb": {
+      "correct": 61,
+      "total": 61,
+      "accuracy": 1.0
+    },
+    "rbg": {
+      "correct": 61,
+      "total": 61,
+      "accuracy": 1.0
+    },
+    "rgb": {
+      "correct": 61,
+      "total": 61,
+      "accuracy": 1.0
+    }
+  },
+  "by_split": {
+    "train": {
+      "correct": 311,
+      "total": 311,
+      "accuracy": 1.0
+    },
+    "val": {
+      "correct": 55,
+      "total": 55,
+      "accuracy": 1.0
+    }
+  },
+  "failures": [],
+  "num_failures": 0
+}

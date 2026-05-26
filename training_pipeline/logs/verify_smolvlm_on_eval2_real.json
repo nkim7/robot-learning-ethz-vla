@@ -1,0 +1,192 @@
+[
+  {
+    "ep": 82,
+    "type": "color",
+    "layout": [
+      "red",
+      "blue",
+      "green"
+    ],
+    "prompt": "Put the banana in the green colored bowl.",
+    "gt_color": "green",
+    "gt_slot": "right",
+    "pred_color": "green",
+    "pred_slot": "middle",
+    "pred_layout": [],
+    "ok_slot": false,
+    "ok_color": true,
+    "ok_layout": null,
+    "raw": "target color: green\ntarget slot: middle"
+  },
+  {
+    "ep": 73,
+    "type": "ordinal",
+    "layout": [
+      "red",
+      "blue",
+      "green"
+    ],
+    "prompt": "Put the banana into the 2nd bowl from the right from the robot perspective.",
+    "gt_color": "blue",
+    "gt_slot": "middle",
+    "pred_color": "?",
+    "pred_slot": "?",
+    "pred_layout": [],
+    "ok_slot": false,
+    "ok_color": false,
+    "ok_layout": null,
+    "raw": "red"
+  },
+  {
+    "ep": 29,
+    "type": "relative",
+    "layout": [
+      "blue",
+      "red",
+      "green"
+    ],
+    "prompt": "Put the banana into the bowl on the left of the green bowl from the robot perspective.",
+    "gt_color": "red",
+    "gt_slot": "middle",
+    "pred_color": "?",
+    "pred_slot": "?",
+    "pred_layout": [],
+    "ok_slot": false,
+    "ok_color": false,
+    "ok_layout": null,
+    "raw": "blue"
+  },
+  {
+    "ep": 59,
+    "type": "negation",
+    "layout": [
+      "green",
+      "red",
+      "blue"
+    ],
+    "prompt": "Put the banana into the bowl that is not green and not red.",
+    "gt_color": "blue",
+    "gt_slot": "right",
+    "pred_color": "?",
+    "pred_slot": "?",
+    "pred_layout": [],
+    "ok_slot": false,
+    "ok_color": false,
+    "ok_layout": null,
+    "raw": "blue"
+  },
+  {
+    "ep": 35,
+    "type": "color",
+    "layout": [
+      "blue",
+      "red",
+      "green"
+    ],
+    "prompt": "Put the banana in the green colored bowl.",
+    "gt_color": "green",
+    "gt_slot": "right",
+    "pred_color": "green",
+    "pred_slot": "middle",
+    "pred_layout": [],
+    "ok_slot": false,
+    "ok_color": true,
+    "ok_layout": null,
+    "raw": "target color: green\ntarget slot: middle"
+  },
+  {
+    "ep": 46,
+    "type": "ordinal",
+    "layout": [
+      "green",
+      "blue",
+      "red"
+    ],
+    "prompt": "Put the banana into the 1st bowl from the right from the robot perspective.",
+    "gt_color": "red",
+    "gt_slot": "right",
+    "pred_color": "?",
+    "pred_slot": "?",
+    "pred_layout": [],
+    "ok_slot": false,
+    "ok_color": false,
+    "ok_layout": null,
+    "raw": "green"
+  },
+  {
+    "ep": 99,
+    "type": "relative",
+    "layout": [
+      "red",
+      "green",
+      "blue"
+    ],
+    "prompt": "Put the banana into the bowl on the left of the blue bowl from the robot perspective.",
+    "gt_color": "green",
+    "gt_slot": "middle",
+    "pred_color": "?",
+    "pred_slot": "?",
+    "pred_layout": [],
+    "ok_slot": false,
+    "ok_color": false,
+    "ok_layout": null,
+    "raw": "red"
+  },
+  {
+    "ep": 37,
+    "type": "negation",
+    "layout": [
+      "green",
+      "blue",
+      "red"
+    ],
+    "prompt": "Put the banana into the bowl that is not blue and not red.",
+    "gt_color": "green",
+    "gt_slot": "left",
+    "pred_color": "?",
+    "pred_slot": "?",
+    "pred_layout": [],
+    "ok_slot": false,
+    "ok_color": false,
+    "ok_layout": null,
+    "raw": "green"
+  },
+  {
+    "ep": 63,
+    "type": "color",
+    "layout": [
+      "green",
+      "red",
+      "blue"
+    ],
+    "prompt": "Put the banana in the green colored bowl.",
+    "gt_color": "green",
+    "gt_slot": "left",
+    "pred_color": "?",
+    "pred_slot": "?",
+    "pred_layout": [],
+    "ok_slot": false,
+    "ok_color": false,
+    "ok_layout": null,
+    "raw": "red"
+  },
+  {
+    "ep": 94,
+    "type": "ordinal",
+    "layout": [
+      "red",
+      "green",
+      "blue"
+    ],
+    "prompt": "Put the banana into the 3rd bowl from the right from the robot perspective.",
+    "gt_color": "red",
+    "gt_slot": "left",
+    "pred_color": "?",
+    "pred_slot": "?",
+    "pred_layout": [],
+    "ok_slot": false,
+    "ok_color": false,
+    "ok_layout": null,
+    "raw": "red"
+  }
+]

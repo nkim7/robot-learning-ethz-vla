@@ -1,0 +1,20 @@
+# Eval 1 fixed follower initial pose
+# Saved from LeRobot teleop display_data
+# Date: 2026-05-18
+# Units: LeRobot calibrated position values, use_degrees=true
+
+follower_pose:
+  shoulder_pan.pos: -1.6703296703296704
+  shoulder_lift.pos: -102.02197802197803
+  elbow_flex.pos: 92.96703296703296
+  wrist_flex.pos: 70.1978021978022
+  wrist_roll.pos: 7.34065934065934
+  gripper.pos: 2.7184466019417477
+
+ports:
+  follower: /dev/tty.usbmodem5B141138561
+  leader: /dev/tty.usbmodem5B141126211
+
+calibration:
+  follower: calibration/so101_group47/follower
+  leader: calibration/so101_group47/leader

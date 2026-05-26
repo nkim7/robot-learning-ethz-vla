@@ -1,0 +1,536 @@
+[transformers] Model config: pad_token_id must be `None` or an integer within the vocabulary (between 0 and 31999), got 128002. This may result in unexpected behavior.
+Device: mps
+
+Loading robot-learning-group47/smolvlm2-500m-vqa-lora-merged ...
+Loading weights:   0%|          | 0/489 [00:00<?, ?it/s]Loading weights:   0%|          | 1/489 [00:00<01:27,  5.59it/s]Loading weights:  25%|██▍       | 122/489 [00:00<00:00, 527.85it/s]Loading weights:  39%|███▉      | 190/489 [00:00<00:00, 586.04it/s]Loading weights:  53%|█████▎    | 258/489 [00:00<00:00, 583.41it/s]Loading weights:  75%|███████▍  | 365/489 [00:00<00:00, 738.38it/s]Loading weights: 100%|██████████| 489/489 [00:00<00:00, 727.96it/s]
+[transformers] Kwargs passed to `processor.__call__` have to be in `processor_kwargs` dict, not in `**kwargs`
+[transformers] Kwargs passed to `processor.__call__` have to be in `processor_kwargs` dict, not in `**kwargs`
+[transformers] Kwargs passed to `processor.__call__` have to be in `processor_kwargs` dict, not in `**kwargs`
+[transformers] Kwargs passed to `processor.__call__` have to be in `processor_kwargs` dict, not in `**kwargs`
+[transformers] Kwargs passed to `processor.__call__` have to be in `processor_kwargs` dict, not in `**kwargs`
+[transformers] Kwargs passed to `processor.__call__` have to be in `processor_kwargs` dict, not in `**kwargs`
+[transformers] Kwargs passed to `processor.__call__` have to be in `processor_kwargs` dict, not in `**kwargs`
+[transformers] Kwargs passed to `processor.__call__` have to be in `processor_kwargs` dict, not in `**kwargs`
+[transformers] Kwargs passed to `processor.__call__` have to be in `processor_kwargs` dict, not in `**kwargs`
+[transformers] Kwargs passed to `processor.__call__` have to be in `processor_kwargs` dict, not in `**kwargs`
+[transformers] Kwargs passed to `processor.__call__` have to be in `processor_kwargs` dict, not in `**kwargs`
+[transformers] Kwargs passed to `processor.__call__` have to be in `processor_kwargs` dict, not in `**kwargs`
+[transformers] Kwargs passed to `processor.__call__` have to be in `processor_kwargs` dict, not in `**kwargs`
+[transformers] Kwargs passed to `processor.__call__` have to be in `processor_kwargs` dict, not in `**kwargs`
+[transformers] Kwargs passed to `processor.__call__` have to be in `processor_kwargs` dict, not in `**kwargs`
+[transformers] Kwargs passed to `processor.__call__` have to be in `processor_kwargs` dict, not in `**kwargs`
+[transformers] Kwargs passed to `processor.__call__` have to be in `processor_kwargs` dict, not in `**kwargs`
+[transformers] Kwargs passed to `processor.__call__` have to be in `processor_kwargs` dict, not in `**kwargs`
+[transformers] Kwargs passed to `processor.__call__` have to be in `processor_kwargs` dict, not in `**kwargs`
+[transformers] Kwargs passed to `processor.__call__` have to be in `processor_kwargs` dict, not in `**kwargs`
+[transformers] Kwargs passed to `processor.__call__` have to be in `processor_kwargs` dict, not in `**kwargs`
+[transformers] Kwargs passed to `processor.__call__` have to be in `processor_kwargs` dict, not in `**kwargs`
+[transformers] Kwargs passed to `processor.__call__` have to be in `processor_kwargs` dict, not in `**kwargs`
+[transformers] Kwargs passed to `processor.__call__` have to be in `processor_kwargs` dict, not in `**kwargs`
+[transformers] Kwargs passed to `processor.__call__` have to be in `processor_kwargs` dict, not in `**kwargs`
+[transformers] Kwargs passed to `processor.__call__` have to be in `processor_kwargs` dict, not in `**kwargs`
+[transformers] Kwargs passed to `processor.__call__` have to be in `processor_kwargs` dict, not in `**kwargs`
+[transformers] Kwargs passed to `processor.__call__` have to be in `processor_kwargs` dict, not in `**kwargs`
+[transformers] Kwargs passed to `processor.__call__` have to be in `processor_kwargs` dict, not in `**kwargs`
+[transformers] Kwargs passed to `processor.__call__` have to be in `processor_kwargs` dict, not in `**kwargs`
+[transformers] Kwargs passed to `processor.__call__` have to be in `processor_kwargs` dict, not in `**kwargs`
+[transformers] Kwargs passed to `processor.__call__` have to be in `processor_kwargs` dict, not in `**kwargs`
+[transformers] Kwargs passed to `processor.__call__` have to be in `processor_kwargs` dict, not in `**kwargs`
+[transformers] Kwargs passed to `processor.__call__` have to be in `processor_kwargs` dict, not in `**kwargs`
+[transformers] Kwargs passed to `processor.__call__` have to be in `processor_kwargs` dict, not in `**kwargs`
+[transformers] Kwargs passed to `processor.__call__` have to be in `processor_kwargs` dict, not in `**kwargs`
+[transformers] Kwargs passed to `processor.__call__` have to be in `processor_kwargs` dict, not in `**kwargs`
+[transformers] Kwargs passed to `processor.__call__` have to be in `processor_kwargs` dict, not in `**kwargs`
+[transformers] Kwargs passed to `processor.__call__` have to be in `processor_kwargs` dict, not in `**kwargs`
+[transformers] Kwargs passed to `processor.__call__` have to be in `processor_kwargs` dict, not in `**kwargs`
+[transformers] Kwargs passed to `processor.__call__` have to be in `processor_kwargs` dict, not in `**kwargs`
+[transformers] Kwargs passed to `processor.__call__` have to be in `processor_kwargs` dict, not in `**kwargs`
+[transformers] Kwargs passed to `processor.__call__` have to be in `processor_kwargs` dict, not in `**kwargs`
+[transformers] Kwargs passed to `processor.__call__` have to be in `processor_kwargs` dict, not in `**kwargs`
+[transformers] Kwargs passed to `processor.__call__` have to be in `processor_kwargs` dict, not in `**kwargs`
+[transformers] Kwargs passed to `processor.__call__` have to be in `processor_kwargs` dict, not in `**kwargs`
+[transformers] Kwargs passed to `processor.__call__` have to be in `processor_kwargs` dict, not in `**kwargs`
+[transformers] Kwargs passed to `processor.__call__` have to be in `processor_kwargs` dict, not in `**kwargs`
+[transformers] Kwargs passed to `processor.__call__` have to be in `processor_kwargs` dict, not in `**kwargs`
+[transformers] Kwargs passed to `processor.__call__` have to be in `processor_kwargs` dict, not in `**kwargs`
+[transformers] Kwargs passed to `processor.__call__` have to be in `processor_kwargs` dict, not in `**kwargs`
+[transformers] Kwargs passed to `processor.__call__` have to be in `processor_kwargs` dict, not in `**kwargs`
+[transformers] Kwargs passed to `processor.__call__` have to be in `processor_kwargs` dict, not in `**kwargs`
+[transformers] Kwargs passed to `processor.__call__` have to be in `processor_kwargs` dict, not in `**kwargs`
+[transformers] Kwargs passed to `processor.__call__` have to be in `processor_kwargs` dict, not in `**kwargs`
+[transformers] Kwargs passed to `processor.__call__` have to be in `processor_kwargs` dict, not in `**kwargs`
+[transformers] Kwargs passed to `processor.__call__` have to be in `processor_kwargs` dict, not in `**kwargs`
+[transformers] Kwargs passed to `processor.__call__` have to be in `processor_kwargs` dict, not in `**kwargs`
+[transformers] Kwargs passed to `processor.__call__` have to be in `processor_kwargs` dict, not in `**kwargs`
+[transformers] Kwargs passed to `processor.__call__` have to be in `processor_kwargs` dict, not in `**kwargs`
+[transformers] Kwargs passed to `processor.__call__` have to be in `processor_kwargs` dict, not in `**kwargs`
+Model ready.
+
+
+──────────────────────────────────────────────────────────────────────
+  Perm: bgr  (bgr.jpeg)  [L=blue C=green R=red]
+──────────────────────────────────────────────────────────────────────
+  ✅  GT=right bowl     Pred=right bowl     | Put the banana in the red colored bowl.
+  ❌  GT=centre bowl    Pred=right bowl     | Put the banana in the green colored bowl.
+  ❌  GT=left bowl      Pred=right bowl     | Put the banana in the blue colored bowl.
+  ❌  GT=left bowl      Pred=right bowl     | Put the banana into the 1st bowl from the left from the robo
+  ❌  GT=centre bowl    Pred=right bowl     | Put the banana into the 2nd bowl from the left from the robo
+  ✅  GT=right bowl     Pred=right bowl     | Put the banana into the 3rd bowl from the left from the robo
+  ✅  GT=right bowl     Pred=right bowl     | Put the banana into the 1st bowl from the right from the rob
+  ❌  GT=centre bowl    Pred=left bowl      | Put the banana into the 2nd bowl from the right from the rob
+  ✅  GT=left bowl      Pred=left bowl      | Put the banana into the 3rd bowl from the right from the rob
+  ❌  GT=centre bowl    Pred=right bowl     | Put the banana into the middle bowl from the robot perspecti
+  ✅  GT=left bowl      Pred=left bowl      | Put the banana into the bowl on the left of the red bowl fro
+  ✅  GT=left bowl      Pred=left bowl      | Put the banana into the bowl on the left of the green bowl f
+  ✅  GT=right bowl     Pred=right bowl     | Put the banana into the bowl on the right of the green bowl 
+  ❌  GT=left bowl      Pred=None           | Put the banana into the bowl that is not red and not green.
+  ❌  GT=centre bowl    Pred=None           | Put the banana into the bowl that is not red and not blue.
+  ❌  GT=right bowl     Pred=None           | Put the banana into the bowl that is not green and not blue.
+  ❌  GT=left bowl      Pred=None           | Put the banana into the bowl that is not green and not red.
+  ❌  GT=centre bowl    Pred=None           | Put the banana into the bowl that is not blue and not red.
+  ❌  GT=right bowl     Pred=None           | Put the banana into the bowl that is not blue and not green.
+  → bgr score: 7/19
+
+──────────────────────────────────────────────────────────────────────
+  Perm: bgr  (bgr_2.jpeg)  [L=blue C=green R=red]
+──────────────────────────────────────────────────────────────────────
+  ✅  GT=right bowl     Pred=right bowl     | Put the banana in the red colored bowl.
+  ❌  GT=centre bowl    Pred=right bowl     | Put the banana in the green colored bowl.
+  ❌  GT=left bowl      Pred=right bowl     | Put the banana in the blue colored bowl.
+  ❌  GT=left bowl      Pred=right bowl     | Put the banana into the 1st bowl from the left from the robo
+  ❌  GT=centre bowl    Pred=right bowl     | Put the banana into the 2nd bowl from the left from the robo
+  ✅  GT=right bowl     Pred=right bowl     | Put the banana into the 3rd bowl from the left from the robo
+  ✅  GT=right bowl     Pred=right bowl     | Put the banana into the 1st bowl from the right from the rob
+  ❌  GT=centre bowl    Pred=left bowl      | Put the banana into the 2nd bowl from the right from the rob
+  ✅  GT=left bowl      Pred=left bowl      | Put the banana into the 3rd bowl from the right from the rob
+  ❌  GT=centre bowl    Pred=right bowl     | Put the banana into the middle bowl from the robot perspecti
+  ✅  GT=left bowl      Pred=left bowl      | Put the banana into the bowl on the left of the red bowl fro
+  ✅  GT=left bowl      Pred=left bowl      | Put the banana into the bowl on the left of the green bowl f
+  ✅  GT=right bowl     Pred=right bowl     | Put the banana into the bowl on the right of the green bowl 
+  ❌  GT=left bowl      Pred=None           | Put the banana into the bowl that is not red and not green.
+  ❌  GT=centre bowl    Pred=None           | Put the banana into the bowl that is not red and not blue.
+  ❌  GT=right bowl     Pred=None           | Put the banana into the bowl that is not green and not blue.
+  ❌  GT=left bowl      Pred=None           | Put the banana into the bowl that is not green and not red.
+  ❌  GT=centre bowl    Pred=None           | Put the banana into the bowl that is not blue and not red.
+  ❌  GT=right bowl     Pred=None           | Put the banana into the bowl that is not blue and not green.
+  → bgr score: 7/19
+
+──────────────────────────────────────────────────────────────────────
+  Perm: brg  (brg.jpeg)  [L=blue C=red R=green]
+──────────────────────────────────────────────────────────────────────
+  ❌  GT=centre bowl    Pred=right bowl     | Put the banana in the red colored bowl.
+  ✅  GT=right bowl     Pred=right bowl     | Put the banana in the green colored bowl.
+  ❌  GT=left bowl      Pred=right bowl     | Put the banana in the blue colored bowl.
+  ✅  GT=left bowl      Pred=left bowl      | Put the banana into the 1st bowl from the left from the robo
+  ❌  GT=centre bowl    Pred=right bowl     | Put the banana into the 2nd bowl from the left from the robo
+  ✅  GT=right bowl     Pred=right bowl     | Put the banana into the 3rd bowl from the left from the robo
+  ✅  GT=right bowl     Pred=right bowl     | Put the banana into the 1st bowl from the right from the rob
+  ❌  GT=centre bowl    Pred=left bowl      | Put the banana into the 2nd bowl from the right from the rob
+  ✅  GT=left bowl      Pred=left bowl      | Put the banana into the 3rd bowl from the right from the rob
+  ❌  GT=centre bowl    Pred=right bowl     | Put the banana into the middle bowl from the robot perspecti
+  ✅  GT=left bowl      Pred=left bowl      | Put the banana into the bowl on the left of the red bowl fro
+  ✅  GT=right bowl     Pred=right bowl     | Put the banana into the bowl on the right of the red bowl fr
+  ❌  GT=left bowl      Pred=None           | Put the banana into the bowl on the left of the green bowl f
+  ❌  GT=left bowl      Pred=None           | Put the banana into the bowl that is not red and not green.
+  ❌  GT=right bowl     Pred=None           | Put the banana into the bowl that is not red and not blue.
+  ❌  GT=centre bowl    Pred=None           | Put the banana into the bowl that is not green and not blue.
+  ❌  GT=left bowl      Pred=None           | Put the banana into the bowl that is not green and not red.
+  ❌  GT=right bowl     Pred=None           | Put the banana into the bowl that is not blue and not red.
+  ❌  GT=centre bowl    Pred=None           | Put the banana into the bowl that is not blue and not green.
+  → brg score: 7/19
+
+──────────────────────────────────────────────────────────────────────
+  Perm: brg  (brg_2.jpeg)  [L=blue C=red R=green]
+──────────────────────────────────────────────────────────────────────
+  ❌  GT=centre bowl    Pred=right bowl     | Put the banana in the red colored bowl.
+  ✅  GT=right bowl     Pred=right bowl     | Put the banana in the green colored bowl.
+  ❌  GT=left bowl      Pred=right bowl     | Put the banana in the blue colored bowl.
+  ❌  GT=left bowl      Pred=right bowl     | Put the banana into the 1st bowl from the left from the robo[transformers] Kwargs passed to `processor.__call__` have to be in `processor_kwargs` dict, not in `**kwargs`
+[transformers] Kwargs passed to `processor.__call__` have to be in `processor_kwargs` dict, not in `**kwargs`
+[transformers] Kwargs passed to `processor.__call__` have to be in `processor_kwargs` dict, not in `**kwargs`
+[transformers] Kwargs passed to `processor.__call__` have to be in `processor_kwargs` dict, not in `**kwargs`
+[transformers] Kwargs passed to `processor.__call__` have to be in `processor_kwargs` dict, not in `**kwargs`
+[transformers] Kwargs passed to `processor.__call__` have to be in `processor_kwargs` dict, not in `**kwargs`
+[transformers] Kwargs passed to `processor.__call__` have to be in `processor_kwargs` dict, not in `**kwargs`
+[transformers] Kwargs passed to `processor.__call__` have to be in `processor_kwargs` dict, not in `**kwargs`
+[transformers] Kwargs passed to `processor.__call__` have to be in `processor_kwargs` dict, not in `**kwargs`
+[transformers] Kwargs passed to `processor.__call__` have to be in `processor_kwargs` dict, not in `**kwargs`
+[transformers] Kwargs passed to `processor.__call__` have to be in `processor_kwargs` dict, not in `**kwargs`
+[transformers] Kwargs passed to `processor.__call__` have to be in `processor_kwargs` dict, not in `**kwargs`
+[transformers] Kwargs passed to `processor.__call__` have to be in `processor_kwargs` dict, not in `**kwargs`
+[transformers] Kwargs passed to `processor.__call__` have to be in `processor_kwargs` dict, not in `**kwargs`
+[transformers] Kwargs passed to `processor.__call__` have to be in `processor_kwargs` dict, not in `**kwargs`
+[transformers] Kwargs passed to `processor.__call__` have to be in `processor_kwargs` dict, not in `**kwargs`
+[transformers] Kwargs passed to `processor.__call__` have to be in `processor_kwargs` dict, not in `**kwargs`
+[transformers] Kwargs passed to `processor.__call__` have to be in `processor_kwargs` dict, not in `**kwargs`
+[transformers] Kwargs passed to `processor.__call__` have to be in `processor_kwargs` dict, not in `**kwargs`
+[transformers] Kwargs passed to `processor.__call__` have to be in `processor_kwargs` dict, not in `**kwargs`
+[transformers] Kwargs passed to `processor.__call__` have to be in `processor_kwargs` dict, not in `**kwargs`
+[transformers] Kwargs passed to `processor.__call__` have to be in `processor_kwargs` dict, not in `**kwargs`
+[transformers] Kwargs passed to `processor.__call__` have to be in `processor_kwargs` dict, not in `**kwargs`
+[transformers] Kwargs passed to `processor.__call__` have to be in `processor_kwargs` dict, not in `**kwargs`
+[transformers] Kwargs passed to `processor.__call__` have to be in `processor_kwargs` dict, not in `**kwargs`
+[transformers] Kwargs passed to `processor.__call__` have to be in `processor_kwargs` dict, not in `**kwargs`
+[transformers] Kwargs passed to `processor.__call__` have to be in `processor_kwargs` dict, not in `**kwargs`
+[transformers] Kwargs passed to `processor.__call__` have to be in `processor_kwargs` dict, not in `**kwargs`
+[transformers] Kwargs passed to `processor.__call__` have to be in `processor_kwargs` dict, not in `**kwargs`
+[transformers] Kwargs passed to `processor.__call__` have to be in `processor_kwargs` dict, not in `**kwargs`
+[transformers] Kwargs passed to `processor.__call__` have to be in `processor_kwargs` dict, not in `**kwargs`
+[transformers] Kwargs passed to `processor.__call__` have to be in `processor_kwargs` dict, not in `**kwargs`
+[transformers] Kwargs passed to `processor.__call__` have to be in `processor_kwargs` dict, not in `**kwargs`
+[transformers] Kwargs passed to `processor.__call__` have to be in `processor_kwargs` dict, not in `**kwargs`
+[transformers] Kwargs passed to `processor.__call__` have to be in `processor_kwargs` dict, not in `**kwargs`
+[transformers] Kwargs passed to `processor.__call__` have to be in `processor_kwargs` dict, not in `**kwargs`
+[transformers] Kwargs passed to `processor.__call__` have to be in `processor_kwargs` dict, not in `**kwargs`
+[transformers] Kwargs passed to `processor.__call__` have to be in `processor_kwargs` dict, not in `**kwargs`
+[transformers] Kwargs passed to `processor.__call__` have to be in `processor_kwargs` dict, not in `**kwargs`
+[transformers] Kwargs passed to `processor.__call__` have to be in `processor_kwargs` dict, not in `**kwargs`
+[transformers] Kwargs passed to `processor.__call__` have to be in `processor_kwargs` dict, not in `**kwargs`
+[transformers] Kwargs passed to `processor.__call__` have to be in `processor_kwargs` dict, not in `**kwargs`
+[transformers] Kwargs passed to `processor.__call__` have to be in `processor_kwargs` dict, not in `**kwargs`
+[transformers] Kwargs passed to `processor.__call__` have to be in `processor_kwargs` dict, not in `**kwargs`
+[transformers] Kwargs passed to `processor.__call__` have to be in `processor_kwargs` dict, not in `**kwargs`
+[transformers] Kwargs passed to `processor.__call__` have to be in `processor_kwargs` dict, not in `**kwargs`
+[transformers] Kwargs passed to `processor.__call__` have to be in `processor_kwargs` dict, not in `**kwargs`
+[transformers] Kwargs passed to `processor.__call__` have to be in `processor_kwargs` dict, not in `**kwargs`
+[transformers] Kwargs passed to `processor.__call__` have to be in `processor_kwargs` dict, not in `**kwargs`
+[transformers] Kwargs passed to `processor.__call__` have to be in `processor_kwargs` dict, not in `**kwargs`
+[transformers] Kwargs passed to `processor.__call__` have to be in `processor_kwargs` dict, not in `**kwargs`
+[transformers] Kwargs passed to `processor.__call__` have to be in `processor_kwargs` dict, not in `**kwargs`
+[transformers] Kwargs passed to `processor.__call__` have to be in `processor_kwargs` dict, not in `**kwargs`
+[transformers] Kwargs passed to `processor.__call__` have to be in `processor_kwargs` dict, not in `**kwargs`
+[transformers] Kwargs passed to `processor.__call__` have to be in `processor_kwargs` dict, not in `**kwargs`
+[transformers] Kwargs passed to `processor.__call__` have to be in `processor_kwargs` dict, not in `**kwargs`
+[transformers] Kwargs passed to `processor.__call__` have to be in `processor_kwargs` dict, not in `**kwargs`
+[transformers] Kwargs passed to `processor.__call__` have to be in `processor_kwargs` dict, not in `**kwargs`
+[transformers] Kwargs passed to `processor.__call__` have to be in `processor_kwargs` dict, not in `**kwargs`
+[transformers] Kwargs passed to `processor.__call__` have to be in `processor_kwargs` dict, not in `**kwargs`
+[transformers] Kwargs passed to `processor.__call__` have to be in `processor_kwargs` dict, not in `**kwargs`
+[transformers] Kwargs passed to `processor.__call__` have to be in `processor_kwargs` dict, not in `**kwargs`
+[transformers] Kwargs passed to `processor.__call__` have to be in `processor_kwargs` dict, not in `**kwargs`
+[transformers] Kwargs passed to `processor.__call__` have to be in `processor_kwargs` dict, not in `**kwargs`
+
+  ❌  GT=centre bowl    Pred=right bowl     | Put the banana into the 2nd bowl from the left from the robo
+  ✅  GT=right bowl     Pred=right bowl     | Put the banana into the 3rd bowl from the left from the robo
+  ✅  GT=right bowl     Pred=right bowl     | Put the banana into the 1st bowl from the right from the rob
+  ❌  GT=centre bowl    Pred=left bowl      | Put the banana into the 2nd bowl from the right from the rob
+  ✅  GT=left bowl      Pred=left bowl      | Put the banana into the 3rd bowl from the right from the rob
+  ❌  GT=centre bowl    Pred=right bowl     | Put the banana into the middle bowl from the robot perspecti
+  ✅  GT=left bowl      Pred=left bowl      | Put the banana into the bowl on the left of the red bowl fro
+  ✅  GT=right bowl     Pred=right bowl     | Put the banana into the bowl on the right of the red bowl fr
+  ✅  GT=left bowl      Pred=left bowl      | Put the banana into the bowl on the left of the green bowl f
+  ❌  GT=left bowl      Pred=None           | Put the banana into the bowl that is not red and not green.
+  ❌  GT=right bowl     Pred=None           | Put the banana into the bowl that is not red and not blue.
+  ❌  GT=centre bowl    Pred=None           | Put the banana into the bowl that is not green and not blue.
+  ❌  GT=left bowl      Pred=None           | Put the banana into the bowl that is not green and not red.
+  ❌  GT=right bowl     Pred=None           | Put the banana into the bowl that is not blue and not red.
+  ❌  GT=centre bowl    Pred=None           | Put the banana into the bowl that is not blue and not green.
+  → brg score: 7/19
+
+──────────────────────────────────────────────────────────────────────
+  Perm: gbr  (gbr.jpeg)  [L=green C=blue R=red]
+──────────────────────────────────────────────────────────────────────
+  ✅  GT=right bowl     Pred=right bowl     | Put the banana in the red colored bowl.
+  ❌  GT=left bowl      Pred=right bowl     | Put the banana in the green colored bowl.
+  ❌  GT=centre bowl    Pred=right bowl     | Put the banana in the blue colored bowl.
+  ✅  GT=left bowl      Pred=left bowl      | Put the banana into the 1st bowl from the left from the robo
+  ❌  GT=centre bowl    Pred=right bowl     | Put the banana into the 2nd bowl from the left from the robo
+  ✅  GT=right bowl     Pred=right bowl     | Put the banana into the 3rd bowl from the left from the robo
+  ✅  GT=right bowl     Pred=right bowl     | Put the banana into the 1st bowl from the right from the rob
+  ❌  GT=centre bowl    Pred=left bowl      | Put the banana into the 2nd bowl from the right from the rob
+  ✅  GT=left bowl      Pred=left bowl      | Put the banana into the 3rd bowl from the right from the rob
+  ❌  GT=centre bowl    Pred=right bowl     | Put the banana into the middle bowl from the robot perspecti
+  ❌  GT=left bowl      Pred=None           | Put the banana into the bowl on the left of the red bowl fro
+  ❌  GT=centre bowl    Pred=right bowl     | Put the banana into the bowl on the right of the green bowl 
+  ❌  GT=centre bowl    Pred=None           | Put the banana into the bowl that is not red and not green.
+  ❌  GT=left bowl      Pred=None           | Put the banana into the bowl that is not red and not blue.
+  ❌  GT=right bowl     Pred=None           | Put the banana into the bowl that is not green and not blue.
+  ❌  GT=centre bowl    Pred=None           | Put the banana into the bowl that is not green and not red.
+  ❌  GT=left bowl      Pred=None           | Put the banana into the bowl that is not blue and not red.
+  ❌  GT=right bowl     Pred=None           | Put the banana into the bowl that is not blue and not green.
+  → gbr score: 5/18
+
+──────────────────────────────────────────────────────────────────────
+  Perm: gbr  (gbr_2.jpeg)  [L=green C=blue R=red]
+──────────────────────────────────────────────────────────────────────
+  ✅  GT=right bowl     Pred=right bowl     | Put the banana in the red colored bowl.
+  ❌  GT=left bowl      Pred=right bowl     | Put the banana in the green colored bowl.
+  ❌  GT=centre bowl    Pred=right bowl     | Put the banana in the blue colored bowl.
+  ✅  GT=left bowl      Pred=left bowl      | Put the banana into the 1st bowl from the left from the robo
+  ❌  GT=centre bowl    Pred=right bowl     | Put the banana into the 2nd bowl from the left from the robo
+  ✅  GT=right bowl     Pred=right bowl     | Put the banana into the 3rd bowl from the left from the robo
+  ✅  GT=right bowl     Pred=right bowl     | Put the banana into the 1st bowl from the right from the rob
+  ❌  GT=centre bowl    Pred=left bowl      | Put the banana into the 2nd bowl from the right from the rob
+  ✅  GT=left bowl      Pred=left bowl      | Put the banana into the 3rd bowl from the right from the rob
+  ❌  GT=centre bowl    Pred=right bowl     | Put the banana into the middle bowl from the robot perspecti
+  ❌  GT=left bowl      Pred=None           | Put the banana into the bowl on the left of the red bowl fro
+  ❌  GT=centre bowl    Pred=None           | Put the banana into the bowl on the right of the green bowl 
+  ❌  GT=centre bowl    Pred=None           | Put the banana into the bowl that is not red and not green.
+  ❌  GT=left bowl      Pred=None           | Put the banana into the bowl that is not red and not blue.
+  ❌  GT=right bowl     Pred=None           | Put the banana into the bowl that is not green and not blue.
+  ❌  GT=centre bowl    Pred=None           | Put the banana into the bowl that is not green and not red.
+  ❌  GT=left bowl      Pred=None           | Put the banana into the bowl that is not blue and not red.
+  ❌  GT=right bowl     Pred=None           | Put the banana into the bowl that is not blue and not green.
+  → gbr score: 5/18
+
+──────────────────────────────────────────────────────────────────────
+  Perm: grb  (grb.jpeg)  [L=green C=red R=blue]
+──────────────────────────────────────────────────────────────────────
+  ❌  GT=centre bowl    Pred=right bowl     | Put the banana in the red colored bowl.
+  ❌  GT=left bowl      Pred=right bowl     | Put the banana in the green colored bowl.
+  ✅  GT=right bowl     Pred=right bowl     | Put the banana in the blue colored bowl.
+  ✅  GT=left bowl      Pred=left bowl      | Put the banana into the 1st bowl from the left from the robo
+  ❌  GT=centre bowl    Pred=right bowl     | Put the banana into the 2nd bowl from the left from the robo
+  ✅  GT=right bowl     Pred=right bowl     | Put the banana into the 3rd bowl from the left from the robo
+  ✅  GT=right bowl     Pred=right bowl     | Put the banana into the 1st bowl from the right from the rob
+  ❌  GT=centre bowl    Pred=left bowl      | Put the banana into the 2nd bowl from the right from the rob
+  ✅  GT=left bowl      Pred=left bowl      | Put the banana into the 3rd bowl from the right from the rob
+  ❌  GT=centre bowl    Pred=right bowl     | Put the banana into the middle bowl from the robot perspecti
+  ✅  GT=left bowl      Pred=left bowl      | Put the banana into the bowl on the left of the red bowl fro
+  ✅  GT=right bowl     Pred=right bowl     | Put the banana into the bowl on the right of the red bowl fr
+  ❌  GT=centre bowl    Pred=right bowl     | Put the banana into the bowl on the right of the green bowl [transformers] Kwargs passed to `processor.__call__` have to be in `processor_kwargs` dict, not in `**kwargs`
+[transformers] Kwargs passed to `processor.__call__` have to be in `processor_kwargs` dict, not in `**kwargs`
+[transformers] Kwargs passed to `processor.__call__` have to be in `processor_kwargs` dict, not in `**kwargs`
+[transformers] Kwargs passed to `processor.__call__` have to be in `processor_kwargs` dict, not in `**kwargs`
+[transformers] Kwargs passed to `processor.__call__` have to be in `processor_kwargs` dict, not in `**kwargs`
+[transformers] Kwargs passed to `processor.__call__` have to be in `processor_kwargs` dict, not in `**kwargs`
+[transformers] Kwargs passed to `processor.__call__` have to be in `processor_kwargs` dict, not in `**kwargs`
+[transformers] Kwargs passed to `processor.__call__` have to be in `processor_kwargs` dict, not in `**kwargs`
+[transformers] Kwargs passed to `processor.__call__` have to be in `processor_kwargs` dict, not in `**kwargs`
+[transformers] Kwargs passed to `processor.__call__` have to be in `processor_kwargs` dict, not in `**kwargs`
+[transformers] Kwargs passed to `processor.__call__` have to be in `processor_kwargs` dict, not in `**kwargs`
+[transformers] Kwargs passed to `processor.__call__` have to be in `processor_kwargs` dict, not in `**kwargs`
+[transformers] Kwargs passed to `processor.__call__` have to be in `processor_kwargs` dict, not in `**kwargs`
+[transformers] Kwargs passed to `processor.__call__` have to be in `processor_kwargs` dict, not in `**kwargs`
+[transformers] Kwargs passed to `processor.__call__` have to be in `processor_kwargs` dict, not in `**kwargs`
+[transformers] Kwargs passed to `processor.__call__` have to be in `processor_kwargs` dict, not in `**kwargs`
+[transformers] Kwargs passed to `processor.__call__` have to be in `processor_kwargs` dict, not in `**kwargs`
+[transformers] Kwargs passed to `processor.__call__` have to be in `processor_kwargs` dict, not in `**kwargs`
+[transformers] Kwargs passed to `processor.__call__` have to be in `processor_kwargs` dict, not in `**kwargs`
+[transformers] Kwargs passed to `processor.__call__` have to be in `processor_kwargs` dict, not in `**kwargs`
+[transformers] Kwargs passed to `processor.__call__` have to be in `processor_kwargs` dict, not in `**kwargs`
+[transformers] Kwargs passed to `processor.__call__` have to be in `processor_kwargs` dict, not in `**kwargs`
+[transformers] Kwargs passed to `processor.__call__` have to be in `processor_kwargs` dict, not in `**kwargs`
+[transformers] Kwargs passed to `processor.__call__` have to be in `processor_kwargs` dict, not in `**kwargs`
+[transformers] Kwargs passed to `processor.__call__` have to be in `processor_kwargs` dict, not in `**kwargs`
+[transformers] Kwargs passed to `processor.__call__` have to be in `processor_kwargs` dict, not in `**kwargs`
+[transformers] Kwargs passed to `processor.__call__` have to be in `processor_kwargs` dict, not in `**kwargs`
+[transformers] Kwargs passed to `processor.__call__` have to be in `processor_kwargs` dict, not in `**kwargs`
+[transformers] Kwargs passed to `processor.__call__` have to be in `processor_kwargs` dict, not in `**kwargs`
+[transformers] Kwargs passed to `processor.__call__` have to be in `processor_kwargs` dict, not in `**kwargs`
+[transformers] Kwargs passed to `processor.__call__` have to be in `processor_kwargs` dict, not in `**kwargs`
+[transformers] Kwargs passed to `processor.__call__` have to be in `processor_kwargs` dict, not in `**kwargs`
+[transformers] Kwargs passed to `processor.__call__` have to be in `processor_kwargs` dict, not in `**kwargs`
+[transformers] Kwargs passed to `processor.__call__` have to be in `processor_kwargs` dict, not in `**kwargs`
+[transformers] Kwargs passed to `processor.__call__` have to be in `processor_kwargs` dict, not in `**kwargs`
+[transformers] Kwargs passed to `processor.__call__` have to be in `processor_kwargs` dict, not in `**kwargs`
+[transformers] Kwargs passed to `processor.__call__` have to be in `processor_kwargs` dict, not in `**kwargs`
+[transformers] Kwargs passed to `processor.__call__` have to be in `processor_kwargs` dict, not in `**kwargs`
+[transformers] Kwargs passed to `processor.__call__` have to be in `processor_kwargs` dict, not in `**kwargs`
+[transformers] Kwargs passed to `processor.__call__` have to be in `processor_kwargs` dict, not in `**kwargs`
+[transformers] Kwargs passed to `processor.__call__` have to be in `processor_kwargs` dict, not in `**kwargs`
+[transformers] Kwargs passed to `processor.__call__` have to be in `processor_kwargs` dict, not in `**kwargs`
+[transformers] Kwargs passed to `processor.__call__` have to be in `processor_kwargs` dict, not in `**kwargs`
+[transformers] Kwargs passed to `processor.__call__` have to be in `processor_kwargs` dict, not in `**kwargs`
+[transformers] Kwargs passed to `processor.__call__` have to be in `processor_kwargs` dict, not in `**kwargs`
+[transformers] Kwargs passed to `processor.__call__` have to be in `processor_kwargs` dict, not in `**kwargs`
+[transformers] Kwargs passed to `processor.__call__` have to be in `processor_kwargs` dict, not in `**kwargs`
+[transformers] Kwargs passed to `processor.__call__` have to be in `processor_kwargs` dict, not in `**kwargs`
+[transformers] Kwargs passed to `processor.__call__` have to be in `processor_kwargs` dict, not in `**kwargs`
+[transformers] Kwargs passed to `processor.__call__` have to be in `processor_kwargs` dict, not in `**kwargs`
+[transformers] Kwargs passed to `processor.__call__` have to be in `processor_kwargs` dict, not in `**kwargs`
+[transformers] Kwargs passed to `processor.__call__` have to be in `processor_kwargs` dict, not in `**kwargs`
+[transformers] Kwargs passed to `processor.__call__` have to be in `processor_kwargs` dict, not in `**kwargs`
+[transformers] Kwargs passed to `processor.__call__` have to be in `processor_kwargs` dict, not in `**kwargs`
+[transformers] Kwargs passed to `processor.__call__` have to be in `processor_kwargs` dict, not in `**kwargs`
+[transformers] Kwargs passed to `processor.__call__` have to be in `processor_kwargs` dict, not in `**kwargs`
+[transformers] Kwargs passed to `processor.__call__` have to be in `processor_kwargs` dict, not in `**kwargs`
+[transformers] Kwargs passed to `processor.__call__` have to be in `processor_kwargs` dict, not in `**kwargs`
+[transformers] Kwargs passed to `processor.__call__` have to be in `processor_kwargs` dict, not in `**kwargs`
+[transformers] Kwargs passed to `processor.__call__` have to be in `processor_kwargs` dict, not in `**kwargs`
+[transformers] Kwargs passed to `processor.__call__` have to be in `processor_kwargs` dict, not in `**kwargs`
+
+  ❌  GT=right bowl     Pred=None           | Put the banana into the bowl that is not red and not green.
+  ❌  GT=left bowl      Pred=None           | Put the banana into the bowl that is not red and not blue.
+  ❌  GT=centre bowl    Pred=None           | Put the banana into the bowl that is not green and not blue.
+  ❌  GT=right bowl     Pred=None           | Put the banana into the bowl that is not green and not red.
+  ❌  GT=left bowl      Pred=None           | Put the banana into the bowl that is not blue and not red.
+  ❌  GT=centre bowl    Pred=None           | Put the banana into the bowl that is not blue and not green.
+  → grb score: 7/19
+
+──────────────────────────────────────────────────────────────────────
+  Perm: grb  (grb_2.jpeg)  [L=green C=red R=blue]
+──────────────────────────────────────────────────────────────────────
+  ❌  GT=centre bowl    Pred=right bowl     | Put the banana in the red colored bowl.
+  ❌  GT=left bowl      Pred=right bowl     | Put the banana in the green colored bowl.
+  ✅  GT=right bowl     Pred=right bowl     | Put the banana in the blue colored bowl.
+  ❌  GT=left bowl      Pred=right bowl     | Put the banana into the 1st bowl from the left from the robo
+  ❌  GT=centre bowl    Pred=right bowl     | Put the banana into the 2nd bowl from the left from the robo
+  ✅  GT=right bowl     Pred=right bowl     | Put the banana into the 3rd bowl from the left from the robo
+  ✅  GT=right bowl     Pred=right bowl     | Put the banana into the 1st bowl from the right from the rob
+  ❌  GT=centre bowl    Pred=left bowl      | Put the banana into the 2nd bowl from the right from the rob
+  ✅  GT=left bowl      Pred=left bowl      | Put the banana into the 3rd bowl from the right from the rob
+  ❌  GT=centre bowl    Pred=right bowl     | Put the banana into the middle bowl from the robot perspecti
+  ✅  GT=left bowl      Pred=left bowl      | Put the banana into the bowl on the left of the red bowl fro
+  ✅  GT=right bowl     Pred=right bowl     | Put the banana into the bowl on the right of the red bowl fr
+  ❌  GT=centre bowl    Pred=right bowl     | Put the banana into the bowl on the right of the green bowl 
+  ❌  GT=right bowl     Pred=None           | Put the banana into the bowl that is not red and not green.
+  ❌  GT=left bowl      Pred=None           | Put the banana into the bowl that is not red and not blue.
+  ❌  GT=centre bowl    Pred=None           | Put the banana into the bowl that is not green and not blue.
+  ❌  GT=right bowl     Pred=None           | Put the banana into the bowl that is not green and not red.
+  ❌  GT=left bowl      Pred=None           | Put the banana into the bowl that is not blue and not red.
+  ❌  GT=centre bowl    Pred=None           | Put the banana into the bowl that is not blue and not green.
+  → grb score: 6/19
+
+──────────────────────────────────────────────────────────────────────
+  Perm: rbg  (rbg.jpeg)  [L=red C=blue R=green]
+──────────────────────────────────────────────────────────────────────
+  ✅  GT=left bowl      Pred=left bowl      | Put the banana in the red colored bowl.
+  ✅  GT=right bowl     Pred=right bowl     | Put the banana in the green colored bowl.
+  ❌  GT=centre bowl    Pred=right bowl     | Put the banana in the blue colored bowl.
+  ✅  GT=left bowl      Pred=left bowl      | Put the banana into the 1st bowl from the left from the robo
+  ❌  GT=centre bowl    Pred=right bowl     | Put the banana into the 2nd bowl from the left from the robo
+  ✅  GT=right bowl     Pred=right bowl     | Put the banana into the 3rd bowl from the left from the robo
+  ✅  GT=right bowl     Pred=right bowl     | Put the banana into the 1st bowl from the right from the rob
+  ❌  GT=centre bowl    Pred=left bowl      | Put the banana into the 2nd bowl from the right from the rob
+  ✅  GT=left bowl      Pred=left bowl      | Put the banana into the 3rd bowl from the right from the rob
+  ❌  GT=centre bowl    Pred=right bowl     | Put the banana into the middle bowl from the robot perspecti
+  ❌  GT=centre bowl    Pred=None           | Put the banana into the bowl on the right of the red bowl fr
+  ❌  GT=left bowl      Pred=None           | Put the banana into the bowl on the left of the green bowl f
+  ❌  GT=centre bowl    Pred=None           | Put the banana into the bowl that is not red and not green.
+  ❌  GT=right bowl     Pred=None           | Put the banana into the bowl that is not red and not blue.
+  ❌  GT=left bowl      Pred=None           | Put the banana into the bowl that is not green and not blue.
+  ❌  GT=centre bowl    Pred=None           | Put the banana into the bowl that is not green and not red.
+  ❌  GT=right bowl     Pred=None           | Put the banana into the bowl that is not blue and not red.
+  ❌  GT=left bowl      Pred=None           | Put the banana into the bowl that is not blue and not green.
+  → rbg score: 6/18
+
+──────────────────────────────────────────────────────────────────────
+  Perm: rbg  (rbg_2.jpeg)  [L=red C=blue R=green]
+──────────────────────────────────────────────────────────────────────
+  ✅  GT=left bowl      Pred=left bowl      | Put the banana in the red colored bowl.
+  ✅  GT=right bowl     Pred=right bowl     | Put the banana in the green colored bowl.
+  ❌  GT=centre bowl    Pred=right bowl     | Put the banana in the blue colored bowl.
+  ✅  GT=left bowl      Pred=left bowl      | Put the banana into the 1st bowl from the left from the robo
+  ❌  GT=centre bowl    Pred=right bowl     | Put the banana into the 2nd bowl from the left from the robo
+  ✅  GT=right bowl     Pred=right bowl     | Put the banana into the 3rd bowl from the left from the robo
+  ✅  GT=right bowl     Pred=right bowl     | Put the banana into the 1st bowl from the right from the rob
+  ❌  GT=centre bowl    Pred=left bowl      | Put the banana into the 2nd bowl from the right from the rob
+  ✅  GT=left bowl      Pred=left bowl      | Put the banana into the 3rd bowl from the right from the rob
+  ❌  GT=centre bowl    Pred=right bowl     | Put the banana into the middle bowl from the robot perspecti
+  ❌  GT=centre bowl    Pred=None           | Put the banana into the bowl on the right of the red bowl fr
+  ❌  GT=left bowl      Pred=None           | Put the banana into the bowl on the left of the green bowl f
+  ❌  GT=centre bowl    Pred=None           | Put the banana into the bowl that is not red and not green.
+  ❌  GT=right bowl     Pred=None           | Put the banana into the bowl that is not red and not blue.
+  ❌  GT=left bowl      Pred=None           | Put the banana into the bowl that is not green and not blue.
+  ❌  GT=centre bowl    Pred=None           | Put the banana into the bowl that is not green and not red.
+  ❌  GT=right bowl     Pred=None           | Put the banana into the bowl that is not blue and not red.
+  ❌  GT=left bowl      Pred=None           | Put the banana into the bowl that is not blue and not green.
+  → rbg score: 6/18
+
+──────────────────────────────────────────────────────────────────────
+  Perm: rgb  (rgb.jpeg)  [L=red C=green R=blue]
+──────────────────────────────────────────────────────────────────────[transformers] Kwargs passed to `processor.__call__` have to be in `processor_kwargs` dict, not in `**kwargs`
+[transformers] Kwargs passed to `processor.__call__` have to be in `processor_kwargs` dict, not in `**kwargs`
+[transformers] Kwargs passed to `processor.__call__` have to be in `processor_kwargs` dict, not in `**kwargs`
+[transformers] Kwargs passed to `processor.__call__` have to be in `processor_kwargs` dict, not in `**kwargs`
+[transformers] Kwargs passed to `processor.__call__` have to be in `processor_kwargs` dict, not in `**kwargs`
+[transformers] Kwargs passed to `processor.__call__` have to be in `processor_kwargs` dict, not in `**kwargs`
+[transformers] Kwargs passed to `processor.__call__` have to be in `processor_kwargs` dict, not in `**kwargs`
+[transformers] Kwargs passed to `processor.__call__` have to be in `processor_kwargs` dict, not in `**kwargs`
+[transformers] Kwargs passed to `processor.__call__` have to be in `processor_kwargs` dict, not in `**kwargs`
+[transformers] Kwargs passed to `processor.__call__` have to be in `processor_kwargs` dict, not in `**kwargs`
+[transformers] Kwargs passed to `processor.__call__` have to be in `processor_kwargs` dict, not in `**kwargs`
+[transformers] Kwargs passed to `processor.__call__` have to be in `processor_kwargs` dict, not in `**kwargs`
+[transformers] Kwargs passed to `processor.__call__` have to be in `processor_kwargs` dict, not in `**kwargs`
+[transformers] Kwargs passed to `processor.__call__` have to be in `processor_kwargs` dict, not in `**kwargs`
+[transformers] Kwargs passed to `processor.__call__` have to be in `processor_kwargs` dict, not in `**kwargs`
+[transformers] Kwargs passed to `processor.__call__` have to be in `processor_kwargs` dict, not in `**kwargs`
+[transformers] Kwargs passed to `processor.__call__` have to be in `processor_kwargs` dict, not in `**kwargs`
+[transformers] Kwargs passed to `processor.__call__` have to be in `processor_kwargs` dict, not in `**kwargs`
+[transformers] Kwargs passed to `processor.__call__` have to be in `processor_kwargs` dict, not in `**kwargs`
+[transformers] Kwargs passed to `processor.__call__` have to be in `processor_kwargs` dict, not in `**kwargs`
+[transformers] Kwargs passed to `processor.__call__` have to be in `processor_kwargs` dict, not in `**kwargs`
+[transformers] Kwargs passed to `processor.__call__` have to be in `processor_kwargs` dict, not in `**kwargs`
+[transformers] Kwargs passed to `processor.__call__` have to be in `processor_kwargs` dict, not in `**kwargs`
+[transformers] Kwargs passed to `processor.__call__` have to be in `processor_kwargs` dict, not in `**kwargs`
+[transformers] Kwargs passed to `processor.__call__` have to be in `processor_kwargs` dict, not in `**kwargs`
+[transformers] Kwargs passed to `processor.__call__` have to be in `processor_kwargs` dict, not in `**kwargs`
+[transformers] Kwargs passed to `processor.__call__` have to be in `processor_kwargs` dict, not in `**kwargs`
+[transformers] Kwargs passed to `processor.__call__` have to be in `processor_kwargs` dict, not in `**kwargs`
+[transformers] Kwargs passed to `processor.__call__` have to be in `processor_kwargs` dict, not in `**kwargs`
+[transformers] Kwargs passed to `processor.__call__` have to be in `processor_kwargs` dict, not in `**kwargs`
+[transformers] Kwargs passed to `processor.__call__` have to be in `processor_kwargs` dict, not in `**kwargs`
+[transformers] Kwargs passed to `processor.__call__` have to be in `processor_kwargs` dict, not in `**kwargs`
+[transformers] Kwargs passed to `processor.__call__` have to be in `processor_kwargs` dict, not in `**kwargs`
+[transformers] Kwargs passed to `processor.__call__` have to be in `processor_kwargs` dict, not in `**kwargs`
+[transformers] Kwargs passed to `processor.__call__` have to be in `processor_kwargs` dict, not in `**kwargs`
+[transformers] Kwargs passed to `processor.__call__` have to be in `processor_kwargs` dict, not in `**kwargs`
+[transformers] Kwargs passed to `processor.__call__` have to be in `processor_kwargs` dict, not in `**kwargs`
+[transformers] Kwargs passed to `processor.__call__` have to be in `processor_kwargs` dict, not in `**kwargs`
+
+  ✅  GT=left bowl      Pred=left bowl      | Put the banana in the red colored bowl.
+  ❌  GT=centre bowl    Pred=right bowl     | Put the banana in the green colored bowl.
+  ✅  GT=right bowl     Pred=right bowl     | Put the banana in the blue colored bowl.
+  ❌  GT=left bowl      Pred=right bowl     | Put the banana into the 1st bowl from the left from the robo
+  ❌  GT=centre bowl    Pred=right bowl     | Put the banana into the 2nd bowl from the left from the robo
+  ✅  GT=right bowl     Pred=right bowl     | Put the banana into the 3rd bowl from the left from the robo
+  ✅  GT=right bowl     Pred=right bowl     | Put the banana into the 1st bowl from the right from the rob
+  ❌  GT=centre bowl    Pred=left bowl      | Put the banana into the 2nd bowl from the right from the rob
+  ✅  GT=left bowl      Pred=left bowl      | Put the banana into the 3rd bowl from the right from the rob
+  ❌  GT=centre bowl    Pred=right bowl     | Put the banana into the middle bowl from the robot perspecti
+  ❌  GT=centre bowl    Pred=right bowl     | Put the banana into the bowl on the right of the red bowl fr
+  ❌  GT=left bowl      Pred=None           | Put the banana into the bowl on the left of the green bowl f
+  ✅  GT=right bowl     Pred=right bowl     | Put the banana into the bowl on the right of the green bowl 
+  ❌  GT=right bowl     Pred=None           | Put the banana into the bowl that is not red and not green.
+  ❌  GT=centre bowl    Pred=None           | Put the banana into the bowl that is not red and not blue.
+  ❌  GT=left bowl      Pred=None           | Put the banana into the bowl that is not green and not blue.
+  ✅  GT=right bowl     Pred=right bowl     | Put the banana into the bowl that is not green and not red.
+  ❌  GT=centre bowl    Pred=None           | Put the banana into the bowl that is not blue and not red.
+  ❌  GT=left bowl      Pred=None           | Put the banana into the bowl that is not blue and not green.
+  → rgb score: 7/19
+
+──────────────────────────────────────────────────────────────────────
+  Perm: rgb  (rgb_2.jpeg)  [L=red C=green R=blue]
+──────────────────────────────────────────────────────────────────────
+  ❌  GT=left bowl      Pred=right bowl     | Put the banana in the red colored bowl.
+  ❌  GT=centre bowl    Pred=right bowl     | Put the banana in the green colored bowl.
+  ✅  GT=right bowl     Pred=right bowl     | Put the banana in the blue colored bowl.
+  ❌  GT=left bowl      Pred=right bowl     | Put the banana into the 1st bowl from the left from the robo
+  ❌  GT=centre bowl    Pred=right bowl     | Put the banana into the 2nd bowl from the left from the robo
+  ✅  GT=right bowl     Pred=right bowl     | Put the banana into the 3rd bowl from the left from the robo
+  ✅  GT=right bowl     Pred=right bowl     | Put the banana into the 1st bowl from the right from the rob
+  ❌  GT=centre bowl    Pred=left bowl      | Put the banana into the 2nd bowl from the right from the rob
+  ✅  GT=left bowl      Pred=left bowl      | Put the banana into the 3rd bowl from the right from the rob
+  ❌  GT=centre bowl    Pred=right bowl     | Put the banana into the middle bowl from the robot perspecti
+  ❌  GT=centre bowl    Pred=right bowl     | Put the banana into the bowl on the right of the red bowl fr
+  ❌  GT=left bowl      Pred=None           | Put the banana into the bowl on the left of the green bowl f
+  ✅  GT=right bowl     Pred=right bowl     | Put the banana into the bowl on the right of the green bowl 
+  ❌  GT=right bowl     Pred=None           | Put the banana into the bowl that is not red and not green.
+  ❌  GT=centre bowl    Pred=None           | Put the banana into the bowl that is not red and not blue.
+  ❌  GT=left bowl      Pred=None           | Put the banana into the bowl that is not green and not blue.
+  ❌  GT=right bowl     Pred=None           | Put the banana into the bowl that is not green and not red.
+  ❌  GT=centre bowl    Pred=None           | Put the banana into the bowl that is not blue and not red.
+  ❌  GT=left bowl      Pred=None           | Put the banana into the bowl that is not blue and not green.
+  → rgb score: 5/19
+
+══════════════════════════════════════════════════════════════════════
+  OVERALL: 75/224 = 33.5%
+══════════════════════════════════════════════════════════════════════
+
+  By category:
+    Color (3)             : 15/36 = 42%
+    Ordinal-left (3)      : 18/36 = 50%
+    Ordinal-right (3)     : 24/36 = 67%
+    Middle (1)            : 0/12 = 0%
+    Relative pos (4)      : 17/32 = 53%
+    Negation (6)          : 1/72 = 1%
+
+  By permutation:
+    bgr: 14/38 = 37%
+    brg: 14/38 = 37%
+    gbr: 10/36 = 28%
+    grb: 13/38 = 34%
+    rbg: 12/36 = 33%
+    rgb: 12/38 = 32%
+
