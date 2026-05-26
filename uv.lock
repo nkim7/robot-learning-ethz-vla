@@ -4482,6 +4482,7 @@ version = "0.1.0"
 source = { virtual = "." }
 dependencies = [
     { name = "lerobot", extra = ["aloha", "feetech", "pusht", "smolvla"] },
+    { name = "peft" },
     { name = "pynput" },
     { name = "rerun-sdk" },
 ]
@@ -4489,6 +4490,7 @@ dependencies = [
 [package.metadata]
 requires-dist = [
     { name = "lerobot", extras = ["aloha", "feetech", "pusht", "smolvla"], editable = "lerobot" },
+    { name = "peft" },
     { name = "pynput" },
     { name = "rerun-sdk", specifier = ">=0.26.2" },
 ]

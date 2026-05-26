@@ -8,6 +8,7 @@ dependencies = [
     "lerobot[aloha,feetech,pusht,smolvla]",
     "rerun-sdk>=0.26.2",
     "pynput",
+    "peft",
 ]
 
 [tool.uv.workspace]
