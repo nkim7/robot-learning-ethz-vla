@@ -9,11 +9,11 @@
 
 This project explores how far a compact Vision-Language-Action model can be pushed on real-world manipulation with limited data and compute. We fine-tuned **SmolVLA 0.5B** (`HuggingFaceTB/SmolVLA-500M`) — built on SmolVLM2 — on three progressively harder tasks, all on the same SO-101 6-DOF follower arm.
 
-| | Task | Language | Demonstrations |
-|---|---|---|---|
-| **Eval 1** | Color bowl | *"Put the banana in the blue bowl."* | ~200 |
-| **Eval 2** | Relational bowl | *"Put the banana into the bowl to the right of the red bowl."* | ~1 080 |
-| **Eval 3** | Open-vocabulary placement | *"Place the coke on Taylor Swift."* | ~180 + VLM LoRA |
+| | Task | Language |
+|---|---|---|
+| **Eval 1** | Color bowl | *"Put the banana in the blue bowl."* |
+| **Eval 2** | Relational bowl | *"Put the banana into the bowl to the right of the red bowl."* |
+| **Eval 3** | Open-vocabulary placement | *"Place the coke on Taylor Swift."* |
 
 ---
 
