@@ -21,6 +21,9 @@ bash robot/apply_lerobot_camera_patch.sh
 
 rm -rf ~/.cache/huggingface/lerobot/local/eval_2_run
 
+echo "Resetting follower to initial pose..."
+python robot/reset_from_eval1_pose.py
+
 lerobot-record \
   --robot.type=so101_follower \
   --robot.id=my_follower \

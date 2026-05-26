@@ -29,6 +29,10 @@ NUM_EPISODES="${NUM_EPISODES:-1}"
 [[ -f "$VLM_LORA/adapter_model.safetensors" ]]      || { echo "VLM LoRA not found. Downloading..."; bash scripts/download_models.sh; }
 
 rm -rf ~/.cache/huggingface/lerobot/local/eval_3_toy_run
+
+echo "Resetting follower to initial pose..."
+python robot/reset_from_eval1_pose.py
+
 echo "Task: $TASK  |  Port: $FOLLOWER_PORT  |  Device: $DEVICE"
 
 PYTHONPATH="$REPO_ROOT/lerobot/src:$REPO_ROOT/models/eval3/runtime:${PYTHONPATH:-}" \
