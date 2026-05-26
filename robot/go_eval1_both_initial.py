@@ -6,13 +6,14 @@ import yaml
 from lerobot.robots.so_follower import SOFollower, SOFollowerConfig
 from lerobot.teleoperators.so_leader import SOLeader, SOLeaderConfig
 
-POSE_PATH = Path("config/initial/eval1_follower_initial_pose.yaml")
+_ROBOT_DIR = Path(__file__).parent
+POSE_PATH = _ROBOT_DIR / "config/poses/eval1_follower_initial_pose.yaml"
 
 FOLLOWER_PORT = "/dev/tty.usbmodem5B141138561"
 LEADER_PORT = "/dev/tty.usbmodem5B141126211"
 
-FOLLOWER_CALIBRATION_DIR = Path("calibration/so101_group47/follower")
-LEADER_CALIBRATION_DIR = Path("calibration/so101_group47/leader")
+FOLLOWER_CALIBRATION_DIR = _ROBOT_DIR / "calibration/so101_group47/follower"
+LEADER_CALIBRATION_DIR = _ROBOT_DIR / "calibration/so101_group47/leader"
 
 CONTROL_HZ = 15
 MOVE_STEPS = 15   # 15 = ~1 second. Use 20 if movement is too abrupt.

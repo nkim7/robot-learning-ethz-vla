@@ -7,7 +7,7 @@ from lerobot.robots.so_follower.so_follower import SOFollower
 from lerobot.robots.so_follower.config_so_follower import SO101FollowerConfig
 
 parser = argparse.ArgumentParser()
-parser.add_argument("--pose_file", default="eval1_initial_pose.yaml")
+parser.add_argument("--pose_file", default=str(Path(__file__).parent / "config/poses/eval1_follower_initial_pose.yaml"))
 parser.add_argument("--port", default=None)
 parser.add_argument("--duration", type=float, default=3.0)
 parser.add_argument("--hold", type=float, default=0.8)
