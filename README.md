@@ -1,28 +1,32 @@
-# Robot Learning — ETH Zürich, Group 47
+# Robot Learning — ETH Zürich · Group 47
 
-**Vision-Language-Action policy experiments on a SO-101 robot arm.**  
-Course project for *Robot Learning* (ETH Zürich, Spring 2026).
+> Fine-tuning [SmolVLA 0.5B](https://huggingface.co/HuggingFaceTB/SmolVLA-500M) for language-conditioned manipulation on a SO-101 robot arm.  
+> *Robot Learning course — ETH Zürich, Spring 2026.*
 
-We fine-tuned [SmolVLA 0.5B](https://huggingface.co/HuggingFaceTB/SmolVLA-500M) — a compact Vision-Language-Action model built on SmolVLM2 — on three increasingly challenging manipulation tasks using a SO-101 6-DOF follower arm.
+---
+
+## Project Overview
+
+This project explores how far a compact Vision-Language-Action model can be pushed on real-world manipulation with limited data and compute. We fine-tuned **SmolVLA 0.5B** (`HuggingFaceTB/SmolVLA-500M`) — built on SmolVLM2 — on three progressively harder tasks, all on the same SO-101 6-DOF follower arm.
+
+| | Task | Language | Demonstrations |
+|---|---|---|---|
+| **Eval 1** | Color bowl | *"Put the banana in the blue bowl."* | ~200 |
+| **Eval 2** | Relational bowl | *"Put the banana into the bowl to the right of the red bowl."* | ~1 080 |
+| **Eval 3** | Open-vocabulary placement | *"Place the coke on Taylor Swift."* | ~180 + VLM LoRA |
 
 ---
 
 ## Tasks
 
-### Eval 1 — Color-conditioned bowl placement
-The robot places a banana into a specified colored bowl (red, green, or blue).  
-Language prompt: *"Put the banana in the blue colored bowl."*  
-Policy fine-tuned on ~200 teleoperated demonstrations across three fixed bowl positions.
+### Eval 1 — Color-conditioned placement
+The robot picks up a banana and places it into a target bowl identified by color (red, green, or blue). Three bowls are always present; the language prompt specifies which one. We collected around 200 teleoperated demonstrations across fixed bowl positions and fine-tuned SmolVLA 0.5B from scratch on this data.
 
 ### Eval 2 — Relational and ordinal language grounding
-The robot interprets spatial and ordinal prompts referring to one of three bowls with varying layout and color permutations.  
-Language prompts include positional (*"1st from the left"*), relational (*"to the right of the red bowl"*), and negation forms (*"not red and not blue"*).  
-Policy fine-tuned on ~1080 demonstrations across 18 bowl-order × color combinations.
+A harder generalization test: three bowls appear in varying color-and-order permutations (18 combinations in total), and the prompt uses positional (*"1st from the left"*), relational (*"to the right of the red bowl"*), or negation (*"not red and not blue"*) language. We collected around 1 080 demonstrations across all combinations and fine-tuned SmolVLA 0.5B to ground these richer descriptions into motor actions.
 
 ### Eval 3 — Open-vocabulary object placement
-The robot places a coke can on a target image identified by a natural-language celebrity name.  
-Language prompt: *"Place the coke on Taylor Swift."*  
-Built on a two-stage pipeline: a VLM LoRA (SmolVLM2-2.2B) resolves the target card position, which is then passed to the SmolVLA 0.5B action policy.
+The robot places a coke can on a celebrity face card identified only by name in the prompt. This task is open-vocabulary — the set of valid targets is not fixed at training time. We solve it with a two-stage pipeline: a **VLM LoRA** (SmolVLM2-2.2B) reads the scene and resolves the target card position; that position is then passed as context to **SmolVLA 0.5B** which executes the placement.
 
 ---
 
@@ -31,32 +35,28 @@ Built on a two-stage pipeline: a VLM LoRA (SmolVLM2-2.2B) resolves the target ca
 **Requirements:** macOS or Linux · Python 3.12+ · `ffmpeg` · `uv`
 
 ```bash
-# 1. Clone (with submodule)
+# Clone with submodule
 git clone --recursive https://github.com/lorefrigo/robot-learning-ethz-vla.git
 cd robot-learning-ethz-vla
 
-# 2. Install system dependencies
+# Install system dependencies
 brew install ffmpeg uv                  # macOS
 # sudo apt install ffmpeg && curl -LsSf https://astral.sh/uv/install.sh | sh  # Linux
 
-# 3. Create virtual environment
+# Create virtual environment
 uv sync && source .venv/bin/activate
 
-# 4. Find your robot ports
+# Find your robot ports, then export them
 lerobot-find-port
-
-# 5. Export port variables (add to ~/.zshrc or ~/.bashrc to persist)
 export FOLLOWER_PORT=/dev/tty.usbmodemXXXX
 export LEADER_PORT=/dev/tty.usbmodemYYYY
 ```
 
-Everything else (model download, camera patch) is handled automatically on first run.
+Models and the camera patch are downloaded automatically on first run. Add the `export` lines to `~/.zshrc` or `~/.bashrc` to avoid re-typing each session.
 
 ---
 
-## Running Evals
-
-Set your port variables, then:
+## Running
 
 ### Eval 1
 ```bash
@@ -82,38 +82,36 @@ TASK="Place the coke on Rihanna." bash run_eval_3_celeb.sh
 
 ## Models
 
-Weights are **not stored in git** — they are downloaded automatically on first `bash run_eval_*.sh` from `robot-learning-group47/` on HuggingFace. To pre-download:
+All three evals use **SmolVLA 0.5B** ([`HuggingFaceTB/SmolVLA-500M`](https://huggingface.co/HuggingFaceTB/SmolVLA-500M)) as the base action policy. Eval 3 additionally uses a VLM LoRA on SmolVLM2-2.2B for scene understanding.
+
+Weights are **not stored in git** — they live on HuggingFace under `robot-learning-group47/` and are downloaded automatically on first run. To pre-fetch:
 
 ```bash
 bash scripts/download_models.sh
 ```
 
-All three evals use **SmolVLA 0.5B** (`HuggingFaceTB/SmolVLA-500M`) as the base action policy, fine-tuned from the same checkpoint.
-
 ```
 models/
-├── eval1/          ← SmolVLA checkpoint for Eval 1
-├── eval2/          ← SmolVLA checkpoint for Eval 2
+├── eval1/       ← SmolVLA 0.5B fine-tune
+├── eval2/       ← SmolVLA 0.5B fine-tune
 └── eval3/
-    ├── TOY/        ← VLM LoRA (SmolVLM2-2.2B) for TOY figures
-    ├── celeb/      ← VLM LoRA (SmolVLM2-2.2B) for celebrity cards
-    └── runtime/    ← Eval 3 inference code (git-tracked)
+    ├── TOY/     ← SmolVLM2-2.2B VLM LoRA (TOY figures)
+    ├── celeb/   ← SmolVLM2-2.2B VLM LoRA (celebrity cards)
+    └── runtime/ ← inference code (git-tracked)
 ```
 
 ---
 
 ## Datasets
 
-Training datasets are hosted on HuggingFace under `robot-learning-group47/`.
+Hosted on HuggingFace under `robot-learning-group47/`. Download with:
 
 ```bash
-bash scripts/download_datasets.sh          # all three evals
-bash scripts/download_datasets.sh eval1    # only eval 1
-bash scripts/download_datasets.sh eval2
-bash scripts/download_datasets.sh eval3
+bash scripts/download_datasets.sh          # all three
+bash scripts/download_datasets.sh eval1    # single eval
 ```
 
-Downloads land in `training_pipeline/eval*/data/`.
+Downloaded data lands in `training_pipeline/eval*/data/`.
 
 ---
 
@@ -121,8 +119,7 @@ Downloads land in `training_pipeline/eval*/data/`.
 
 ```bash
 source .venv/bin/activate
-python robot/teleop.py
-# Requires FOLLOWER_PORT and LEADER_PORT to be set
+python robot/teleop.py   # requires FOLLOWER_PORT and LEADER_PORT
 ```
 
 ---
@@ -131,35 +128,21 @@ python robot/teleop.py
 
 ```
 robot-learning-ethz-vla/
-├── run_eval_1.sh              — Eval 1 runner
-├── run_eval_2.sh              — Eval 2 runner
-├── run_eval_3_TOY.sh          — Eval 3 TOY figures runner
-├── run_eval_3_celeb.sh        — Eval 3 celebrity cards runner
+├── run_eval_*.sh              — One-command eval runners
 │
-├── robot/                     — Hardware scripts & calibration
+├── robot/                     — Hardware layer
 │   ├── calibration/           — Calibration files for group 47 arms
 │   ├── config/poses/          — Initial pose YAML
-│   ├── teleop.py              — Teleoperation
+│   ├── teleop.py
 │   ├── go_eval1_both_initial.py
 │   └── reset_from_eval1_pose.py
 │
-├── models/                    — Policy checkpoints (gitignored, auto-downloaded)
+├── models/                    — Checkpoints (gitignored, auto-downloaded)
 │
 ├── training_pipeline/
-│   ├── eval1/
-│   │   ├── data/              — Datasets and config
-│   │   ├── src/               — Training & evaluation scripts
-│   │   └── shells/            — Shell scripts (train, record, eval)
-│   ├── eval2/
-│   │   ├── data/
-│   │   ├── src/
-│   │   └── shells/
-│   └── eval3/
-│       ├── data/
-│       ├── src/
-│       │   ├── vlm/           — VLM LoRA training (SmolVLM2-2.2B)
-│       │   └── vla/           — VLA action model training & server
-│       └── shells/
+│   ├── eval1/  ─┐
+│   ├── eval2/   ├─  data/ · src/ · shells/
+│   └── eval3/  ─┘  (src/ splits into vlm/ and vla/ for eval3)
 │
 ├── scripts/
 │   ├── download_models.sh
