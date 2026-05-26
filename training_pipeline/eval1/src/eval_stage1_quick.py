@@ -8,8 +8,13 @@ Usage:
 """
 import argparse
 import logging
+import os
 import time
+import yaml
 from pathlib import Path
+
+_REPO_ROOT = Path(__file__).resolve().parents[3]
+_POSE_FILE = _REPO_ROOT / "robot/config/poses/eval1_follower_initial_pose.yaml"
 
 from lerobot.cameras.opencv_crop import OpenCVCropCameraConfig
 from lerobot.common.control_utils import predict_action
@@ -29,14 +34,7 @@ PROMPTS = [
     ("right",  "Put the banana into the right bowl from the robot perspective."),
 ]
 
-RESET_POSE = {
-    "shoulder_pan.pos":  -1.6703296703296704,
-    "shoulder_lift.pos": -102.02197802197803,
-    "elbow_flex.pos":     92.96703296703296,
-    "wrist_flex.pos":     70.1978021978022,
-    "wrist_roll.pos":      7.34065934065934,
-    "gripper.pos":         2.7184466019417477,
-}
+RESET_POSE = yaml.safe_load(_POSE_FILE.read_text())["follower_pose"]
 
 FPS             = 15
 EPISODE_TIME_S  = 20
@@ -99,9 +97,24 @@ def run_episode(robot, policy, preprocessor, postprocessor, task, fps=FPS, episo
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--ckpt", required=True)
-    parser.add_argument("--port", default="/dev/tty.usbmodem5B140319121")
-    parser.add_argument("--calib", default="calibration/so101_group47/follower")
+    parser.add_argument("--port", default=None,
+                        help="Serial port (default: $FOLLOWER_PORT env var, then auto-detect /dev/tty.usbmodem*)")
+    parser.add_argument("--calib", default=None,
+                        help="Calibration dir (default: robot/calibration/so101_group47/follower)")
     args = parser.parse_args()
+
+    # Resolve port
+    port = args.port or os.environ.get("FOLLOWER_PORT")
+    if not port:
+        import glob
+        ports = glob.glob("/dev/tty.usbmodem*")
+        if not ports:
+            raise RuntimeError("No /dev/tty.usbmodem* found. Set FOLLOWER_PORT env var.")
+        port = ports[0]
+        print(f"Auto-detected port: {port}")
+
+    # Resolve calibration dir
+    calib = args.calib or str(_REPO_ROOT / "robot/calibration/so101_group47/follower")
 
     ckpt = Path(args.ckpt).resolve()
     assert ckpt.exists(), f"Not found: {ckpt}"
@@ -127,9 +140,9 @@ def main():
     # ── Connect robot (once) ──────────────────────────────────────
     print("Connecting robot …")
     robot_cfg = SOFollowerRobotConfig(
-        port=args.port,
+        port=port,
         id="my_follower",
-        calibration_dir=args.calib,
+        calibration_dir=calib,
         cameras={
             "camera1": OpenCVCropCameraConfig(
                 index_or_path=0,

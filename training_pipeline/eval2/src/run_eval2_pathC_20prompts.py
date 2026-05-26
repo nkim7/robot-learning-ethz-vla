@@ -13,9 +13,14 @@ from __future__ import annotations
 
 import argparse
 import glob
+import os
 import sys
 import time
+import yaml
 from pathlib import Path
+
+_REPO_ROOT = Path(__file__).resolve().parents[3]
+_POSE_FILE = _REPO_ROOT / "robot/config/poses/eval1_follower_initial_pose.yaml"
 
 from lerobot.cameras.opencv_crop import OpenCVCropCameraConfig
 from lerobot.common.control_utils import predict_action
@@ -33,14 +38,7 @@ EPISODE_TIME_S = 20
 RESET_DURATION_S = 5.0
 RENAME_MAP = {"observation.images.camera1": "observation.images.front"}
 
-RESET_POSE = {
-    "shoulder_pan.pos": -1.6703296703296704,
-    "shoulder_lift.pos": -102.02197802197803,
-    "elbow_flex.pos": 92.96703296703296,
-    "wrist_flex.pos": 70.1978021978022,
-    "wrist_roll.pos": 7.34065934065934,
-    "gripper.pos": 2.7184466019417477,
-}
+RESET_POSE = yaml.safe_load(_POSE_FILE.read_text())["follower_pose"]
 
 PROMPTS = [
     "Put the banana into the 1st bowl from the left from the robot perspective.",
@@ -128,17 +126,24 @@ def main() -> None:
     parser.add_argument("--policy_path", required=True)
     parser.add_argument("--port", default=None)
     parser.add_argument("--id", default="my_follower")
-    parser.add_argument("--calibration_dir", default="calibration/so101_group47/follower")
+    parser.add_argument("--calibration_dir", default=None,
+                        help="Calibration dir (default: robot/calibration/so101_group47/follower)")
     parser.add_argument("--camera_index", type=int, default=0)
     parser.add_argument("--start_from", type=int, default=1)
     args = parser.parse_args()
 
     if args.port is None:
+        args.port = os.environ.get("FOLLOWER_PORT")
+    if args.port is None:
         ports = glob.glob("/dev/tty.usbmodem*")
         if not ports:
-            print("ERROR: no /dev/tty.usbmodem* found.")
+            print("ERROR: no /dev/tty.usbmodem* found. Set FOLLOWER_PORT env var.")
             sys.exit(1)
         args.port = ports[0]
+        print(f"Auto-detected port: {args.port}")
+
+    if args.calibration_dir is None:
+        args.calibration_dir = str(_REPO_ROOT / "robot/calibration/so101_group47/follower")
 
     print_plan(args.policy_path)
     input("Press Enter to load model and connect robot, Ctrl+C to abort...")

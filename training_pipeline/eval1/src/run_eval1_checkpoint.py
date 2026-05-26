@@ -14,14 +14,25 @@ Available checkpoints:
     robot-learning-group47/eval1-fixed-bowl-step008000
     robot-learning-group47/eval1-fixed-bowl-step010000  (final)
 """
-import argparse, sys, time
+import argparse, glob, os, sys, time
 from pathlib import Path
 
 sys.path.insert(0, "lerobot/src")
 
+_REPO_ROOT = Path(__file__).resolve().parents[3]
+
 STEPS = [2000, 4000, 6000, 8000, 10000]
-PORT  = "/dev/tty.usbmodem5AE60831701"
-CALIB = "calibration/so101_group47/follower"
+
+
+def _detect_follower_port() -> str:
+    port = os.environ.get("FOLLOWER_PORT")
+    if port:
+        return port
+    ports = glob.glob("/dev/tty.usbmodem*")
+    if not ports:
+        raise RuntimeError("No /dev/tty.usbmodem* found. Set FOLLOWER_PORT env var.")
+    print(f"Auto-detected port: {ports[0]}")
+    return ports[0]
 
 def get_repo(step):
     s = f"{step:06d}"
@@ -61,9 +72,9 @@ def main():
     print(f"Policy loaded on {device}")
 
     robot_cfg = SOFollowerRobotConfig(
-        port=PORT,
+        port=_detect_follower_port(),
         id="my_follower",
-        calibration_dir=Path(CALIB),
+        calibration_dir=_REPO_ROOT / "robot/calibration/so101_group47/follower",
         use_degrees=True,
     )
     robot = SOFollower(robot_cfg)

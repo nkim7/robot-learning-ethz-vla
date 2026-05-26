@@ -7,8 +7,22 @@
 set -euo pipefail
 
 POLICY_PATH="${1:-models/smolvla-eval2-pathC/step8000}"
-PORT="${2:-/dev/tty.usbmodem5B140319121}"
-CALIB="calibration/so101_group47/follower"
+CALIB="robot/calibration/so101_group47/follower"
+
+# Resolve follower port: arg 2 → FOLLOWER_PORT env var → auto-detect
+if [[ -n "${2:-}" ]]; then
+  PORT="$2"
+elif [[ -n "${FOLLOWER_PORT:-}" ]]; then
+  PORT="$FOLLOWER_PORT"
+else
+  _PORTS=(/dev/tty.usbmodem*)
+  if [[ ${#_PORTS[@]} -eq 0 || ! -e "${_PORTS[0]}" ]]; then
+    echo "ERROR: No /dev/tty.usbmodem* found. Set FOLLOWER_PORT env var." >&2
+    exit 1
+  fi
+  PORT="${_PORTS[0]}"
+  echo "Auto-detected port: $PORT"
+fi
 CAMERAS='{"camera1":{"type":"opencv_crop","index_or_path":0,"source_width":640,"source_height":480,"roi_x":215,"roi_y":0,"roi_size":425,"width":256,"height":256,"fps":15,"warmup_s":1}}'
 EPISODES_PER_PROMPT=1
 EPISODE_TIME=20

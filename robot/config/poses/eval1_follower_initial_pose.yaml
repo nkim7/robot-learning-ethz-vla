@@ -11,9 +11,8 @@ follower_pose:
   wrist_roll.pos: 7.34065934065934
   gripper.pos: 2.7184466019417477
 
-ports:
-  follower: /dev/tty.usbmodem5B141138561
-  leader: /dev/tty.usbmodem5B141126211
+# Ports are NOT stored here. Set FOLLOWER_PORT and LEADER_PORT env vars,
+# or let scripts auto-detect /dev/tty.usbmodem* devices.
 
 calibration:
   follower: robot/calibration/so101_group47/follower

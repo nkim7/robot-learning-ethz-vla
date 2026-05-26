@@ -13,8 +13,8 @@
 #   redo          # remove latest episode and redo it
 #
 # Requires:
-#   export FOLLOWER_PORT=/dev/tty.usbmodem5B141138561
-#   export LEADER_PORT=/dev/tty.usbmodem5B141126211
+#   export FOLLOWER_PORT=/dev/tty.usbmodemXXXX   # your follower arm port
+#   export LEADER_PORT=/dev/tty.usbmodemYYYY      # your leader arm port
 
 # ---------------------------------------------------------------------
 # zsh compatibility
@@ -347,8 +347,8 @@ record() {
     if [ -z "${FOLLOWER_PORT:-}" ] || [ -z "${LEADER_PORT:-}" ]; then
         echo "ERROR: FOLLOWER_PORT and/or LEADER_PORT not set." >&2
         echo "Run:"
-        echo "  export FOLLOWER_PORT=/dev/tty.usbmodem5B141138561"
-        echo "  export LEADER_PORT=/dev/tty.usbmodem5B141126211"
+        echo "  export FOLLOWER_PORT=/dev/tty.usbmodemXXXX   # your follower arm port"
+        echo "  export LEADER_PORT=/dev/tty.usbmodemYYYY    # your leader arm port"
         return 1
     fi
 

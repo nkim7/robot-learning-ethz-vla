@@ -4,8 +4,18 @@ set -euo pipefail
 cd ~/robot-learning-ethz-vla
 source .venv/bin/activate
 
-export LEADER_PORT=/dev/tty.usbmodem5B141126211
-export FOLLOWER_PORT=/dev/tty.usbmodem5B141138561
+# Resolve ports: honour env vars set by the caller, else require them to be set.
+if [[ -z "${FOLLOWER_PORT:-}" || -z "${LEADER_PORT:-}" ]]; then
+  mapfile -t _PORTS < <(ls /dev/tty.usbmodem* 2>/dev/null | sort)
+  if [[ ${#_PORTS[@]} -lt 2 ]]; then
+    echo "ERROR: Need at least 2 /dev/tty.usbmodem* ports." >&2
+    echo "       Set FOLLOWER_PORT and LEADER_PORT environment variables." >&2
+    exit 1
+  fi
+  export FOLLOWER_PORT="${FOLLOWER_PORT:-${_PORTS[0]}}"
+  export LEADER_PORT="${LEADER_PORT:-${_PORTS[1]}}"
+  echo "Auto-detected: FOLLOWER_PORT=$FOLLOWER_PORT  LEADER_PORT=$LEADER_PORT"
+fi
 
 BASE_DIR="data/eval1_fixed_interactive"
 mkdir -p "$BASE_DIR"
@@ -298,11 +308,11 @@ while true; do
   lerobot-record \
     --robot.type=so101_follower \
     --robot.port="$FOLLOWER_PORT" \
-    --robot.calibration_dir=calibration/so101_group47/follower \
+    --robot.calibration_dir=robot/calibration/so101_group47/follower \
     --robot.cameras='{"front": {"type": "opencv", "index_or_path": 0, "width": 640, "height": 480, "fps": 15, "warmup_s": 5}}' \
     --teleop.type=so101_leader \
     --teleop.port="$LEADER_PORT" \
-    --teleop.calibration_dir=calibration/so101_group47/leader \
+    --teleop.calibration_dir=robot/calibration/so101_group47/leader \
     --dataset.repo_id="$REPO_ID" \
     --dataset.root="$EP_ROOT" \
     --resume="$RESUME_FLAG" \

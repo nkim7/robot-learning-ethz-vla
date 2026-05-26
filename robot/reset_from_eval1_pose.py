@@ -1,3 +1,5 @@
+import glob
+import os
 import time
 import yaml
 import argparse
@@ -8,7 +10,8 @@ from lerobot.robots.so_follower.config_so_follower import SO101FollowerConfig
 
 parser = argparse.ArgumentParser()
 parser.add_argument("--pose_file", default=str(Path(__file__).parent / "config/poses/eval1_follower_initial_pose.yaml"))
-parser.add_argument("--port", default=None)
+parser.add_argument("--port", default=None,
+                    help="Serial port (default: $FOLLOWER_PORT env var, then auto-detect /dev/tty.usbmodem*)")
 parser.add_argument("--duration", type=float, default=3.0)
 parser.add_argument("--hold", type=float, default=0.8)
 parser.add_argument("--hz", type=float, default=30.0)
@@ -18,7 +21,16 @@ with open(args.pose_file) as f:
     pose_cfg = yaml.safe_load(f)
 
 target_pose = {k: float(v) for k, v in pose_cfg["follower_pose"].items()}
-port = args.port or pose_cfg["ports"]["follower"]
+
+# Resolve port: CLI arg → FOLLOWER_PORT env var → auto-detect
+port = args.port or os.environ.get("FOLLOWER_PORT")
+if not port:
+    _detected = sorted(glob.glob("/dev/tty.usbmodem*"))
+    if not _detected:
+        raise RuntimeError("No /dev/tty.usbmodem* found. Set FOLLOWER_PORT env var.")
+    port = _detected[0]
+    print(f"Auto-detected port: {port}")
+
 calibration_dir = Path(pose_cfg["calibration"]["follower"]).resolve()
 
 cfg = SO101FollowerConfig(

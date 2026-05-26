@@ -6,7 +6,7 @@ SKIP="12 19"
 STEP=3  # send every Nth frame — increase to go faster
 
 python3 - <<'PYEOF'
-import sys, time, os, subprocess
+import glob, sys, time, os, subprocess
 import pyarrow.parquet as pq
 import numpy as np
 
@@ -18,7 +18,14 @@ from lerobot.processor import make_default_robot_action_processor
 
 SKIP = set()
 STEP = int(os.environ.get("STEP", 1))
-PORT = "/dev/tty.usbmodem5AE60831701"
+# Resolve port: env var → auto-detect
+PORT = os.environ.get("FOLLOWER_PORT")
+if not PORT:
+    _ports = glob.glob("/dev/tty.usbmodem*")
+    if not _ports:
+        raise RuntimeError("No /dev/tty.usbmodem* found. Set FOLLOWER_PORT env var.")
+    PORT = _ports[0]
+    print(f"Auto-detected port: {PORT}")
 CALIB = "robot/calibration/so101_group47/follower"
 SNAP = (
     os.path.expanduser("~") +
