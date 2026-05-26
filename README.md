@@ -23,7 +23,7 @@ This project explores language-conditioned manipulation with a Vision-Language-A
 The robot picks up a banana and places it into a target bowl identified by color (red, green, or blue). Three bowls are always present; the language prompt specifies which one. We collected 60 teleoperated demonstrations across fixed bowl positions and trained SmolVLA 0.5B on this data.
 
 ### Eval 2 — Relational and ordinal language grounding
-A harder generalization test: three bowls appear in varying color-and-order permutations (18 combinations in total), and the prompt uses positional (*"1st from the left"*), relational (*"to the right of the red bowl"*), or negation (*"not red and not blue"*) language. We collected 108 demonstrations across all combinations and trained SmolVLA 0.5B to ground these richer descriptions into motor actions.
+A harder generalization test: three bowls appear in varying color-and-order permutations (18 combinations in total), and the prompt uses positional (*"1st from the left"*), relational (*"to the right of the red bowl"*), or negation (*"not red and not blue"*) language. We collected 108 demonstrations across all combinations and trained SmolVLA 0.5B.
 
 ### Eval 3 — Open-vocabulary object placement
 The robot must pick up a coke can and place it precisely on top of a small celebrity photo card lying flat on the table — identified only by the person's name in the prompt. Solved with SmolVLA 0.5B.
