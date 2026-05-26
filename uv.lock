@@ -4481,13 +4481,15 @@ name = "project1-group-47"
 version = "0.1.0"
 source = { virtual = "." }
 dependencies = [
-    { name = "lerobot", extra = ["aloha", "feetech", "pusht"] },
+    { name = "lerobot", extra = ["aloha", "feetech", "pusht", "smolvla"] },
+    { name = "pynput" },
     { name = "rerun-sdk" },
 ]
 
 [package.metadata]
 requires-dist = [
-    { name = "lerobot", extras = ["aloha", "feetech", "pusht"], editable = "lerobot" },
+    { name = "lerobot", extras = ["aloha", "feetech", "pusht", "smolvla"], editable = "lerobot" },
+    { name = "pynput" },
     { name = "rerun-sdk", specifier = ">=0.26.2" },
 ]
 

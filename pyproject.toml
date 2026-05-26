@@ -5,8 +5,9 @@ description = "Add your description here"
 readme = "README.md"
 requires-python = ">=3.12"
 dependencies = [
-    "lerobot[aloha,feetech,pusht]",
+    "lerobot[aloha,feetech,pusht,smolvla]",
     "rerun-sdk>=0.26.2",
+    "pynput",
 ]
 
 [tool.uv.workspace]
