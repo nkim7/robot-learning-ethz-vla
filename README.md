@@ -26,7 +26,7 @@ The robot picks up a banana and places it into a target bowl identified by color
 A harder generalization test: three bowls appear in varying color-and-order permutations (18 combinations in total), and the prompt uses positional (*"1st from the left"*), relational (*"to the right of the red bowl"*), or negation (*"not red and not blue"*) language. We collected 108 demonstrations across all combinations and trained SmolVLA 0.5B to ground these richer descriptions into motor actions.
 
 ### Eval 3 — Open-vocabulary object placement
-The robot must pick up a coke can and place it precisely on top of a small celebrity photo card lying flat on the table — identified only by the person's name in the prompt. The challenge is threefold: the coke can is tall and round, making grasp and release tricky; the target cards are small and visually cluttered; and the set of valid targets is open-vocabulary, meaning the model must generalise to celebrities not seen at training time. SmolVLA 0.5B handles the full task end-to-end.
+The robot must pick up a coke can and place it precisely on top of a small celebrity photo card lying flat on the table — identified only by the person's name in the prompt. Solved with SmolVLA 0.5B.
 
 ---
 
