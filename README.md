@@ -127,95 +127,43 @@ python robot/teleop.py   # requires FOLLOWER_PORT and LEADER_PORT
 ```
 robot-learning-ethz-vla/
 │
-├── run_eval_1.sh                          — Eval 1 one-command runner
-├── run_eval_2.sh                          — Eval 2 one-command runner
-├── run_eval_3_TOY.sh                      — Eval 3 TOY figures runner
-├── run_eval_3_celeb.sh                    — Eval 3 celebrity cards runner
+├── run_eval_1.sh                 — Eval 1 one-command runner
+├── run_eval_2.sh                 — Eval 2 one-command runner
+├── run_eval_3_TOY.sh             — Eval 3 TOY figures runner
+├── run_eval_3_celeb.sh           — Eval 3 celebrity cards runner
 │
-├── robot/
-│   ├── calibration/so101_group47/
-│   │   ├── follower/                      — Follower arm calibration JSON
-│   │   └── leader/                        — Leader arm calibration JSON
-│   ├── config/
-│   │   ├── poses/eval1_follower_initial_pose.yaml  — Reset pose for all evals
-│   │   └── robot/                         — Robot config JSONs
-│   ├── patches/lerobot_opencv_camera_no_crash.patch
-│   ├── teleop.py                          — Teleoperation script
-│   ├── calibrate.py                       — Calibration helper
-│   ├── go_eval1_both_initial.py           — Move both arms to initial pose
-│   ├── reset_from_eval1_pose.py           — Reset follower to initial pose
-│   ├── replay_all.sh                      — Replay recorded episodes on robot
-│   ├── apply_lerobot_camera_patch.sh      — Apply OpenCV camera stability patch
-│   └── setup_teleop_keyword.sh            — Keyboard shortcut setup for teleop
+├── robot/                        — Hardware scripts, calibration & config
+│   ├── calibration/              — Arm calibration files for group 47
+│   ├── config/                   — Robot config and initial pose YAML
+│   └── patches/                  — OpenCV camera stability patch
 │
-├── models/                                — Checkpoints (gitignored, auto-downloaded)
-│   ├── eval1/                             — SmolVLA 0.5B checkpoint
-│   ├── eval2/                             — SmolVLA 0.5B checkpoint
-│   └── eval3/runtime/                     — Eval 3 inference code (git-tracked)
+├── models/                       — Checkpoints (gitignored, auto-downloaded)
+│   ├── eval1/                    — SmolVLA 0.5B checkpoint
+│   ├── eval2/                    — SmolVLA 0.5B checkpoint
+│   └── eval3/runtime/            — Eval 3 inference code (git-tracked)
 │
 ├── training_pipeline/
-│   │
 │   ├── eval1/
-│   │   ├── shells/
-│   │   │   ├── record_eval1_interactive_resume.sh  — Interactive recording loop
-│   │   │   ├── run_train_eval1_fixed_bowl.sh        — Main training run
-│   │   │   ├── run_train_eval1_position.sh          — Position-only training
-│   │   │   └── eval_stage1.sh                       — Evaluation script
-│   │   └── src/
-│   │       ├── eval_stage1_quick.py                 — On-robot evaluation (3 prompts)
-│   │       ├── run_eval1_checkpoint.py              — Run specific HF checkpoint
-│   │       ├── run_eval1_inference.py               — Low-level inference runner
-│   │       ├── delete_latest_eval1_episode.py       — Dataset episode management
-│   │       ├── relabel_eval1_position_dataset.py
-│   │       ├── inspect_eval1_grasp_quality.py
-│   │       ├── merge_vqa_backbone_into_eval1.py
-│   │       └── build_eval1final_groundedvlm_hybrid.py
-│   │
+│   │   ├── data/                 — Training datasets (gitignored)
+│   │   ├── shells/               — Recording, training & evaluation shell scripts
+│   │   └── src/                  — Training, evaluation & dataset scripts
 │   ├── eval2/
-│   │   ├── shells/
-│   │   │   ├── eval2_record_combinations.sh         — Record all 18 bowl combos
-│   │   │   ├── run_eval2_pathC_20prompts.sh          — 20-prompt sweep on robot
-│   │   │   ├── run_eval2_resolvedcolor.sh            — Color-resolved eval
-│   │   │   ├── run_stage1_position_bootstrap.sh
-│   │   │   ├── run_stage2_compositional.sh
-│   │   │   └── run_train_*.sh                        — Various training experiments
-│   │   └── src/
-│   │       ├── eval_stage2_prompt_loop.py            — Interactive on-robot eval loop
-│   │       ├── run_eval2_pathC_20prompts.py          — 20-prompt sweep script
-│   │       ├── run_eval2_resolver_fullrollout.py
-│   │       ├── build_eval2_*.py                      — Dataset construction scripts
-│   │       ├── create_eval2_*.py                     — Prompt augmentation & VQA datasets
-│   │       ├── train_eval2_*.py                      — Training experiment scripts
-│   │       └── probe_*.py                            — Diagnostic & probing scripts
-│   │
+│   │   ├── data/                 — Training datasets & image assets (gitignored)
+│   │   ├── shells/               — Recording, training & evaluation shell scripts
+│   │   └── src/                  — Training, probing & dataset construction scripts
 │   ├── eval3/
-│   │   ├── shells/
-│   │   │   ├── eval3_record.sh                      — Interactive recording loop
-│   │   │   ├── run_eval3_cotrain_cycle06_action.sh  — Main training run
-│   │   │   ├── run_phase2_pipeline.sh
-│   │   │   └── init.sh
+│   │   ├── data/                 — Training datasets & image assets (gitignored)
+│   │   ├── shells/               — Recording & training shell scripts
 │   │   └── src/
-│   │       ├── vla/                                  — VLA action model training
-│   │       │   ├── scripts/eval3_run1_action_train/  — Run 1 training scripts
-│   │       │   ├── scripts/eval3_run2_lmr210_action_train/
-│   │       │   ├── scripts/eval3_cotrain/            — Co-training experiments
-│   │       │   ├── scripts/eval3_vlm_lora/           — VLM LoRA experiments
-│   │       │   ├── scripts/eval3_bridge_train/
-│   │       │   ├── scripts/eval3_alignment/
-│   │       │   └── scripts/eval3_runtime_common.sh
-│   │       └── vlm/                                  — VLM scene understanding scripts
-│   │           ├── train_eval3_phase1_lora.py
-│   │           ├── train_eval3_phase2_*.py
-│   │           ├── eval3_*.py                        — Evaluation & probing
-│   │           └── build_*/gen_*/synthesize_*.py     — Dataset generation
-│   │
-│   └── logs/                                         — Experiment logs & probe results
+│   │       ├── vla/              — VLA action model training scripts
+│   │       └── vlm/              — VLM scene understanding training scripts
+│   └── logs/                     — Experiment logs & probe results
 │
 ├── scripts/
 │   ├── download_models.sh
 │   └── download_datasets.sh
 │
-└── lerobot/                                          — LeRobot submodule (v0.5.2)
+└── lerobot/                      — LeRobot submodule (v0.5.2)
 ```
 
 ---
