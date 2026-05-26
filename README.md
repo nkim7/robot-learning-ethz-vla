@@ -155,8 +155,6 @@ robot-learning-ethz-vla/
 
 ## Hardware Notes
 
-- **Follower arm charger:** green LED — **Leader arm charger:** blue LED
-- Connect the 12V power adapter to the follower before running
 - Calibration files: `robot/calibration/so101_group47/`
 - Ports are auto-detected from `/dev/tty.usbmodem*` if env vars are not set
 
