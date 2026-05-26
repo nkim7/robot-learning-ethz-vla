@@ -22,3 +22,17 @@ fi
 git -C lerobot apply "../$PATCH"
 
 echo "Applied LeRobot camera stability patch."
+
+# Register opencv_crop camera type so draccus can parse --robot.cameras='{"type":"opencv_crop",...}'.
+# The @CameraConfig.register_subclass("opencv_crop") decorator only runs on import, so we add the
+# import to cameras/__init__.py without touching the submodule's git history.
+CAMERAS_INIT="lerobot/src/lerobot/cameras/__init__.py"
+MARKER="from .opencv_crop import OpenCVCropCameraConfig"
+if ! grep -q "$MARKER" "$CAMERAS_INIT"; then
+  echo "" >> "$CAMERAS_INIT"
+  echo "# Register opencv_crop type for draccus CLI parsing (added by apply_lerobot_camera_patch.sh)" >> "$CAMERAS_INIT"
+  echo "$MARKER  # noqa: F401" >> "$CAMERAS_INIT"
+  echo "Registered OpenCVCropCameraConfig in cameras/__init__.py."
+else
+  echo "OpenCVCropCameraConfig already registered."
+fi
