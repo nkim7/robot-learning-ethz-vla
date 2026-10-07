@@ -23,7 +23,9 @@ This project explores language-conditioned manipulation with a Vision-Language-A
 
 
 
-https://github.com/user-attachments/assets/79426635-a169-45a3-a597-498dd4f2845e
+<div align="center">
+  <video src="https://github.com/user-attachments/assets/79426635-a169-45a3-a597-498dd4f2845e" width="480" controls></video>
+</div>
 
 
 
@@ -35,7 +37,9 @@ The robot picks up a banana and places it into a target bowl identified by color
 
 
 
-https://github.com/user-attachments/assets/f8ad96ce-0641-40c5-b42d-963f267891c8
+<div align="center">
+  <video src="https://github.com/user-attachments/assets/f8ad96ce-0641-40c5-b42d-963f267891c8" width="480" controls></video>
+</div>
 
 
 
@@ -46,12 +50,14 @@ A harder generalization test: three bowls appear in varying color-and-order perm
 
 
 
-https://github.com/user-attachments/assets/c968eb0a-1b17-4e17-a671-02b083d911df
+<div align="center">
+  <video src="https://github.com/user-attachments/assets/c968eb0a-1b17-4e17-a671-02b083d911df" width="480" controls></video>
+</div>
 
 
 <p align="center">
-  <img src="https://github.com/user-attachments/assets/8178ab90-c150-468f-94a7-2f6758809698" height="240" alt="eval-3-celebrity-grid" />
-  <img src="https://github.com/user-attachments/assets/f9901a5b-9454-42ba-b8a3-f848461f49fa" height="240" alt="eval-3-grounding-overlay" />
+  <img src="https://github.com/user-attachments/assets/8178ab90-c150-468f-94a7-2f6758809698" height="360" alt="eval-3-celebrity-grid" />
+  <img src="https://github.com/user-attachments/assets/f9901a5b-9454-42ba-b8a3-f848461f49fa" height="360" alt="eval-3-grounding-overlay" />
 </p>
 
 The robot must pick up a coke can and place it precisely on top of a small celebrity photo card lying flat on the table — identified only by the person's name in the prompt. Solved with SmolVLA 0.5B.
