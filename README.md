@@ -20,12 +20,28 @@ This project explores language-conditioned manipulation with a Vision-Language-A
 ## Tasks
 
 ### Eval 1 — Color-conditioned placement
+
+https://github.com/user-attachments/assets/fdf569ac-2c79-4c8b-ae13-35cb6a4761d7
+
+
 The robot picks up a banana and places it into a target bowl identified by color (red, green, or blue). Three bowls are always present; the language prompt specifies which one. We collected 60 teleoperated demonstrations across fixed bowl positions and trained SmolVLA 0.5B on this data.
 
 ### Eval 2 — Relational and ordinal language grounding
+
+
+https://github.com/user-attachments/assets/33626ecb-3561-40f6-ac2e-a0022cec08ee
+
+
 A harder generalization test: three bowls appear in varying color-and-order permutations (18 combinations in total), and the prompt uses positional (*"1st from the left"*), relational (*"to the right of the red bowl"*), or negation (*"not red and not blue"*) language. We collected 108 demonstrations across all combinations and trained SmolVLA 0.5B.
 
 ### Eval 3 — Open-vocabulary object placement
+
+https://github.com/user-attachments/assets/7e4a790a-52b7-4e25-bc1b-34470e564d96
+
+<img width="1024" height="1024" alt="eval-3-grounding-overlay" src="https://github.com/user-attachments/assets/f9901a5b-9454-42ba-b8a3-f848461f49fa" />
+<img width="1074" height="874" alt="eval-3-celebrity-grid" src="https://github.com/user-attachments/assets/8178ab90-c150-468f-94a7-2f6758809698" />
+
+
 The robot must pick up a coke can and place it precisely on top of a small celebrity photo card lying flat on the table — identified only by the person's name in the prompt. Solved with SmolVLA 0.5B.
 
 ---
