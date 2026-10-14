@@ -23,8 +23,9 @@ This project explores language-conditioned manipulation with a Vision-Language-A
 
 
 
+
 <div align="center">
-  <video src="https://github.com/user-attachments/assets/79426635-a169-45a3-a597-498dd4f2845e" width="480" controls></video>
+  <video src="https://github.com/user-attachments/assets/52c57a92-67d1-4945-b290-c02fe56a5047" width="480" controls></video>
 </div>
 
 
@@ -38,7 +39,7 @@ The robot picks up a banana and places it into a target bowl identified by color
 
 
 <div align="center">
-  <video src="https://github.com/user-attachments/assets/f8ad96ce-0641-40c5-b42d-963f267891c8" width="480" controls></video>
+  <video src="https://github.com/user-attachments/assets/59007881-a84e-4af9-8205-86dcb588083c" width="480" controls></video>
 </div>
 
 
@@ -51,7 +52,7 @@ A harder generalization test: three bowls appear in varying color-and-order perm
 
 
 <div align="center">
-  <video src="https://github.com/user-attachments/assets/c968eb0a-1b17-4e17-a671-02b083d911df" width="480" controls></video>
+  <video src="https://github.com/user-attachments/assets/22b4ca66-44e5-4fb9-ade4-03f932d14db4" width="480" controls></video>
 </div>
 
 
